@@ -229,5 +229,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<Tab>"
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Tab>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
 nmap <space>e :CocCommand explorer<CR>
