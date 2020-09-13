@@ -7,6 +7,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Townk/vim-autoclose'
 call plug#end()
 
 " activates filetype detection
@@ -67,8 +68,8 @@ autocmd FileType html,css EmmetInstall
 "indentLine configuration
 let g:indentLine_char = '|'
 
-"coc.nvim configuration
 
+"coc.nvim configuration ******************
 
 " TextEdit might fail if hidden is not set.
 set hidden
