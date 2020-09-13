@@ -3,11 +3,10 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 "Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Townk/vim-autoclose'
 call plug#end()
 
 " activates filetype detection
@@ -68,6 +67,8 @@ autocmd FileType html,css EmmetInstall
 "indentLine configuration
 let g:indentLine_char = '|'
 
+"autopairs configuration
+let g:AutoPairsMultilineClose = 0
 
 "coc.nvim configuration ******************
 
@@ -231,3 +232,4 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<Tab>"
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Tab>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <space>e :CocCommand explorer<CR>
+autocmd FileType * set formatoptions-=cro
