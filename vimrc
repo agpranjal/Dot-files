@@ -1,7 +1,5 @@
 call plug#begin()
-"Plug 'preservim/NERDTree'
 Plug 'tpope/vim-surround'
-"Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
@@ -49,6 +47,9 @@ set ignorecase
 autocmd FileType python setlocal completeopt-=preview
 :command W w
 :command Wq wq
+:command D nohl
+
+
 
 "*****************Plugin Configurations***********************
 
