@@ -25,11 +25,9 @@ set backspace=indent,eol,start
 set linebreak
 set wrap
 set autoindent
-set tabstop=4
 set incsearch
 set showmode
 set background=dark
-set shiftwidth=4
 set splitbelow
 set splitright
 set ruler
@@ -43,6 +41,12 @@ set numberwidth=1
 set hlsearch
 set updatetime=50
 set ignorecase
+
+set shiftwidth=4
+set tabstop=4
+set expandtab
+:retab
+
 
 autocmd FileType python setlocal completeopt-=preview
 :command W w
@@ -66,10 +70,12 @@ autocmd FileType html,css EmmetInstall
 
 
 "indentLine configuration
-let g:indentLine_char = '|'
+let g:indentLine_char_list = ['┊']
 
 "autopairs configuration
 let g:AutoPairsMultilineClose = 0
+
+
 
 "coc.nvim configuration ******************
 
@@ -234,3 +240,5 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
+
+
