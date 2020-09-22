@@ -4,6 +4,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -24,8 +26,8 @@ update
 set backspace=indent,eol,start
 set linebreak
 set wrap
-set autoindent
 set incsearch
+set autoindent
 set showmode
 set background=dark
 set splitbelow
