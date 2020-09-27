@@ -51,6 +51,7 @@ set expandtab
 
 set laststatus=2
 set statusline+=%F
+set nocompatible
 
 autocmd FileType python setlocal completeopt-=preview
 :command W w
