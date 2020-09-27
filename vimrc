@@ -6,7 +6,6 @@ Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'timakro/vim-searchant'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -50,6 +49,8 @@ set tabstop=4
 set expandtab
 :retab
 
+set laststatus=2
+set statusline+=%F
 
 autocmd FileType python setlocal completeopt-=preview
 :command W w
@@ -57,7 +58,6 @@ autocmd FileType python setlocal completeopt-=preview
 
 "use esc+esc to unhighlight search words
 nnoremap <esc><esc> :silent! nohls<cr>
-highlight SearchCurrent ctermbg=red
 
 
 "*****************Plugin Configurations***********************
@@ -70,19 +70,12 @@ map <C-n> :NERDTreeToggle<CR>
 
 "emmet configuration
 let g:user_emmet_leader_key=','
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
 
 "indentLine configuration
 let g:indentLine_char_list = ['┊']
 
 "autopairs configuration
 let g:AutoPairsMultilineClose = 0
-
-"searchant configuration
-let g:searchant_map_stop = 0
-nmap <esc><esc> <Plug>SearchantStop
 
 "coc.nvim configuration ******************
 
@@ -247,4 +240,3 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
-

@@ -1,10 +1,11 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Roboto Mono", "Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    //fontFamily: 'YaHei Consolas Hybrid', Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", 'monospace',
+    fontFamily: ['Consolas', 'YaHei Consolas Hybrid', 'Menlo', "DejaVu Sans Mono", "Lucida Console", 'monospace'],
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -36,6 +37,7 @@ module.exports = {
       .terms_termsShifted {
         margin-top: 30px;
       }
+
     `,
 
     // custom css to embed in the terminal window
@@ -107,6 +109,7 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
 	  "hyperterm-safepaste",
+      "hyper-font-smoothing"
   ],
 
   // in development, you can create a directory under
