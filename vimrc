@@ -49,16 +49,17 @@ set tabstop=4
 set expandtab
 :retab
 
-set laststatus=2
+set laststatus=0
 set statusline+=%F
 set nocompatible
 
 autocmd FileType python setlocal completeopt-=preview
 :command W w
 :command Wq wq
+:command D nohl
 
-"use esc+esc to unhighlight search words
-nnoremap <esc><esc> :silent! nohls<cr>
+hi MatchParen cterm=bold ctermbg=white ctermfg=black
+
 
 
 "*****************Plugin Configurations***********************
@@ -76,7 +77,10 @@ let g:user_emmet_leader_key=','
 let g:indentLine_char_list = ['┊']
 
 "autopairs configuration
-let g:AutoPairsMultilineClose = 0
+let g:AutoPairsMultilineClose=0
+let g:AutoPairsOnlyBeforeClose=1
+let g:AutoPairsBalanceImmediately=1
+let g:AutoPairsNeverJumpLines=1
 
 "coc.nvim configuration ******************
 

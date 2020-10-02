@@ -68,7 +68,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git django pip python nmap themes)
+plugins=(git django pip python nmap themes pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +102,14 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 
+ZLE_SPACE_SUFFIX_CHARS=$'|&'
+
+# personal modifications
+xmodmap -e "keycode 62 = semicolon colon"
+xmodmap -e "keycode 105 = backslash bar"
+
+alias cl="clear"
+alias cle="clear"
+alias clea="clear"
+alias rls="ls"
+alias chrome="google-chrome"
