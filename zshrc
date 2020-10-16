@@ -8,7 +8,7 @@ export ZSH="/home/ag_pranjal/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dracula"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,12 +104,13 @@ fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
 
-# personal modifications
-xmodmap -e "keycode 62 = semicolon colon"
-xmodmap -e "keycode 105 = backslash bar"
-
 alias cl="clear"
 alias cle="clear"
 alias clea="clear"
 alias rls="ls"
 alias chrome="google-chrome"
+
+# personal modifications
+xmodmap -e "keycode 62 = semicolon colon"
+xmodmap -e "keycode 105 = backslash bar"
+
