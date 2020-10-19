@@ -109,8 +109,3 @@ alias cle="clear"
 alias clea="clear"
 alias rls="ls"
 alias chrome="google-chrome"
-
-# personal modifications
-xmodmap -e "keycode 62 = semicolon colon"
-xmodmap -e "keycode 105 = backslash bar"
-
