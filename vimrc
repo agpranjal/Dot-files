@@ -1,11 +1,8 @@
 call plug#begin()
-Plug 'tpope/vim-surround'
-Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -29,14 +26,12 @@ set wrap
 set incsearch
 set autoindent
 set showmode
-set background=dark
 set splitbelow
 set splitright
 set ruler
 set wildmenu
 set mouse=a
 set title
-set background=dark
 set noswapfile
 set number
 set numberwidth=1
@@ -57,30 +52,27 @@ autocmd FileType python setlocal completeopt-=preview
 :command W w
 :command Wq wq
 :command D nohl
+:command Disable CocDisable
+:command Enable CocEnable
 
-hi MatchParen cterm=bold ctermbg=white ctermfg=black
-
-
+set background=dark
 
 "*****************Plugin Configurations***********************
-
-"kite configuration
-let g:kite_tab_complete=1
-
-"NerdTree configuration
-map <C-n> :NERDTreeToggle<CR>
 
 "emmet configuration
 let g:user_emmet_leader_key=','
 
 "indentLine configuration
-let g:indentLine_char_list = ['┊']
+let g:indentLine_char_list = ['|']
 
 "autopairs configuration
 let g:AutoPairsMultilineClose=0
 let g:AutoPairsOnlyBeforeClose=1
 let g:AutoPairsBalanceImmediately=1
 let g:AutoPairsNeverJumpLines=1
+
+
+
 
 "coc.nvim configuration ******************
 
