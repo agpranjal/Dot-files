@@ -2,8 +2,10 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
-Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'dense-analysis/ale'
 call plug#end()
 
 " activates filetype detection
@@ -44,20 +46,44 @@ set tabstop=4
 set expandtab
 :retab
 
-set laststatus=0
-set statusline+=%F
 set nocompatible
 
 autocmd FileType python setlocal completeopt-=preview
-:command W w
-:command Wq wq
-:command D nohl
-:command Disable CocDisable
-:command Enable CocEnable
+:command! W w
+:command! Wq wq
+:command! D nohl
 
 set background=dark
 
+"**************************Status line configuration*****************
+set laststatus=2
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=\ %F
+set statusline+=%m
+"set statusline+=%{StatuslineGit()}
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ [%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+
 "*****************Plugin Configurations***********************
+
+"indentLine conceal fix
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 0
 
 "emmet configuration
 let g:user_emmet_leader_key=','
@@ -210,7 +236,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
