@@ -8,7 +8,7 @@ export ZSH="/home/ag_pranjal/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fwalch"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -98,17 +98,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# start tmux when shell starts
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
 
+# for terminal
 alias cl="clear"
 alias cle="clear"
 alias clea="clear"
 alias rls="ls"
+
+# for google-chrome
 alias chrome="google-chrome"
+
+# for git (git-log output)
+alias show="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # For Android
 #export ANDROID_HOME=$HOME/Android/Sdk
