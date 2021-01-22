@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: ["Monaco", 'Fira Mono Regular', 'Menlo', "DejaVu Sans Mono", "Lucida Console", 'monospace'],
@@ -27,7 +27,8 @@ module.exports = {
     letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+      //cursorColor: 'rgba(248,28,229,0.8)',
+      cursorColor: 'rgb(255,255,255)',
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
@@ -59,7 +60,7 @@ module.exports = {
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
-    showHamburgerMenu: '',
+    showHamburgerMenu: false,
 
     // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
@@ -67,7 +68,8 @@ module.exports = {
     showWindowControls: false,
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+      //padding: '12px 14px',
+      padding: '0px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
