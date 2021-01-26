@@ -4,6 +4,7 @@ Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'vim-scripts/cmdalias.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'dense-analysis/ale'
 call plug#end()
@@ -52,6 +53,7 @@ autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
 :command! D nohl
+:command T terminal
 
 set background=dark
 
