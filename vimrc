@@ -2,12 +2,20 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
+Plug 'gko/vim-coloresque'
 Plug 'pangloss/vim-javascript'
+Plug 'brooth/far.vim'
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'voldikss/vim-floaterm'
+Plug 'preservim/nerdtree'
 Plug 'mxw/vim-jsx'
-Plug 'vim-scripts/cmdalias.vim'
+Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'dense-analysis/ale'
 call plug#end()
+
+
+" set the leader key to spacebar
+let mapleader=" "
 
 " activates filetype detection
 filetype plugin indent on
@@ -48,12 +56,14 @@ set expandtab
 :retab
 
 set nocompatible
+set encoding=UTF-8
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
 :command! D nohl
 :command T terminal
+:command F FloatermNew
 
 set background=dark
 
@@ -83,15 +93,14 @@ set statusline+=\
 
 "*****************Plugin Configurations***********************
 
-"indentLine conceal fix
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 0
+"nerdtree
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 "emmet configuration
 let g:user_emmet_leader_key=','
 
 "indentLine configuration
-let g:indentLine_char_list = ['|']
+let g:indentLine_char_list = ['┆']
 
 "autopairs configuration
 let g:AutoPairsMultilineClose=0
@@ -265,3 +274,6 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
+
+
+
