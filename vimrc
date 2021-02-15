@@ -4,7 +4,6 @@ Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'gko/vim-coloresque'
 Plug 'pangloss/vim-javascript'
-Plug 'brooth/far.vim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
@@ -62,8 +61,8 @@ autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
 :command! D nohl
-:command T terminal
-:command F FloatermNew
+:command! T terminal
+:command! F FloatermNew
 
 set background=dark
 
@@ -84,7 +83,7 @@ set statusline+=\ %F
 set statusline+=%m
 "set statusline+=%{StatuslineGit()}
 set statusline+=%=
-set statusline+=\ %y
+"set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\ [%{&fileformat}\]
 set statusline+=\ %p%%

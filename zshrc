@@ -8,8 +8,8 @@ export ZSH="/home/ag_pranjal/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="gentoo"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="gentoo"
 #ZSH_THEME="mh"
 #ZSH_THEME="michelebologna"
 #ZSH_THEME="minimal"
@@ -120,10 +120,3 @@ alias chrome="google-chrome"
 
 # for git (git-log output)
 alias show="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-# For Android
-#export ANDROID_HOME=$HOME/Android/Sdk
-#export PATH=$PATH:$ANDROID_HOME/emulator
-#export PATH=$PATH:$ANDROID_HOME/tools
-#export PATH=$PATH:$ANDROID_HOME/tools/bin
-#export PATH=$PATH:$ANDROID_HOME/platform-tools
