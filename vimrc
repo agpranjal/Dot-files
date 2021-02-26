@@ -2,7 +2,6 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
-Plug 'gko/vim-coloresque'
 Plug 'pangloss/vim-javascript'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'voldikss/vim-floaterm'

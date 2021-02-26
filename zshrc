@@ -120,3 +120,4 @@ alias chrome="google-chrome"
 
 # for git (git-log output)
 alias show="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias mssql-cli="python3 /usr/local/lib/python3.8/dist-packages/mssqlcli/main.py"
