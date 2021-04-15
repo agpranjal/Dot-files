@@ -1,15 +1,22 @@
-call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Yggdroot/indentLine'
+call plug#begin("~/.vim/plugged")
 Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'mattn/emmet-vim'
-"Plug 'AndrewRadev/tagalong.vim'
-"Plug 'voldikss/vim-floaterm'
-"Plug 'mxw/vim-jsx'
 call plug#end()
+
+
+" fzf.vim
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+"let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+
 
 
 " set the leader key to spacebar
@@ -59,12 +66,13 @@ set encoding=UTF-8
 set background=dark
 set laststatus=2
 
+nnoremap <C-Left> :tabprevious<CR>                                                                            
+nnoremap <C-Right> :tabnext<CR>
+
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
 :command! D nohl
-:command! T terminal
-:command! F FloatermNew
 
 
 "**************************Status line configuration*****************
@@ -93,7 +101,14 @@ set statusline+=\
 "*****************Plugin Configurations***********************
 
 "nerdtree
-nnoremap <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Toggle
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 "emmet configuration
 let g:user_emmet_leader_key=','
@@ -273,12 +288,10 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \ 'coc-cssmodules',
             \ 'coc-emmet',
-            \ 'coc-floaterm',
             \ 'coc-markdownlint',
             \ 'coc-sh',
             \ 'coc-stylelintplus',
             \ 'coc-spell-checker',
-            \ 'coc-tabnine',
             \ 'coc-yaml'
             \ ]
 
@@ -288,3 +301,5 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
+
+set signcolumn=no
