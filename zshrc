@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pip docker npm)
+plugins=(pip docker npm colored-man-pages zsh-autosuggestions command-not-found thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,3 +125,6 @@ alias mssql-cli="python3 /usr/local/lib/python3.8/dist-packages/mssqlcli/main.py
 export LANG=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:/usr/local/python3/bin"
+eval "$(thefuck --alias)"

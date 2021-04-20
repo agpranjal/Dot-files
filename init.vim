@@ -1,10 +1,14 @@
 call plug#begin("~/.vim/plugged")
-Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'PhilRunninger/nerdtree-buffer-ops'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Nopik/vim-nerdtree-direnter'
 call plug#end()
 
 
@@ -66,9 +70,6 @@ set encoding=UTF-8
 set background=dark
 set laststatus=2
 
-nnoremap <C-Left> :tabprevious<CR>                                                                            
-nnoremap <C-Right> :tabnext<CR>
-
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
@@ -98,17 +99,48 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
+
+
+
 "*****************Plugin Configurations***********************
 
-"nerdtree
+" NERDTree
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = 0
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Toggle
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+
+" Open files in a new tab in NERDTree when pressing ENTER
+let NERDTreeMapOpenInTab='<ENTER>'
+
+" Go to tab by number
+noremap <M-1> 1gt
+noremap <M-2> 2gt
+noremap <M-3> 3gt
+noremap <M-4> 4gt
+noremap <M-5> 5gt
+noremap <M-6> 6gt
+noremap <M-7> 7gt
+noremap <M-8> 8gt
+noremap <M-9> 9gt
+noremap <M-0> :tablast<cr>
+
+
+" NERDTreeTabs
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_smart_startup_focus=1
+let g:nerdtree_tabs_autofind=1
+let g:nerdtree_tabs_meaningful_tab_names=1
+let g:nerdtree_tabs_autoclose=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_open_on_new_tab=1
+
+
+
+
 
 "emmet configuration
 let g:user_emmet_leader_key=','
