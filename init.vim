@@ -335,3 +335,7 @@ nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
 
 set signcolumn=no
+
+
+set timeoutlen=1000
+set ttimeoutlen=5
