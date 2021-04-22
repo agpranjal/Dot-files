@@ -6,23 +6,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
-Plug 'PhilRunninger/nerdtree-buffer-ops'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
+Plug 'morhetz/gruvbox'
 call plug#end()
-
-
-" fzf.vim
-nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
-"let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
-
-
-
 " set the leader key to spacebar
 let mapleader=" "
 
@@ -69,6 +56,7 @@ set encoding=UTF-8
 
 set background=dark
 set laststatus=2
+colorscheme gruvbox
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
@@ -103,6 +91,14 @@ set statusline+=\
 
 
 "*****************Plugin Configurations***********************
+
+" fzf.vim
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
@@ -324,7 +320,8 @@ let g:coc_global_extensions = [
             \ 'coc-sh',
             \ 'coc-stylelintplus',
             \ 'coc-spell-checker',
-            \ 'coc-yaml'
+            \ 'coc-yaml',
+            \ 'coc-tabnine'
             \ ]
 
 "my personal configuration for cocvim
@@ -339,3 +336,6 @@ set signcolumn=no
 
 set timeoutlen=1000
 set ttimeoutlen=5
+
+" Reload init.conf by pressing leader key two times
+nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
