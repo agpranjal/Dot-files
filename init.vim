@@ -8,6 +8,7 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
+Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
 call plug#end()
 " set the leader key to spacebar
