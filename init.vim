@@ -1,16 +1,22 @@
+" VimPlug
 call plug#begin("~/.vim/plugged")
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
+"Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
-Plug 'Yggdroot/indentLine'
+
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 call plug#end()
+
+
 " set the leader key to spacebar
 let mapleader=" "
 
@@ -134,9 +140,6 @@ let g:nerdtree_tabs_meaningful_tab_names=1
 let g:nerdtree_tabs_autoclose=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_new_tab=1
-
-
-
 
 
 "emmet configuration

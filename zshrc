@@ -128,3 +128,6 @@ export LANG=en_US.UTF-8
 
 export PATH="$PATH:/usr/local/python3/bin"
 eval "$(thefuck --alias)"
+
+
+bindkey "^ " autosuggest-accept
