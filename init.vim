@@ -4,7 +4,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
-"Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'preservim/nerdtree'
@@ -14,6 +14,7 @@ Plug 'Nopik/vim-nerdtree-direnter'
 
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 
@@ -63,7 +64,8 @@ set encoding=UTF-8
 
 set background=dark
 set laststatus=2
-colorscheme gruvbox
+colorscheme dracula
+let g:onedark_terminal_italics=1
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
@@ -343,3 +345,8 @@ set ttimeoutlen=5
 
 " Reload init.conf by pressing leader key two times
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
+
+
+
+noremap <Leader><Left>  :tabmove -1<CR>
+noremap <Leader><Right> :tabmove +1<CR>
