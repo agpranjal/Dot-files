@@ -64,7 +64,7 @@ set encoding=UTF-8
 
 set background=dark
 set laststatus=2
-colorscheme dracula
+colorscheme onedark
 let g:onedark_terminal_italics=1
 
 autocmd FileType python setlocal completeopt-=preview
