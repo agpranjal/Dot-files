@@ -15,6 +15,7 @@ Plug 'Nopik/vim-nerdtree-direnter'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
+Plug 'zacanger/angr.vim'
 call plug#end()
 
 
@@ -64,7 +65,7 @@ set encoding=UTF-8
 
 set background=dark
 set laststatus=2
-colorscheme gruvbox
+colorscheme dracula
 let g:onedark_terminal_italics=1
 
 autocmd FileType python setlocal completeopt-=preview
