@@ -132,4 +132,4 @@ eval "$(thefuck --alias)"
 
 bindkey "^ " autosuggest-accept
 
-alias runcrap="g++ -o crap crap.cc && ./crap"
+alias run="g++ -o crap crap.cc && ./crap"

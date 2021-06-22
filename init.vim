@@ -5,6 +5,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'preservim/nerdtree'
@@ -55,8 +56,8 @@ set hlsearch
 set updatetime=50
 set ignorecase
 
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 :retab
 
@@ -65,7 +66,7 @@ set encoding=UTF-8
 
 set background=dark
 set laststatus=2
-colorscheme dracula
+colorscheme gruvbox
 let g:onedark_terminal_italics=1
 
 autocmd FileType python setlocal completeopt-=preview
