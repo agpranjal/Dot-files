@@ -5,8 +5,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -18,7 +21,6 @@ Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 Plug 'zacanger/angr.vim'
 call plug#end()
-
 
 " set the leader key to spacebar
 let mapleader=" "
@@ -55,6 +57,7 @@ set numberwidth=1
 set hlsearch
 set updatetime=50
 set ignorecase
+set guicursor=
 
 set shiftwidth=2
 set tabstop=2
@@ -66,8 +69,11 @@ set encoding=UTF-8
 
 set background=dark
 set laststatus=2
-colorscheme gruvbox
-let g:onedark_terminal_italics=1
+
+"let g:onedark_terminal_italics=1
+let g:material_terminal_italics = 1
+"let g:material_theme_style = 'ocean'
+colorscheme material
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
@@ -329,7 +335,7 @@ let g:coc_global_extensions = [
             \ 'coc-stylelintplus',
             \ 'coc-spell-checker',
             \ 'coc-yaml',
-            \ 'coc-tabnine'
+            \ 'coc-tabnine',
             \ ]
 
 "my personal configuration for cocvim
