@@ -1,25 +1,24 @@
 " VimPlug
 call plug#begin("~/.vim/plugged")
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'AndrewRadev/tagalong.vim'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
+" NERDTree plugins
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
 
+" Theme plugins
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 Plug 'zacanger/angr.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 call plug#end()
 
 " set the leader key to spacebar
@@ -332,10 +331,10 @@ let g:coc_global_extensions = [
             \ 'coc-emmet',
             \ 'coc-markdownlint',
             \ 'coc-sh',
-            \ 'coc-stylelintplus',
-            \ 'coc-spell-checker',
             \ 'coc-yaml',
             \ 'coc-tabnine',
+            \ 'coc-eslint',
+            \ 'coc-prettier'
             \ ]
 
 "my personal configuration for cocvim
@@ -358,3 +357,4 @@ nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 
 noremap <Leader><Left>  :tabmove -1<CR>
 noremap <Leader><Right> :tabmove +1<CR>
+
