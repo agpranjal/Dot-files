@@ -6,14 +6,15 @@ Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'editorconfig/editorconfig-vim'
 
-" NERDTree plugins
+" NERDTree
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
 
-" Theme plugins
+" Themes
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
@@ -58,6 +59,10 @@ set updatetime=50
 set ignorecase
 set guicursor=
 
+set signcolumn=no
+set timeoutlen=1000
+set ttimeoutlen=5
+
 set shiftwidth=2
 set tabstop=2
 set expandtab
@@ -70,8 +75,8 @@ set background=dark
 set laststatus=2
 
 "let g:onedark_terminal_italics=1
+let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
-"let g:material_theme_style = 'ocean'
 colorscheme material
 
 autocmd FileType python setlocal completeopt-=preview
@@ -94,7 +99,7 @@ endfunction
 set statusline=
 set statusline+=\ %F
 set statusline+=%m
-"set statusline+=%{StatuslineGit()}
+set statusline+=%{StatuslineGit()}
 set statusline+=%=
 "set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
@@ -104,17 +109,7 @@ set statusline+=\ %l:%c
 set statusline+=\ 
 
 
-
-
-"*****************Plugin Configurations***********************
-
-" fzf.vim
-nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+" Plugin configurations
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
@@ -122,7 +117,7 @@ let g:NERDTreeMinimalUI = 0
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
 
-" Toggle
+" NREDTree toggle
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Open files in a new tab in NERDTree when pressing ENTER
@@ -151,22 +146,20 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_new_tab=1
 
 
-"emmet configuration
+" Emmet
 let g:user_emmet_leader_key=','
 
-"indentLine configuration
+" Indentline
 let g:indentLine_char_list = ['┆']
 
-"autopairs configuration
+"Autopairs
 let g:AutoPairsMultilineClose=0
 let g:AutoPairsOnlyBeforeClose=1
 let g:AutoPairsBalanceImmediately=1
 let g:AutoPairsNeverJumpLines=1
 
 
-
-
-"coc.nvim configuration ******************
+" Coc.nvim
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -328,7 +321,6 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-css',
             \ 'coc-cssmodules',
-            \ 'coc-emmet',
             \ 'coc-markdownlint',
             \ 'coc-sh',
             \ 'coc-yaml',
@@ -337,24 +329,15 @@ let g:coc_global_extensions = [
             \ 'coc-prettier'
             \ ]
 
-"my personal configuration for cocvim
+
+" My personal configuration for cocvim
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<Tab>"
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Tab>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
 
-set signcolumn=no
-
-
-set timeoutlen=1000
-set ttimeoutlen=5
 
 " Reload init.conf by pressing leader key two times
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
-
-
-
-noremap <Leader><Left>  :tabmove -1<CR>
-noremap <Leader><Right> :tabmove +1<CR>
 
