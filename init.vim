@@ -58,6 +58,7 @@ set hlsearch
 set updatetime=50
 set ignorecase
 set guicursor=
+set cursorline
 
 set signcolumn=no
 set timeoutlen=1000
@@ -74,10 +75,10 @@ set encoding=UTF-8
 set background=dark
 set laststatus=2
 
-"let g:onedark_terminal_italics=1
-let g:material_theme_style = 'ocean'
-let g:material_terminal_italics = 1
-colorscheme material
+let g:onedark_terminal_italics=1
+"let g:material_theme_style = 'ocean'
+"let g:material_terminal_italics = 1
+colorscheme onedark
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
@@ -99,7 +100,7 @@ endfunction
 set statusline=
 set statusline+=\ %F
 set statusline+=%m
-set statusline+=%{StatuslineGit()}
+"set statusline+=%{StatuslineGit()}
 set statusline+=%=
 "set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
