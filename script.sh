@@ -7,4 +7,4 @@ cp ~/.config/fusuma/config.yml config.yml
 
 git add .
 git commit -m "Update"
-git push
+git push --force
