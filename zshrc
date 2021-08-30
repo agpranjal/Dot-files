@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pip docker npm colored-man-pages zsh-autosuggestions command-not-found thefuck)
+plugins=(docker colored-man-pages zsh-autosuggestions command-not-found thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,7 +119,7 @@ alias rls="ls"
 alias chrome="google-chrome"
 
 # for git (git-log output)
-alias show="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gitshow="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias mssql-cli="python3 /usr/local/lib/python3.8/dist-packages/mssqlcli/main.py"
 
 export LANG=en_US.UTF-8

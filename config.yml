@@ -1,0 +1,28 @@
+swipe:
+  3:
+    left:
+      sendkey: "LEFTALT+LEFTSHIFT+TAB"
+    right:
+      sendkey: "LEFTALT+RIGHTSHIFT+TAB"
+    up:
+      sendkey: "LEFTMETA"
+    down:
+      sendkey: "LEFTMETA"
+  4:
+    up:
+      sendkey: "LEFTMETA+M"
+    down:
+      sendkey: "LEFTMETA+M"
+pinch:
+  in:
+    command: "xdotool key ctrl+plus"
+  out:
+    command: "xdotool key ctrl+minus"
+
+threshold:
+  swipe: 0.3
+  pinch: 0.6
+
+interval:
+  swipe: 0.75
+  pinch: 1

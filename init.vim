@@ -10,9 +10,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 " NERDTree
 Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
+Plug 'preservim/nerdcommenter'
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -20,6 +20,8 @@ Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 Plug 'zacanger/angr.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " set the leader key to spacebar
@@ -57,7 +59,7 @@ set numberwidth=1
 set hlsearch
 set updatetime=50
 set ignorecase
-set guicursor=
+"set guicursor=
 set cursorline
 
 set signcolumn=no
@@ -73,12 +75,13 @@ set nocompatible
 set encoding=UTF-8
 
 set background=dark
-set laststatus=2
+set laststatus=0
 
 let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
 colorscheme onedark
+let g:airline_theme='onedark'
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w
@@ -86,28 +89,28 @@ autocmd FileType python setlocal completeopt-=preview
 :command! D nohl
 
 
-"**************************Status line configuration*****************
+" Status line configuration
 
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
+" function! GitBranch()
+"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" endfunction
+" 
+" function! StatuslineGit()
+"   let l:branchname = GitBranch()
+"   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+" endfunction
 
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-set statusline=
-set statusline+=\ %F
-set statusline+=%m
-"set statusline+=%{StatuslineGit()}
-set statusline+=%=
-"set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ [%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
+" set statusline=
+" set statusline+=\ %F
+" set statusline+=%m
+" "set statusline+=%{StatuslineGit()}
+" set statusline+=%=
+" "set statusline+=\ %y
+" set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" set statusline+=\ [%{&fileformat}\]
+" set statusline+=\ %p%%
+" set statusline+=\ %l:%c
+" set statusline+=\ 
 
 
 " Plugin configurations
@@ -140,11 +143,11 @@ noremap <M-0> :tablast<cr>
 " NERDTreeTabs
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=1
-let g:nerdtree_tabs_autofind=1
 let g:nerdtree_tabs_meaningful_tab_names=1
 let g:nerdtree_tabs_autoclose=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_new_tab=1
+let g:nerdtree_tabs_autofind=1
 
 
 " Emmet
@@ -152,6 +155,7 @@ let g:user_emmet_leader_key=','
 
 " Indentline
 let g:indentLine_char_list = ['┆']
+let g:indentLine_fileTypeExclude = ['json']
 
 "Autopairs
 let g:AutoPairsMultilineClose=0
@@ -323,7 +327,6 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \ 'coc-cssmodules',
             \ 'coc-markdownlint',
-            \ 'coc-sh',
             \ 'coc-yaml',
             \ 'coc-tabnine',
             \ 'coc-eslint',
