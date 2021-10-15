@@ -6,7 +6,7 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: "stable",
+    //updateChannel: "stable",
 
     // default font size in pixels for all tabs
     fontSize: 12,
@@ -59,7 +59,7 @@ module.exports = {
     borderColor: "#333",
 
     // custom CSS to embed in the main window
-    css: "",
+    css: ".notification_indicator{display:none;}",
 
     // custom CSS to embed in the terminal window
     termCSS: "",
