@@ -77,11 +77,11 @@ set encoding=UTF-8
 set background=dark
 set laststatus=0
 
-let g:onedark_terminal_italics=1
+"let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-colorscheme onedark
-let g:airline_theme='onedark'
+"colorscheme onedark
+"let g:airline_theme='onedark'
 
 autocmd FileType python setlocal completeopt-=preview
 :command! W w

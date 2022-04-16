@@ -144,3 +144,6 @@ alias run="g++ -o crap crap.cc && ./crap"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias migrate-undo="npx sequelize-cli db:migrate:undo:all"
+alias migrate-seed="npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
