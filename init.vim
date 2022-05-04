@@ -141,7 +141,7 @@ noremap <M-0> :tablast<cr>
 
 
 " NERDTreeTabs
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=0
 let g:nerdtree_tabs_smart_startup_focus=1
 let g:nerdtree_tabs_meaningful_tab_names=1
 let g:nerdtree_tabs_autoclose=1
