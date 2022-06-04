@@ -80,7 +80,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker colored-man-pages zsh-autosuggestions command-not-found thefuck)
+plugins=(docker colored-man-pages zsh-autosuggestions command-not-found thefuck copypath dirhistory jsontools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,12 +123,8 @@ alias cle="clear"
 alias clea="clear"
 alias rls="ls"
 
-# for google-chrome
-alias chrome="google-chrome"
-
 # for git (git-log output)
 alias gitshow="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias mssql-cli="python3 /usr/local/lib/python3.8/dist-packages/mssqlcli/main.py"
 
 export LANG=en_US.UTF-8
 
@@ -145,5 +141,8 @@ alias run="g++ -o crap crap.cc && ./crap"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias migrate-undo="npx sequelize-cli db:migrate:undo:all"
-alias migrate-seed="npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+# Add pyenv to PATH
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

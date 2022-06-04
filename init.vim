@@ -326,7 +326,6 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-css',
             \ 'coc-cssmodules',
-            \ 'coc-markdownlint',
             \ 'coc-yaml',
             \ 'coc-tabnine',
             \ 'coc-eslint',
