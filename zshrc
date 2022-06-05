@@ -80,7 +80,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf-tab docker colored-man-pages zsh-autosuggestions command-not-found thefuck copypath dirhistory jsontools)
+plugins=(docker colored-man-pages zsh-autosuggestions thefuck jsontools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -141,6 +141,7 @@ export PATH="$PATH:/usr/local/python3/bin"
 
 eval "$(thefuck --alias)"
 
+# CUSTOM: use Ctrl-Space to accept zsh suggestion
 bindkey "^ " autosuggest-accept
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -153,8 +154,28 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # CUSTOM: config for less pager program
-export LESS='--quit-if-one-screen --incsearch --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5 -g'
+export LESS='--quit-if-one-screen --incsearch --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
 
-# CUSTOM: options for fzf
-#export FZF_DEFAUlT_OPTS="--border=sharp"
+# Default options for fzf
+export FZF_DEFAULT_OPTS="
+--cycle
+--layout=reverse
+--border=sharp
+--info=inline
+--multi
+--preview-window=:hidden
+--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
+--prompt='∼ ' --pointer='▶' --marker='✓'
+--bind '?:toggle-preview'
+--bind 'ctrl-a:select-all'
+--bind 'tab:accept'
+"
 
+# Use fd as backend for fzf
+export FZF_DEFAULT_COMMAND='fdfind . --hidden'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# CUSTOM: use Ctrl-f trigger fzf (just like Ctrl-T)
+bindkey "^f" fzf-file-widget
