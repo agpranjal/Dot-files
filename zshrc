@@ -80,7 +80,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker colored-man-pages zsh-autosuggestions command-not-found thefuck copypath dirhistory jsontools)
+plugins=(fzf-tab docker colored-man-pages zsh-autosuggestions command-not-found thefuck copypath dirhistory jsontools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,26 +117,31 @@ fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
 
-# for terminal
+# Load ~/.fzf.zsh if exists, else download fzf and install
+if [ -f ~/.fzf.zsh ]
+then
+  source ~/.fzf.zsh
+else
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
+
+# CUSTOM: aliases for clear
 alias cl="clear"
 alias cle="clear"
 alias clea="clear"
 alias rls="ls"
 
-# for git (git-log output)
+# CUSTOM: customised git log
 alias gitshow="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 export LANG=en_US.UTF-8
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export PATH="$PATH:/usr/local/python3/bin"
+
 eval "$(thefuck --alias)"
 
-
 bindkey "^ " autosuggest-accept
-
-alias run="g++ -o crap crap.cc && ./crap"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -146,3 +151,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# CUSTOM: config for less pager program
+export LESS='--quit-if-one-screen --incsearch --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5 -g'
+
+# CUSTOM: options for fzf
+#export FZF_DEFAUlT_OPTS="--border=sharp"
+
