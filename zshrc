@@ -156,6 +156,12 @@ eval "$(pyenv virtualenv-init -)"
 # CUSTOM: config for less pager program
 export LESS='--quit-if-one-screen --incsearch --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
 
+# Install bat if not already installed
+if ! [ -x "$(command -v batcat)" ]
+then
+  sudo apt install bat
+fi
+
 # Default options for fzf
 export FZF_DEFAULT_OPTS="
 --cycle
@@ -173,11 +179,14 @@ export FZF_DEFAULT_OPTS="
 "
 
 # Use fd (if installed) as backend for fzf
-if [ type fdfind &> /dev/null ]; then
+if [ -x "$(command -v fdfind)" ]
+then
   export FZF_DEFAULT_COMMAND='fdfind . --hidden'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+else
+  sudo apt install fd-find
 fi
 
-# CUSTOM: use Ctrl-f trigger fzf (just like Ctrl-T)
+# CUSTOM: use Ctrl-f to trigger fzf (just like Ctrl-T)
 bindkey "^f" fzf-file-widget
