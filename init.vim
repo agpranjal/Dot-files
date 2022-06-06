@@ -350,7 +350,14 @@ nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 " Surround word with double/single quotes with <leader>" or <leader>'
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+
+nnoremap <leader>( viw<esc>a)<esc>bi(<esc>
+nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
+
+vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
 
 
