@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 
 # start tmux when shell starts
 if [[ ! $TERM =~ screen ]]; then
-    exec tmux -u
+  exec tmux -u
 fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
@@ -172,10 +172,12 @@ export FZF_DEFAULT_OPTS="
 --bind 'tab:accept'
 "
 
-# Use fd as backend for fzf
-export FZF_DEFAULT_COMMAND='fdfind . --hidden'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+# Use fd (if installed) as backend for fzf
+if [ type fdfind &> /dev/null ]; then
+  export FZF_DEFAULT_COMMAND='fdfind . --hidden'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 
 # CUSTOM: use Ctrl-f trigger fzf (just like Ctrl-T)
 bindkey "^f" fzf-file-widget

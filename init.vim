@@ -89,7 +89,7 @@ autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
 :command! D nohl
-:command! F Files
+nnoremap <silent> <C-f> :Files<CR>
 
 
 " Status line configuration
@@ -344,6 +344,13 @@ nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
 
 
-" Reload init.conf by pressing leader key two times
+" Reload init.conf by pressing leader" key two times
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
+
+" Surround word with double/single quotes with <leader>" or <leader>'
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+
 
