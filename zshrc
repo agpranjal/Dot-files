@@ -154,7 +154,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # CUSTOM: config for less pager program
-export LESS='--quit-if-one-screen --incsearch --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
+export LESS='--quit-if-one-screen --incsearch --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
 
 # Install bat if not already installed
 if ! [ -x "$(command -v batcat)" ]
