@@ -341,14 +341,13 @@ let g:coc_global_extensions = [
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<Tab>"
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Tab>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-nmap <space>e :CocCommand explorer<CR>
 autocmd FileType * set formatoptions-=cro
 
 
-" Reload init.conf by pressing leader" key two times
+" Reload init.conf by pressing leader key two times
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 
-" Surround word with double/single quotes with <leader>" or <leader>'
+" Surround word/visual-selection with double/single quotes with <leader>" or <leader>'
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
@@ -360,5 +359,4 @@ nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
 
 vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
 vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
-
 
