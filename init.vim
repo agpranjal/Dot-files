@@ -89,6 +89,8 @@ autocmd FileType python setlocal completeopt-=preview
 :command! W w
 :command! Wq wq
 :command! D nohl
+
+" use Ctrl+f to open fzf file widget
 nnoremap <silent> <C-f> :Files<CR>
 
 
@@ -198,10 +200,7 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -238,6 +237,18 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Use Up and Down arrow keys to scroll when documentation window shows up with <shift+k>
+" Use esc key to remove the documentation window
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <Down> coc#float#has_scroll() ? coc#float#scroll(1) : "\<Down>"
+  nnoremap <silent><nowait><expr> <Up> coc#float#has_scroll() ? coc#float#scroll(0) : "\<Up>"
+  vnoremap <silent><nowait><expr> <Down> coc#float#has_scroll() ? coc#float#scroll(1) : "\<Down>"
+  vnoremap <silent><nowait><expr> <Up> coc#float#has_scroll() ? coc#float#scroll(0) : "\<Up>"
+
+  nnoremap <silent><nowait><expr> <esc> coc#float#has_float() ? "a\<esc>" : "\<esc>"
+  vnoremap <silent><nowait><expr> <esc> coc#float#has_float() ? "a\<esc>" : "\<esc>"
+endif
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -333,7 +344,8 @@ let g:coc_global_extensions = [
             \ 'coc-tabnine',
             \ 'coc-eslint',
             \ 'coc-prettier',
-            \ 'coc-python'
+            \ 'coc-sh',
+            \ 'coc-pyright'
             \ ]
 
 
@@ -343,20 +355,15 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd FileType * set formatoptions-=cro
 
-
 " Reload init.conf by pressing leader key two times
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 
 " Surround word/visual-selection with double/single quotes with <leader>" or <leader>'
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
-
 nnoremap <leader>( viw<esc>a)<esc>bi(<esc>
 nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
-
 vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
 vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
-
