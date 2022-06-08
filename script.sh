@@ -3,7 +3,7 @@
 [ -f ~/.tmux.conf ] && cp ~/.tmux.conf tmux.conf
 [ -f ~/.hyper.js ] && cp ~/.hyper.js hyper.js
 [ -f ~/.config/nvim/init.vim ] && cp ~/.config/nvim/init.vim init.vim
-[ -f ~/.config/fusuma/config.yml ] && cp ~/.config/fusuma/config.yml config.yml
+[ -f ~/.config/nvim/coc-settings.json] && cp ~/.config/nvim/coc-settings.json coc-settings.json
 
 git add .
 git commit -m "Update"

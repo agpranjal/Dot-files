@@ -1,0 +1,16 @@
+{
+
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "html", "jsx", "yaml", "python"],
+
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.format.enable": true,
+
+  "languageserver": {
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    }
+  }
+}
