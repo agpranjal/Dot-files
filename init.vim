@@ -29,6 +29,7 @@ Plug 'zacanger/angr.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
+Plug 'embark-theme/vim'
 
 call plug#end()
 
