@@ -1,5 +1,6 @@
 " VimPlug
 call plug#begin("~/.vim/plugged")
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript'
@@ -11,13 +12,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" NERDTree and Tabline
+" NERDTree, Icons, Buffers/Tabs
 Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Nopik/vim-nerdtree-direnter'
 Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+Plug 'romgrk/barbar.nvim'
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -87,10 +89,12 @@ set termguicolors
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-"colorscheme purify
+"colorscheme material
 "let g:airline_theme='purify'
 
 autocmd FileType python setlocal completeopt-=preview
+
+" custom mappings
 :command! W w
 :command! Wq wq
 :command! D nohl
@@ -98,74 +102,38 @@ autocmd FileType python setlocal completeopt-=preview
 " use Ctrl+f to open fzf file widget
 nnoremap <silent> <C-f> :Files<CR>
 
-
-" Status line configuration
-
-"function! GitBranch()
- "return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-"endfunction
-
-"function! StatuslineGit()
- "let l:branchname = GitBranch()
- "return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-"endfunction
-
-"set statusline=
-"set statusline+=\ %F
-"set statusline+=%m
-"set statusline+=%{StatuslineGit()}
-"set statusline+=%=
-"set statusline+=\ %y
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"set statusline+=\ [%{&fileformat}\]
-"set statusline+=\ %p%%
-"set statusline+=\ %l:%c
-"set statusline+=\ 
-
-
 " Plugin configurations
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 0
 let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
+let g:NERDTreeStatusline = 'NERDTree'
 
-" NREDTree toggle
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+" NERDTree toggle using leader+leader
+nnoremap <silent> <leader><leader> :NERDTreeToggle<CR> :wincmd l<cr>
 
-" Open files in a new tab in NERDTree when pressing ENTER
-let NERDTreeMapOpenInTab='<ENTER>'
+" Open NERDTree automatically on startup and move the cursor to the opened window
+autocmd VimEnter *
+      \ NERDTree |
+      \ wincmd l
 
-" Go to tab by number
-noremap <M-1> 1gt
-noremap <M-2> 2gt
-noremap <M-3> 3gt
-noremap <M-4> 4gt
-noremap <M-5> 5gt
-noremap <M-6> 6gt
-noremap <M-7> 7gt
-noremap <M-8> 8gt
-noremap <M-9> 9gt
-noremap <M-0> :tablast<cr>
+" Close vim if the only window remaining in NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Use :q to close buffer. Quit vim if buffer list is empty
+" Use :qq to close only the current window
+"cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1) && expand('%') == '')<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+cnoreabbrev <silent> qq :quit
 
-" NERDTreeTabs
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=1
-let g:nerdtree_tabs_meaningful_tab_names=1
-let g:nerdtree_tabs_autoclose=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:nerdtree_tabs_open_on_new_tab=1
-let g:nerdtree_tabs_autofind=1
-
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
 
 " Use leader+Right and leader+Left to resize NerdTree window
-nnoremap <silent> <leader><Right> :vertical resize +10<CR>
-nnoremap <silent> <leader><Left> :vertical resize -10<CR>
+nnoremap <silent> <leader><Right> :vertical resize +5<CR>
+nnoremap <silent> <leader><Left> :vertical resize -5<CR>
 
+"let g:NERDTreeDirArrowExpandable = ''
+"let g:NERDTreeDirArrowCollapsible = ''
 
 " Emmet
 let g:user_emmet_leader_key=','
@@ -368,7 +336,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd FileType * set formatoptions-=cro
 
 " Reload init.conf by pressing leader key two times
-nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
+nnoremap <silent> <Leader><r> :source $MYVIMRC<cr>
 
 " Surround word/visual-selection with double/single quotes with <leader>" or <leader>'
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -379,3 +347,119 @@ nnoremap <leader>( viw<esc>a)<esc>bi(<esc>
 nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
 vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
 vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
+
+
+" Move to previous/next
+nnoremap <silent>    <A-Left> :BufferPrevious<CR>
+nnoremap <silent>    <A-Right> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferGoto 9<CR>
+nnoremap <silent>    <A-0> :BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <silent>    <A-p> :BufferPin<CR>
+" Close buffer
+nnoremap <silent>    <A-c> :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseAllButPinned<CR>
+"                          :BufferCloseAllButCurrentOrPinned<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> <C-p>    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
+
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
+
+
+" NOTE: If barbar's option dict isn't created yet, create it
+let bufferline = get(g:, 'bufferline', {})
+
+" New tabs are opened next to the currently selected tab.
+" Enable to insert them in buffer number order.
+let bufferline.add_in_buffer_number_order = v:false
+
+" Enable/disable animations
+let bufferline.animation = v:true
+
+" Enable/disable auto-hiding the tab bar when there is a single buffer
+let bufferline.auto_hide = v:false
+
+" Enable/disable current/total tabpages indicator (top right corner)
+let bufferline.tabpages = v:true
+
+" Enable/disable close button
+let bufferline.closable = v:true
+
+" Enables/disable clickable tabs
+"  - left-click: go to buffer
+"  - middle-click: delete buffer
+let bufferline.clickable = v:true
+
+" Excludes buffers from the tabline
+let bufferline.exclude_ft = ['']
+let bufferline.exclude_name = ['']
+
+" Enable/disable icons
+" if set to 'buffer_number', will show buffer number in the tabline
+" if set to 'numbers', will show buffer index in the tabline
+" if set to 'both', will show buffer index and icons in the tabline
+" if set to 'buffer_number_with_icon', will show buffer number and icons in the tabline
+let bufferline.icons = v:true
+
+" Sets the icon's highlight group.
+" If false, will use nvim-web-devicons colors
+let bufferline.icon_custom_colors = v:false
+
+" Configure icons on the bufferline.
+let bufferline.icon_separator_active = '▎'
+let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_close_tab = ''
+let bufferline.icon_close_tab_modified = '●'
+let bufferline.icon_pinned = '車'
+
+" If true, new buffers will be inserted at the start/end of the list.
+" Default is to insert after current buffer.
+let bufferline.insert_at_start = v:false
+let bufferline.insert_at_end = v:false
+
+" Sets the maximum padding width with which to surround each tab.
+let bufferline.maximum_padding = 0
+
+" Sets the maximum buffer name length.
+let bufferline.maximum_length = 30
+
+" If set, the letters for each buffer in buffer-pick mode will be
+" assigned based on their name. Otherwise or in case all letters are
+" already assigned, the behavior is to assign letters in order of
+" usability (see order below)
+let bufferline.semantic_letters = v:true
+
+" New buffer letters are assigned in this order. This order is
+" optimal for the qwerty keyboard layout but might need adjustement
+" for other layouts.
+let bufferline.letters =
+  \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
+
+" Sets the name of unnamed buffers. By default format is "[Buffer X]"
+" where X is the buffer number. But only a static string is accepted here.
+let bufferline.no_name_title = v:null
