@@ -30,6 +30,8 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
 Plug 'embark-theme/vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -86,13 +88,6 @@ set encoding=UTF-8
 set background=dark
 set laststatus=0
 set termguicolors
-
-"let g:onedark_terminal_italics=1
-"let g:material_theme_style = 'ocean'
-"let g:material_terminal_italics = 1
-"colorscheme material
-"let g:airline_theme='purify'
-
 autocmd FileType python setlocal completeopt-=preview
 
 " custom mappings
@@ -103,6 +98,12 @@ autocmd FileType python setlocal completeopt-=preview
 " use Ctrl+f to open fzf file widget
 nnoremap <silent> <C-f> :Files<CR>
 
+"let g:onedark_terminal_italics=1
+"let g:material_theme_style = 'ocean'
+"let g:material_terminal_italics = 1
+"colorscheme molokai
+"let g:airline_theme='purify'
+
 " Plugin configurations
 
 " NERDTree
@@ -111,33 +112,57 @@ let g:NERDTreeMinimalUI = 0
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = 'NERDTree'
 
+"let g:NERDTreeDirArrowExpandable = ''
+"let g:NERDTreeDirArrowCollapsible = ''
+
 " NERDTree toggle using leader+leader
 nnoremap <silent> <leader><leader> :NERDTreeToggle<CR> :wincmd l<cr>
 
 " Open NERDTree automatically on startup and move the cursor to the opened window
 autocmd VimEnter *
       \ NERDTree |
+      \ wincmd l |
+      \ NERDTreeFind |
       \ wincmd l
 
 " Close vim if the only window remaining in NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Use :q to close buffer. Quit vim if buffer list is empty
-" Use :qq to close only the current window
-"cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1) && expand('%') == '')<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+" Use :q and :q! to close buffer. Quit vim if buffer list is empty
+" Use :qq and :qq! to close only the current window
 set iskeyword+=!
 cnoreabbrev <silent> q if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
 cnoreabbrev <silent> q! if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit!'<Bar>else<Bar>exe 'BufferClose!'<Bar>endif<cr>
 cnoreabbrev <silent> qq quit
 cnoreabbrev <silent> qq! quit!
 
+" Original abbreviation. May need in future if something goes wrong.
+"cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1) && expand('%') == '')<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+
 
 " Use leader+Right and leader+Left to resize NerdTree window
 nnoremap <silent> <leader><Right> :vertical resize +5<CR>
 nnoremap <silent> <leader><Left> :vertical resize -5<CR>
 
-"let g:NERDTreeDirArrowExpandable = ''
-"let g:NERDTreeDirArrowCollapsible = ''
+" Highlight the currently active file in NERDTree
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+
 
 " Emmet
 let g:user_emmet_leader_key=','
