@@ -125,8 +125,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Use :q to close buffer. Quit vim if buffer list is empty
 " Use :qq to close only the current window
 "cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1) && expand('%') == '')<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
-cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
-cnoreabbrev <silent> qq :quit
+set iskeyword+=!
+cnoreabbrev <silent> q if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+cnoreabbrev <silent> q! if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit!'<Bar>else<Bar>exe 'BufferClose!'<Bar>endif<cr>
+cnoreabbrev <silent> qq quit
+cnoreabbrev <silent> qq! quit!
 
 
 " Use leader+Right and leader+Left to resize NerdTree window
