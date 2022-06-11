@@ -148,7 +148,7 @@ export PATH="$PATH:/usr/local/python3/bin"
 # Install thefuck (if not installed)
 if [ ! -x "$(command -v thefuck)" ]
 then
-  sudo apt install thefuck
+  sudo apt install thefuck -y
 fi
 
 eval "$(thefuck --alias)"
@@ -186,7 +186,7 @@ export LESS='--quit-if-one-screen --incsearch --ignore-case --LONG-PROMPT --RAW-
 # Install bat if not already installed
 if ! [ -x "$(command -v batcat)" ]
 then
-  sudo apt install bat
+  sudo apt install bat -y
 fi
 
 # Default options for fzf
@@ -212,7 +212,7 @@ export FZF_DEFAULT_COMMAND='fdfind . --hidden'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 else
-  sudo apt install fd-find
+  sudo apt install fd-find -y
 fi
 
 # CUSTOM: use Ctrl-f to trigger fzf (just like Ctrl-T)
