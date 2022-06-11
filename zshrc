@@ -145,7 +145,19 @@ export LANG=en_US.UTF-8
 
 export PATH="$PATH:/usr/local/python3/bin"
 
+# Install thefuck (if not installed)
+if [ ! -x "$(command -v thefuck)" ]
+then
+  sudo apt install thefuck
+fi
+
 eval "$(thefuck --alias)"
+
+# Install zsh-autosuggestions (if not installed)
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]
+then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
 
 # CUSTOM: use Ctrl-Space to accept zsh suggestion
 bindkey "^ " autosuggest-accept
