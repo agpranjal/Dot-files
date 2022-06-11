@@ -9,13 +9,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
 
-" NERDTree, Icons, Buffers/Tabs
+" NERDTree, Icons, Buffers
 Plug 'preservim/nerdtree'
-Plug 'Nopik/vim-nerdtree-direnter'
-Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
@@ -31,7 +31,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
 Plug 'embark-theme/vim'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'sickill/vim-monokai'
 
 call plug#end()
 
@@ -68,7 +69,6 @@ set noswapfile
 set number
 set numberwidth=1
 set hlsearch
-set updatetime=50
 set ignorecase
 "set guicursor=
 set cursorline
@@ -101,8 +101,22 @@ nnoremap <silent> <C-f> :Files<CR>
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-"colorscheme molokai
+colorscheme monokai
 "let g:airline_theme='purify'
+
+" Use :reload to reload init.conf
+cnoreabbrev reload source $MYVIMRC
+
+" Surround word/visual-selection with double/single quotes with <leader>" or <leader>'
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+nnoremap <leader>( viw<esc>a)<esc>bi(<esc>
+nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
+vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
+
 
 " Plugin configurations
 
@@ -146,7 +160,7 @@ nnoremap <silent> <leader><Left> :vertical resize -5<CR>
 
 " Highlight the currently active file in NERDTree
 
-" Check if NERDTree is open or active
+ "Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
@@ -161,14 +175,18 @@ function! SyncTree()
 endfunction
 
 " Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
+autocmd BufWinEnter * call SyncTree()
 
+" Vim GitGutter
+nnoremap ]h <Plug>(GitGutterNextHunk)
+nnoremap [h <Plug>(GitGutterPrevHunk)
+cnoreabbrev diff GitGutterDiffOrig
 
 " Emmet
 let g:user_emmet_leader_key=','
 
 " Indentline
-let g:indentLine_char_list = ['┆']
+let g:indentLine_char_list = ['']
 let g:indentLine_fileTypeExclude = ['json']
 
 "Autopairs
@@ -176,7 +194,6 @@ let g:AutoPairsMultilineClose=0
 let g:AutoPairsOnlyBeforeClose=1
 let g:AutoPairsBalanceImmediately=1
 let g:AutoPairsNeverJumpLines=1
-
 
 " Coc.nvim
 
@@ -192,7 +209,7 @@ set nowritebackup
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -364,19 +381,8 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd FileType * set formatoptions-=cro
 
-" Reload init.conf by pressing leader key two times
-nnoremap <silent> <Leader><r> :source $MYVIMRC<cr>
 
-" Surround word/visual-selection with double/single quotes with <leader>" or <leader>'
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
-vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
-nnoremap <leader>( viw<esc>a)<esc>bi(<esc>
-nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
-vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
-vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
-
+" BarBar.vim
 
 " Move to previous/next
 nnoremap <silent>    <A-Left> :BufferPrevious<CR>
