@@ -13,12 +13,13 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " NERDTree, Icons, Buffers
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons in barbar.nvim)
 Plug 'romgrk/barbar.nvim'
 
 " Themes
@@ -101,7 +102,7 @@ nnoremap <silent> <C-f> :Files<CR>
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-colorscheme monokai
+"colorscheme oceanic_material
 "let g:airline_theme='purify'
 
 " Use :reload to reload init.conf
@@ -126,8 +127,8 @@ let g:NERDTreeMinimalUI = 0
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = 'NERDTree'
 
-"let g:NERDTreeDirArrowExpandable = ''
-"let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 " NERDTree toggle using leader+leader
 nnoremap <silent> <leader><leader> :NERDTreeToggle<CR> :wincmd l<cr>
@@ -155,8 +156,11 @@ cnoreabbrev <silent> qq! quit!
 
 
 " Use leader+Right and leader+Left to resize NerdTree window
+" Use leader+Up and leader+Down to resize horizontal split windows
 nnoremap <silent> <leader><Right> :vertical resize +5<CR>
 nnoremap <silent> <leader><Left> :vertical resize -5<CR>
+nnoremap <silent> <leader><Up> :resize +3<CR>
+nnoremap <silent> <leader><Down> :resize -3<CR>
 
 " Highlight the currently active file in NERDTree
 
@@ -186,8 +190,13 @@ cnoreabbrev diff GitGutterDiffOrig
 let g:user_emmet_leader_key=','
 
 " Indentline
+
+" Indentline character
 let g:indentLine_char_list = ['']
-let g:indentLine_fileTypeExclude = ['json']
+
+" Disable indentline for json and markdown files
+let g:vim_json_conceal=0
+let g:markdown_syntax_conceal=0
 
 "Autopairs
 let g:AutoPairsMultilineClose=0
