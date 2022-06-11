@@ -102,7 +102,7 @@ nnoremap <silent> <C-f> :Files<CR>
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-"colorscheme oceanic_material
+colorscheme oceanic_material
 "let g:airline_theme='purify'
 
 " Use :reload to reload init.conf
