@@ -96,7 +96,12 @@ set encoding=UTF-8
 set background=dark
 set laststatus=0
 set termguicolors
+
 autocmd FileType python setlocal completeopt-=preview
+
+" Add line numbers for help buffer
+autocmd FileType help setlocal number
+autocmd FileType *.txt setlocal number
 
 " custom mappings
 :command! W w
@@ -112,7 +117,7 @@ nnoremap <silent> <C-f> :Files<CR>
 colorscheme molokayo
 "let g:airline_theme='purify'
 
-" Better highlight colors for buffers (barbar.vim)
+" Better highlight colors for current buffer (barbar.vim)
 highlight BufferCurrent gui=bold
 highlight BufferCurrentIndex gui=bold
 highlight BufferCurrentMod gui=bold
@@ -157,7 +162,7 @@ nnoremap <silent> <leader><leader> :NERDTreeToggle<CR> :wincmd l<cr>
 autocmd VimEnter *
       \ NERDTree |
       \ wincmd l |
-      \ NERDTreeFind |
+      \ silent NERDTreeFind |
       \ wincmd l
 
 " Close vim if the only window remaining in NERDTree
