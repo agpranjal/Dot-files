@@ -480,8 +480,8 @@ let bufferline.closable = v:true
 let bufferline.clickable = v:true
 
 " Excludes buffers from the tabline
-let bufferline.exclude_ft = ['']
-let bufferline.exclude_name = ['']
+"let bufferline.exclude_ft = ['']
+"let bufferline.exclude_name = ['']
 
 " Enable/disable icons
 " if set to 'buffer_number', will show buffer number in the tabline
