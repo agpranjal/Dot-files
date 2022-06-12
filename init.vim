@@ -109,8 +109,21 @@ nnoremap <silent> <C-f> :Files<CR>
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-colorscheme oceanic_material
+colorscheme molokayo
 "let g:airline_theme='purify'
+
+" Better highlight colors for buffers (barbar.vim)
+highlight BufferCurrent gui=bold
+highlight BufferCurrentIndex gui=bold
+highlight BufferCurrentMod gui=bold
+
+" Better highlight colors for inactive buffers (barbar.vim)
+let current_scheme = get(g:, 'colors_name', 'default')
+if current_scheme == "molokai" || current_scheme == "molokayo"
+  highlight BufferInactive guifg=GREY
+  highlight BufferInactiveIndex guifg=GREY
+  highlight BufferInactiveMod guifg=GREY
+endif
 
 " Use :reload to reload init.conf
 cnoreabbrev reload source $MYVIMRC
