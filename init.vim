@@ -99,10 +99,6 @@ set termguicolors
 
 autocmd FileType python setlocal completeopt-=preview
 
-" Add line numbers for help buffer
-autocmd FileType help setlocal number
-autocmd FileType *.txt setlocal number
-
 " custom mappings
 :command! W w
 :command! Wq wq
