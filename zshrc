@@ -138,3 +138,15 @@ fi
 
 # CUSTOM: use Ctrl-f to trigger fzf (just like Ctrl-T)
 bindkey "^f" fzf-file-widget
+
+# CUSTOM: set default editor for the shell
+if [ -x "$(command -v nvim)" ]
+then
+  export VISUAL=nvim
+elif [ -x "$(command -v vim)" ]
+then
+  export VISUAL=vim
+else
+  export VISUAL=vi
+fi
+export EDITOR="$VISUAL"

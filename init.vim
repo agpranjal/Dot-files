@@ -110,7 +110,7 @@ nnoremap <silent> <C-f> :Files<CR>
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-colorscheme molokayo
+colorscheme molokai
 "let g:airline_theme='purify'
 
 " Better highlight colors for current buffer (barbar.vim)
