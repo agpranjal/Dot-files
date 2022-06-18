@@ -104,13 +104,17 @@ autocmd FileType python setlocal completeopt-=preview
 :command! Wq wq
 :command! D nohl
 
+" move half screen up and down with PageUp and PageDown
+nnoremap <PageUp> <C-u>
+nnoremap <PageDown> <C-d>
+
 " use Ctrl+f to open fzf file widget
 nnoremap <silent> <C-f> :Files<CR>
 
 "let g:onedark_terminal_italics=1
 "let g:material_theme_style = 'ocean'
 "let g:material_terminal_italics = 1
-colorscheme molokai
+colorscheme molokayo
 "let g:airline_theme='purify'
 
 " Better highlight colors for current buffer (barbar.vim)
