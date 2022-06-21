@@ -1,3 +1,4 @@
+" --------------------------------------------------------------------------------------------
 " Install VimPlug (if not installed)
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -21,28 +22,28 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+"Plug 'xolox/vim-session'
+"Plug 'xolox/vim-misc'
 
-" NERDTree, Icons, Buffers
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
+" NvimTree, icons, bufferline
+"Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons in barbar.nvim)
 Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Themes
+Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 Plug 'zacanger/angr.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'vim-airline/vim-airline-themes'
-Plug 'nanotech/jellybeans.vim'
 Plug 'embark-theme/vim'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'phanviet/vim-monokai-pro'
 Plug 'sickill/vim-monokai'
 
 call plug#end()
+
+" --------------------------------------------------------------------------------------------
 
 " set the leader key to spacebar
 let mapleader=" "
@@ -96,6 +97,7 @@ set encoding=UTF-8
 set background=dark
 set laststatus=0
 set termguicolors
+set foldmethod=indent
 
 autocmd FileType python setlocal completeopt-=preview
 
@@ -108,14 +110,36 @@ autocmd FileType python setlocal completeopt-=preview
 nnoremap <PageUp> <C-u>
 nnoremap <PageDown> <C-d>
 
+" move screen one line up and down using <leader><PageUp> and <leader><PageDown>
+nnoremap <leader><PageUp> <C-y>
+nnoremap <leader><PageDown> <C-e>
+
+" Use leader+Right and leader+Left to resize window
+nnoremap <silent> <leader><Right> :vertical resize +5<CR>
+nnoremap <silent> <leader><Left> :vertical resize -5<CR>
+
+" remove ZZ mapping (which writes and quits vim)
+nnoremap ZZ <NOP>
+
 " use Ctrl+f to open fzf file widget
 nnoremap <silent> <C-f> :Files<CR>
 
-"let g:onedark_terminal_italics=1
-"let g:material_theme_style = 'ocean'
-"let g:material_terminal_italics = 1
-colorscheme molokayo
+" search only in the current buffer
+nnoremap / :set scrolloff=0<CR>VggoG<Esc>:set scrolloff=0<CR>``<C-y>/\%V
+
+" search in visual selection
+vnoremap / <Esc>/\%><C-R>=line("'<")-1<CR>l\%<<C-R>=line("'>")+1<CR>l
+
+" use z/ to search in the among the visible lines only (restricted search)
+nnoremap z/ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=0<CR>``<C-y>/\%V
+
+" show numberline for vim help
+autocmd FileType help setlocal number
+
 "let g:airline_theme='purify'
+"let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+let g:material_theme_style = "ocean"
+colorscheme material
 
 " Better highlight colors for current buffer (barbar.vim)
 highlight BufferCurrent gui=bold
@@ -143,69 +167,7 @@ nnoremap <leader>) viw<esc>a)<esc>bi(<esc>
 vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
 vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
 
-
-" Plugin configurations
-
-" NERDTree
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 0
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = 'NERDTree'
-
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-
-" NERDTree toggle using leader+leader
-nnoremap <silent> <leader><leader> :NERDTreeToggle<CR> :wincmd l<cr>
-
-" Open NERDTree automatically on startup and move the cursor to the opened window
-autocmd VimEnter *
-      \ NERDTree |
-      \ wincmd l |
-      \ silent NERDTreeFind |
-      \ wincmd l
-
-" Close vim if the only window remaining in NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Use :q and :q! to close buffer. Quit vim if buffer list is empty
-" Use :qq and :qq! to close only the current window
-set iskeyword+=!
-cnoreabbrev <silent> q if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
-cnoreabbrev <silent> q! if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit!'<Bar>else<Bar>exe 'BufferClose!'<Bar>endif<cr>
-cnoreabbrev <silent> qq quit
-cnoreabbrev <silent> qq! quit!
-
-" Original abbreviation. May need in future if something goes wrong.
-"cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1) && expand('%') == '')<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
-
-
-" Use leader+Right and leader+Left to resize NerdTree window
-" Use leader+Up and leader+Down to resize horizontal split windows
-nnoremap <silent> <leader><Right> :vertical resize +5<CR>
-nnoremap <silent> <leader><Left> :vertical resize -5<CR>
-nnoremap <silent> <leader><Up> :resize +3<CR>
-nnoremap <silent> <leader><Down> :resize -3<CR>
-
-" Highlight the currently active file in NERDTree
-
- "Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufWinEnter * call SyncTree()
-
+" --------------------------------------------------------------------------------------------
 " Vim GitGutter
 nnoremap ]h <Plug>(GitGutterNextHunk)
 nnoremap [h <Plug>(GitGutterPrevHunk)
@@ -229,6 +191,7 @@ let g:AutoPairsOnlyBeforeClose=1
 let g:AutoPairsBalanceImmediately=1
 let g:AutoPairsNeverJumpLines=1
 
+" --------------------------------------------------------------------------------------------
 " Coc.nvim
 
 " TextEdit might fail if hidden is not set.
@@ -384,9 +347,11 @@ nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+"nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>ds  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+"nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>ws  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -395,18 +360,18 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = [ 
-            \ 'coc-json', 
-            \ 'coc-tsserver',
-            \ 'coc-html',
-            \ 'coc-css',
-            \ 'coc-cssmodules',
-            \ 'coc-yaml',
-            \ 'coc-tabnine',
-            \ 'coc-eslint',
-            \ 'coc-prettier',
-            \ 'coc-sh',
-            \ 'coc-pyright'
-            \ ]
+      \ 'coc-json', 
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-cssmodules',
+      \ 'coc-yaml',
+      \ 'coc-tabnine',
+      \ 'coc-eslint',
+      \ 'coc-prettier',
+      \ 'coc-sh',
+      \ 'coc-pyright'
+      \ ]
 
 
 " My personal configuration for cocvim
@@ -416,6 +381,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd FileType * set formatoptions-=cro
 
 
+" --------------------------------------------------------------------------------------------
 " BarBar.vim
 
 " Move to previous/next
@@ -527,8 +493,66 @@ let bufferline.semantic_letters = v:true
 " optimal for the qwerty keyboard layout but might need adjustement
 " for other layouts.
 let bufferline.letters =
-  \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
+      \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
 
 " Sets the name of unnamed buffers. By default format is "[Buffer X]"
 " where X is the buffer number. But only a static string is accepted here.
 let bufferline.no_name_title = v:null
+
+" Use :q and :q! to close buffer. Quit vim if buffer list is empty
+" Use :qq and :qq! to close only the current window
+set iskeyword+=!
+cnoreabbrev <silent> q if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+cnoreabbrev <silent> q! if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1))<Bar>exe 'quit!'<Bar>else<Bar>exe 'BufferClose!'<Bar>endif<cr>
+cnoreabbrev <silent> qq quit
+cnoreabbrev <silent> qq! quit!
+
+" Original abbreviation. May need in future if something goes wrong.
+"cnoreabbrev <silent> q :if ((len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1) && expand('%') == '')<Bar>exe 'quit'<Bar>else<Bar>exe 'BufferClose'<Bar>endif<cr>
+
+" --------------------------------------------------------------------------------------------
+" NvimTree
+
+lua << EOF
+require("nvim-tree").setup({
+open_on_setup = true,
+open_on_setup_file = true,
+hijack_cursor = true,
+reload_on_bufenter = true,
+actions = {
+  open_file = {
+    window_picker = {
+      enable = false
+      }
+    }
+  },
+view = {
+  adaptive_size = true,
+  },
+update_focused_file = {
+  enable = true
+  },
+renderer = {
+  highlight_git = true,
+  highlight_opened_files = "all",
+  indent_markers = {
+    enable = true
+    },
+  },
+})
+EOF
+
+" Use <leader><leader> to toggle NvimTree
+nnoremap <silent> <leader><leader> :lua require("nvim-tree").toggle(false, true)<CR>
+
+" Close nvim if NvimTree is the only open window
+lua << EOF
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+      vim.cmd "quit"
+    end
+  end
+})
+EOF

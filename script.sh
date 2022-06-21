@@ -8,4 +8,4 @@
 
 git add .
 git commit -m "Update"
-git push --force
+git push origin master
