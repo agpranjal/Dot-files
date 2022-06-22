@@ -1,4 +1,3 @@
-" --------------------------------------------------------------------------------------------
 " Install VimPlug (if not installed)
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -97,7 +96,7 @@ set laststatus=0
 set termguicolors
 set foldmethod=indent
 
-autocmd FileType python setlocal completeopt-=preview
+"autocmd FileType python setlocal completeopt-=preview
 
 " show numberline for vim help
 autocmd FileType help setlocal number
@@ -172,18 +171,21 @@ nnoremap ]h <Plug>(GitGutterNextHunk)
 nnoremap [h <Plug>(GitGutterPrevHunk)
 cnoreabbrev diff GitGutterDiffOrig
 
+" --------------------------------------------------------------------------------------------
 " Emmet
 let g:user_emmet_leader_key=','
 
+" --------------------------------------------------------------------------------------------
 " Indentline
 
 " Indentline character
-let g:indentLine_char_list = ['']
+let g:indentLine_char_list = ['▏']
 
 " Disable indentline for json and markdown files
 let g:vim_json_conceal=0
 let g:markdown_syntax_conceal=0
 
+" --------------------------------------------------------------------------------------------
 "Autopairs
 let g:AutoPairsMultilineClose=0
 let g:AutoPairsOnlyBeforeClose=1
@@ -477,7 +479,7 @@ let bufferline.insert_at_start = v:false
 let bufferline.insert_at_end = v:false
 
 " Sets the maximum padding width with which to surround each tab.
-let bufferline.maximum_padding = 0
+let bufferline.maximum_padding = 1
 
 " Sets the maximum buffer name length.
 let bufferline.maximum_length = 30
