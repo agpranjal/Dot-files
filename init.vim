@@ -26,20 +26,18 @@ Plug 'tpope/vim-fugitive'
 "Plug 'xolox/vim-misc'
 
 " NvimTree, icons, bufferline
-"Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons in barbar.nvim)
 Plug 'romgrk/barbar.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Themes
-Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'zacanger/angr.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'embark-theme/vim'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sickill/vim-monokai'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
 
@@ -101,6 +99,15 @@ set foldmethod=indent
 
 autocmd FileType python setlocal completeopt-=preview
 
+" show numberline for vim help
+autocmd FileType help setlocal number
+
+" Use :reload to reload init.conf
+cnoreabbrev reload source $MYVIMRC
+
+" remove ZZ mapping (which writes and quits vim)
+nnoremap ZZ <NOP>
+
 " custom mappings
 :command! W w
 :command! Wq wq
@@ -118,10 +125,8 @@ nnoremap <leader><PageDown> <C-e>
 nnoremap <silent> <leader><Right> :vertical resize +5<CR>
 nnoremap <silent> <leader><Left> :vertical resize -5<CR>
 
-" remove ZZ mapping (which writes and quits vim)
-nnoremap ZZ <NOP>
-
 " use Ctrl+f to open fzf file widget
+" use <leader>f to open fzf file widget
 nnoremap <silent> <C-f> :Files<CR>
 
 " search only in the current buffer
@@ -133,13 +138,10 @@ vnoremap / <Esc>/\%><C-R>=line("'<")-1<CR>l\%<<C-R>=line("'>")+1<CR>l
 " use z/ to search in the among the visible lines only (restricted search)
 nnoremap z/ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=0<CR>``<C-y>/\%V
 
-" show numberline for vim help
-autocmd FileType help setlocal number
-
 "let g:airline_theme='purify'
 "let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = "ocean"
-colorscheme material
+colorscheme embark
 
 " Better highlight colors for current buffer (barbar.vim)
 highlight BufferCurrent gui=bold
@@ -153,9 +155,6 @@ if current_scheme == "molokai" || current_scheme == "molokayo"
   highlight BufferInactiveIndex guifg=GREY
   highlight BufferInactiveMod guifg=GREY
 endif
-
-" Use :reload to reload init.conf
-cnoreabbrev reload source $MYVIMRC
 
 " Surround word/visual-selection with double/single quotes with <leader>" or <leader>'
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -515,6 +514,8 @@ cnoreabbrev <silent> qq! quit!
 
 lua << EOF
 require("nvim-tree").setup({
+ignore_buffer_on_setup = true,
+auto_reload_on_write = true,
 open_on_setup = true,
 open_on_setup_file = true,
 hijack_cursor = true,
@@ -546,13 +547,4 @@ EOF
 nnoremap <silent> <leader><leader> :lua require("nvim-tree").toggle(false, true)<CR>
 
 " Close nvim if NvimTree is the only open window
-lua << EOF
-vim.api.nvim_create_autocmd("BufEnter", {
-  nested = true,
-  callback = function()
-    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-      vim.cmd "quit"
-    end
-  end
-})
-EOF
+autocmd bufenter * if (winnr("$") == 1 && &filetype == "nvimtree") | q | endif
