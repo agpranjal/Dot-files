@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 "Plug 'xolox/vim-session'
 "Plug 'xolox/vim-misc'
+"Plug 'thaerkh/vim-workspace'
 
 " NvimTree, icons, bufferline
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons in barbar.nvim)
@@ -140,7 +141,7 @@ nnoremap z/ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=0<CR>``<C-y>/\%V
 "let g:airline_theme='purify'
 "let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = "ocean"
-colorscheme embark
+colorscheme molokai
 
 " Better highlight colors for current buffer (barbar.vim)
 highlight BufferCurrent gui=bold
@@ -516,7 +517,6 @@ cnoreabbrev <silent> qq! quit!
 
 lua << EOF
 require("nvim-tree").setup({
-ignore_buffer_on_setup = true,
 auto_reload_on_write = true,
 open_on_setup = true,
 open_on_setup_file = true,

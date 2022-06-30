@@ -117,7 +117,6 @@ export FZF_DEFAULT_OPTS="
 --border=sharp
 --info=inline
 --multi
---preview-window=:hidden
 --preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
 --prompt='∼ ' --pointer='▶' --marker='✓'
@@ -125,6 +124,21 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-a:select-all'
 --bind 'tab:accept'
 "
+
+#export FZF_DEFAULT_OPTS="
+#--cycle
+#--layout=reverse
+#--border=sharp
+#--info=inline
+#--multi
+#--preview-window=:show
+#--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+#--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
+#--prompt='∼ ' --pointer='▶' --marker='✓'
+#--bind '?:toggle-preview'
+#--bind 'ctrl-a:select-all'
+#--bind 'tab:accept'
+
 
 # Use fd (if installed) as backend for fzf
 if [ -x "$(command -v fdfind)" ]
@@ -150,3 +164,4 @@ else
   export VISUAL=vi
 fi
 export EDITOR="$VISUAL"
+. "/home/ag_pranjal/.acme.sh/acme.sh.env"
