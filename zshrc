@@ -92,7 +92,7 @@ then
   sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
-  curl https://pyenv.run | bash
+      curl https://pyenv.run | bash
 fi
 
 # Add pyenv to PATH
@@ -121,29 +121,16 @@ export FZF_DEFAULT_OPTS="
 --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
 --prompt='∼ ' --pointer='▶' --marker='✓'
 --bind '?:toggle-preview'
---bind 'ctrl-a:select-all'
+--bind 'ctrl-s:toggle'
+--bind 'ctrl-a:toggle-all'
 --bind 'tab:accept'
 "
-
-#export FZF_DEFAULT_OPTS="
-#--cycle
-#--layout=reverse
-#--border=sharp
-#--info=inline
-#--multi
-#--preview-window=:show
-#--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-#--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
-#--prompt='∼ ' --pointer='▶' --marker='✓'
-#--bind '?:toggle-preview'
-#--bind 'ctrl-a:select-all'
-#--bind 'tab:accept'
-
 
 # Use fd (if installed) as backend for fzf
 if [ -x "$(command -v fdfind)" ]
 then
-export FZF_DEFAULT_COMMAND='fdfind . --hidden'
+  #export FZF_DEFAULT_COMMAND='fdfind . --hidden'
+  export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore-vcs"
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 else
@@ -164,4 +151,3 @@ else
   export VISUAL=vi
 fi
 export EDITOR="$VISUAL"
-. "/home/ag_pranjal/.acme.sh/acme.sh.env"
