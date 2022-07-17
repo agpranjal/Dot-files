@@ -1,27 +1,3 @@
--- local M = {}
---
--- function M.setup()
---   require "bufdel".setup {
---     next = "alternate"
---   }
---
---   vim.cmd([[
---   set iskeyword+=!
---
---   cnoreabbrev <silent> q BufDel
---   cnoreabbrev <silent> q! BufDel!
---   cnoreabbrev <silent> qq quit
---   cnoreabbrev <silent> qq! quit!
---   ]])
--- end
---
--- return M
---
-
--- nvim-bufdel
--- By Olivier Roques
--- github.com/ojroques
-
 local M = {}
 
 -- Options
@@ -75,7 +51,7 @@ function _G.delete_buffer_nvim_bufdel(bufexpr, force)
       if force then
         vim.cmd('qall!')
       else
-        vim.cmd('confirm qall')
+        vim.cmd('qall')
       end
       return
     end

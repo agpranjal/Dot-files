@@ -35,18 +35,15 @@ local sources = {
   b.diagnostics.tsc,
   with_root_file(b.diagnostics.selene, "selene.toml"),
   with_diagnostics_code(b.diagnostics.shellcheck),
+  b.diagnostics.cppcheck,
 
   -- code actions
-  b.code_actions.gitsigns,
-  b.code_actions.gitrebase,
-
+  -- b.code_actions.gitsigns,
+  -- b.code_actions.gitrebase,
+  b.code_actions.shellcheck,
+  --
   -- hover
   b.hover.dictionary,
-
-  -- git signs
-  -- b.code_actions.gitsigns,
-
-  b.diagnostics.cppcheck
 }
 
 function M.setup(opts)

@@ -4,6 +4,7 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 
 local function on_attach(client, bufnr)
   -- Use null-ls as the only formatter
+  -- Disable formatting capabilities from all other LSP servers
   -- if client.name ~= "null-ls" then
   --   client.resolved_capabilities.document_formatting = false
   -- end

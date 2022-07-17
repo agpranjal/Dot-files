@@ -12,8 +12,8 @@ local function plugins(use)
   --use "dracula/vim"
   use "tomasr/molokai"
   use "embark-theme/vim"
-  use 'folke/tokyonight.nvim'
-  vim.cmd "colorscheme embark"
+  use "flazz/vim-colorschemes"
+  vim.cmd "colorscheme molokai"
 
   -- Startup screen
   use {
@@ -90,7 +90,9 @@ local function plugins(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    requires = {
+      "p00f/nvim-ts-rainbow"
+    },
     config = function()
       require("config.nvim-treesitter").setup()
     end
@@ -160,6 +162,7 @@ local function plugins(use)
       "b0o/schemastore.nvim",
     },
     config = function()
+      require "gitsigns".setup()
       require("config.lsp").setup()
     end
   }
@@ -191,10 +194,10 @@ local function plugins(use)
     requires = {
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
-      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-      "nvim-telescope/telescope-project.nvim",
-      "cljoly/telescope-repo.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      "cljoly/telescope-repo.nvim",
+      "nvim-telescope/telescope-project.nvim",
       {
         "ahmedkhalf/project.nvim",
         config = function()
@@ -225,6 +228,17 @@ local function plugins(use)
     "chrisbra/csv.vim",
     config = function()
       require("config.csv").setup()
+    end
+  }
+
+  -- Search and Replace
+  use {
+    "nvim-pack/nvim-spectre",
+    requires = {
+      "BurntSushi/ripgrep",
+    },
+    config = function()
+      require("config.nvim-spectre").setup()
     end
   }
 

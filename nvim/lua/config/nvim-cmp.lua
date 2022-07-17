@@ -61,11 +61,11 @@ function M.setup()
       --   -- winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
       --   -- winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
       -- }),
+      -- documentation = cmp.config.window.bordered(),
       completion = {
         border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
         winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
       },
-      -- documentation = cmp.config.window.bordered(),
       documentation = {
         border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
       }

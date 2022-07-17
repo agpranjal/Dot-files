@@ -4,7 +4,6 @@ local whichkey = require "which-key"
 
 local keymap = vim.api.nvim_set_keymap
 local buf_keymap = vim.api.nvim_buf_set_keymap
-local util = require 'vim.lsp.util'
 
 function M.setup(client, bufnr)
   local opts = { noremap = true, silent = true }
@@ -27,31 +26,28 @@ function M.setup(client, bufnr)
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
     },
   }
-  -- keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" }
+
+  -- Use null-ls as formatter when original LSP does not provide formatting
   if client.resolved_capabilities.document_formatting then
-    -- Set null-ls as the only lsp for formatting
-    keymap_l.l.f = {
-      function()
-        local params = util.make_formatting_params({})
-        client.request('textDocument/formatting', params, nil, bufnr)
-      end, "Format Document"}
-    end
-
-    -- Whichkey
-    -- Goto
-    local keymap_g = {
-      g = {
-        name = "Goto",
-        d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-        D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-        s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
-        t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
-      }
-    }
-
-    whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
-    whichkey.register(keymap_g, { buffer = bufnr, prefix = "<leader>" })
+    -- keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" }
+    keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting_seq_sync({'null-ls'})<CR>", "Format Document" }
   end
 
-  return M
+  -- Whichkey
+  -- Goto
+  local keymap_g = {
+    g = {
+      name = "Goto",
+      d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+      D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+      s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+      i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
+      t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
+    }
+  }
+
+  whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
+  whichkey.register(keymap_g, { buffer = bufnr, prefix = "<leader>" })
+end
+
+return M
