@@ -21,8 +21,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
 #ZSH_THEME="gentoo"
 #ZSH_THEME="mh"
 #ZSH_THEME="michelebologna"
@@ -135,6 +135,7 @@ then
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 else
   sudo apt install fd-find -y
+  sudo apt install ripgrep
 fi
 
 # CUSTOM: use Ctrl-f to trigger fzf (just like Ctrl-T)
