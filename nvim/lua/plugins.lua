@@ -13,14 +13,10 @@ local function plugins(use)
   use "mangeshrex/everblush.vim"
   use "dracula/vim"
   use "tomasr/molokai"
-  use {
-    "embark-theme/vim",
-    config = function()
-      vim.cmd "let g:embark_terminal_italics = 1"
-    end
-  }
+  use "embark-theme/vim"
   use "flazz/vim-colorschemes"
-  vim.cmd "colorscheme everblush"
+
+  vim.cmd "colorscheme onedark"
 
 
   -- Startup screen
