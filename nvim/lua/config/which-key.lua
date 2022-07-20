@@ -24,7 +24,7 @@ function M.setup()
 
   local mappings = {
     -- ["w"] = { "<cmd>update!<CR>", "Save" },
-    ["w"] = {"<cmd>set wrap!<CR>", "Toggle wrap"},
+    ["w"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
     ["q"] = { "<cmd>quit!<CR>", "Quit" },
 
     b = {
@@ -48,12 +48,9 @@ function M.setup()
       u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    G = {
-      name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
-    },
-
-    e = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer"}
+    -- NvimTree
+    e = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
+    ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" }
   }
 
   whichkey.setup(conf)

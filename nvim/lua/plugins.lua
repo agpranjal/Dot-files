@@ -13,22 +13,13 @@ local function plugins(use)
   use "tomasr/molokai"
   use "embark-theme/vim"
   use "flazz/vim-colorschemes"
-  vim.cmd "colorscheme molokai"
+  vim.cmd "colorscheme molokai_dark"
 
   -- Startup screen
   use {
     "goolord/alpha-nvim",
     config = function()
       require("config.alpha-nvim").setup()
-    end
-  }
-
-  -- Git
-  use {
-    "TimUntersberger/neogit",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("config.neogit").setup()
     end
   }
 
@@ -151,18 +142,15 @@ local function plugins(use)
       "nvim-lsp-installer",
       "lua-dev.nvim",
       "null-ls.nvim",
-      "gitsigns.nvim",
       "schemastore.nvim"
     },
     requires = {
       "williamboman/nvim-lsp-installer",
       "folke/lua-dev.nvim",
       "jose-elias-alvarez/null-ls.nvim",
-      "lewis6991/gitsigns.nvim",
       "b0o/schemastore.nvim",
     },
     config = function()
-      require "gitsigns".setup()
       require("config.lsp").setup()
     end
   }
@@ -245,9 +233,6 @@ local function plugins(use)
 end
 
 function M.setup()
-  -- Register custom buffer deletion plugin
-  require "config.nvim-bufdel".setup()
-
   -- Indicate first time installation
   local packer_bootstrap = false
 

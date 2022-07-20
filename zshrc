@@ -21,8 +21,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
 #ZSH_THEME="gentoo"
 #ZSH_THEME="mh"
 #ZSH_THEME="michelebologna"
@@ -33,7 +33,27 @@ ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker colored-man-pages zsh-autosuggestions thefuck jsontools)
+plugins=(
+  colored-man-pages 
+  zsh-autosuggestions
+  thefuck
+  jsontools
+  docker
+  docker-compose
+  aws
+  npm 
+  pip
+  fancy-ctrl-z
+  gitfast
+  heroku
+  pm2
+  safe-paste
+  sudo
+  themes
+  ufw
+  yarn
+  z
+)
 
 source $ZSH/oh-my-zsh.sh
 

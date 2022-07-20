@@ -24,6 +24,14 @@ function M.setup(client, bufnr)
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
       D = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+      g = {
+        name = "Goto",
+        d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+        D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+        s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
+        t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
+      }
     },
   }
 
@@ -33,21 +41,7 @@ function M.setup(client, bufnr)
     keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting_seq_sync({'null-ls'})<CR>", "Format Document" }
   end
 
-  -- Whichkey
-  -- Goto
-  local keymap_g = {
-    g = {
-      name = "Goto",
-      d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-      D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-      s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-      i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
-      t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
-    }
-  }
-
   whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
-  whichkey.register(keymap_g, { buffer = bufnr, prefix = "<leader>" })
 end
 
 return M

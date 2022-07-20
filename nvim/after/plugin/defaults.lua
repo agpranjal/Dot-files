@@ -16,7 +16,6 @@ vim.opt.signcolumn = "yes" -- Always show sign column
 vim.opt.clipboard = "unnamedplus" -- Access system clipboard
 vim.opt.cursorline = true -- Highlight line with cursor
 vim.opt.swapfile = false -- Disable swap files
-vim.opt.foldmethod = "indent" -- Fold by indent
 vim.opt.timeoutlen = 300 -- Set timeout to 300ms (for whichkey)
 
 vim.opt.shiftwidth = 2
@@ -31,3 +30,10 @@ vim.cmd [[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]]
+
+vim.opt.foldmethod = "indent" -- Fold by indent
+-- vim.opt.foldcolumn = "1"
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldlevelstart = -1
+-- vim.opt.foldenable = true
+
