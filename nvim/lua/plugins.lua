@@ -10,6 +10,12 @@ local function plugins(use)
   use "flazz/vim-colorschemes"
   use "mangeshrex/everblush.vim"
   use "dracula/vim"
+  use {
+    'folke/tokyonight.nvim',
+    config = function()
+      vim.g.tokyonight_style = "night"
+    end
+  }
   use "tomasr/molokai"
   use {
     'bluz71/vim-nightfly-guicolors',
@@ -17,8 +23,6 @@ local function plugins(use)
       vim.g.nightflyNormalFloat = 1
     end
   }
-  vim.cmd "set termguicolors"
-  vim.cmd "colorscheme nightfly"
 
   -- Startup screen
   use {
