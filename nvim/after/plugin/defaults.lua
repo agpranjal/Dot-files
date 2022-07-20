@@ -37,3 +37,7 @@ vim.opt.foldmethod = "indent" -- Fold by indent
 -- vim.opt.foldlevelstart = -1
 -- vim.opt.foldenable = true
 
+vim.cmd [[
+  set t_ZH=^[[3m
+  set t_ZR=^[[23m
+]]

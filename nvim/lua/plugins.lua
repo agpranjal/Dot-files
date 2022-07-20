@@ -7,13 +7,21 @@ local function plugins(use)
   use { "wbthomason/packer.nvim" }
 
   -- Colorscheme
-  use "joshdick/onedark.vim"
+  use {
+    "joshdick/onedark.vim",
+  }
   use "mangeshrex/everblush.vim"
-  --use "dracula/vim"
+  use "dracula/vim"
   use "tomasr/molokai"
-  use "embark-theme/vim"
+  use {
+    "embark-theme/vim",
+    config = function()
+      vim.cmd "let g:embark_terminal_italics = 1"
+    end
+  }
   use "flazz/vim-colorschemes"
-  vim.cmd "colorscheme molokai_dark"
+  vim.cmd "colorscheme everblush"
+
 
   -- Startup screen
   use {

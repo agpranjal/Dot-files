@@ -48,7 +48,7 @@ plugins=(
   heroku
   pm2
   safe-paste
-  sudo
+  # sudo
   themes
   ufw
   yarn
@@ -59,6 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 # start tmux when shell starts
 if [[ ! $TERM =~ screen ]]; then
+  export TERM=screen-256color
   exec tmux -u
 fi
 
