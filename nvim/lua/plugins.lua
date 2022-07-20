@@ -7,17 +7,18 @@ local function plugins(use)
   use { "wbthomason/packer.nvim" }
 
   -- Colorscheme
-  use {
-    "joshdick/onedark.vim",
-  }
+  use "flazz/vim-colorschemes"
   use "mangeshrex/everblush.vim"
   use "dracula/vim"
   use "tomasr/molokai"
-  use "embark-theme/vim"
-  use "flazz/vim-colorschemes"
-
-  vim.cmd "colorscheme onedark"
-
+  use {
+    'bluz71/vim-nightfly-guicolors',
+    config = function()
+      vim.g.nightflyNormalFloat = 1
+    end
+  }
+  vim.cmd "set termguicolors"
+  vim.cmd "colorscheme nightfly"
 
   -- Startup screen
   use {
@@ -90,15 +91,6 @@ local function plugins(use)
     },
     config = function()
       require("config.nvim-treesitter").setup()
-    end
-  }
-
-  -- Nvim-gps
-  use {
-    "SmiteshP/nvim-gps",
-    requires = "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("config.nvim-gps").setup()
     end
   }
 
