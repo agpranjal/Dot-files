@@ -169,7 +169,6 @@ local function plugins(use)
     config = function()
       require("config.telescope").setup()
     end,
-    --keys = { "<leader>f", "<leader>p" },
     wants = {
       "plenary.nvim",
       "popup.nvim",
