@@ -17,17 +17,6 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# disable sort when completing `git checkout`
-# zstyle ':completion:*:git-checkout:*' sort false
-# # set descriptions format to enable group support
-# zstyle ':completion:*:descriptions' format '[%d]'
-# # set list-colors to enable filename colorizing
-# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# # preview directory's content with exa when completing cd
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-# # switch group using `,` and `.`
-# zstyle ':fzf-tab:*' switch-group ',' '.'
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -63,7 +52,7 @@ plugins=(
   themes
   ufw
   yarn
-  z
+  zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh

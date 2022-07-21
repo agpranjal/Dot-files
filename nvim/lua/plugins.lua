@@ -229,6 +229,16 @@ local function plugins(use)
     end
   }
 
+  -- Folding
+  use {
+    "kevinhwang91/nvim-ufo",
+    wants = { "promise-async" },
+    requires = "kevinhwang91/promise-async",
+    config = function()
+      pcall(require("config.nvim-ufo").setup())
+    end
+  }
+
 end
 
 function M.setup()
