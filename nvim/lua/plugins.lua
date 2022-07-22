@@ -235,7 +235,7 @@ local function plugins(use)
     wants = { "promise-async" },
     requires = "kevinhwang91/promise-async",
     config = function()
-      pcall(require("config.nvim-ufo").setup())
+      require("config.nvim-ufo").setup()
     end
   }
 
