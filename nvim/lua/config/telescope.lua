@@ -27,8 +27,10 @@ function M.setup()
       g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
       c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
       C = { "<cmd>Telescope commands<cr>", "Commands" },
-      w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
-      p = { "<cmd>lua require 'telescope'.extensions.project.project{}<cr>", "List Projects" },
+      -- w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
+      ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
+      -- p = { "<cmd>lua require 'telescope'.extensions.project.project{}<cr>", "List Projects" },
+      p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Github repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume"}
     }

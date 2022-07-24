@@ -145,7 +145,7 @@ local function plugins(use)
   -- Fidget
   use {
     "j-hui/fidget.nvim",
-    config = function ()
+    config = function()
       require("config.fidget").setup()
     end
   }
@@ -172,6 +172,7 @@ local function plugins(use)
       "telescope-repo.nvim",
       "telescope-file-browser.nvim",
       "project.nvim",
+      "glow.nvim"
     },
     requires = {
       "nvim-lua/popup.nvim",
@@ -180,6 +181,7 @@ local function plugins(use)
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       "cljoly/telescope-repo.nvim",
       "nvim-telescope/telescope-project.nvim",
+      "ellisonleao/glow.nvim",
       {
         "ahmedkhalf/project.nvim",
         config = function()
