@@ -33,9 +33,6 @@ function M.setup()
       -- update_cwd = true
     }
   })
-
-  -- Close nvim if the last buffer is closed
-  -- vim.cmd 'autocmd bufenter * if (winnr("$") == 1 && &filetype == "nvimtree") | q | endif'
 end
 
 return M

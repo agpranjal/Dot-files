@@ -36,7 +36,7 @@ function M.setup()
   whichkey.register(keymaps_f, { prefix = "<leader>" })
 
   -- Disable folds inside Telescope pickers
-  vim.cmd "autocmd! FileType TelescopeResults setlocal nofoldenable"
+  -- vim.cmd "autocmd! FileType TelescopeResults setlocal nofoldenable"
 end
 
 return M
