@@ -16,7 +16,7 @@ vim.opt.signcolumn = "yes" -- Always show sign column
 -- vim.opt.clipboard = "unnamedplus" -- Access system clipboard
 vim.opt.cursorline = true -- Highlight line with cursor
 vim.opt.swapfile = false -- Disable swap files
-vim.opt.timeoutlen = 300 -- Set timeout to 300ms (for whichkey)
+vim.opt.timeoutlen = 400 -- Set timeout to 300ms (for whichkey)
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
