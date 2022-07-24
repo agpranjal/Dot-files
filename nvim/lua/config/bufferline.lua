@@ -1,5 +1,7 @@
 local M = {}
 
+local whichkey = require("which-key")
+
 function M.setup()
   require("bufferline").setup {
     options = {
@@ -10,7 +12,7 @@ function M.setup()
       show_tab_indicators = true,
       show_buffer_close_icons = true,
       show_close_icon = false,
-      offsets = {{filetype = "NvimTree", text = "File Explorer", highlight = "Directory", text_align = "center"}},
+      offsets = { { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", text_align = "center" } },
     },
   }
 
@@ -27,6 +29,27 @@ function M.setup()
   vim.keymap.set("", "<A-9>", "<cmd>BufferLineGoToBuffer 9<cr>")
   vim.keymap.set("", "<M->>", "<cmd>BufferLineMoveNext<cr>")
   vim.keymap.set("", "<M-<>", "<cmd>BufferLineMovePrev<cr>")
+
+
+  local keymap_b = {
+    b = {
+      name = "Buffer",
+      n = { "<Cmd>BufferLineCycleNext<Cr>", "Next buffer" },
+      p = { "<Cmd>BufferLineCyclePrev<Cr>", "Previous buffer" },
+      m = {
+        name = "Move Buffer",
+        n = { "<Cmd>BufferLineMoveNext<Cr>", "Move buffer next" },
+        p = { "<Cmd>BufferLineMovePrev<Cr>", "Move buffer prev" },
+      },
+      s = {
+        name = "Sort Buffer",
+        e = { "<Cmd>BufferLineSortByExtension<Cr>", "Sort by extension" },
+        d = { "<Cmd>BufferLineSortByDirectory<Cr>", "Sort by directory" }
+      }
+    }
+  }
+
+  whichkey.register(keymap_b, { prefix = "<leader>" })
 end
 
 return M

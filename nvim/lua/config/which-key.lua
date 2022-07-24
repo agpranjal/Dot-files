@@ -27,19 +27,7 @@ function M.setup()
     ["w"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
     ["q"] = { "<cmd>quit!<CR>", "Quit" },
 
-    b = {
-      name = "Buffer",
-      c = { "<Cmd>bd!<Cr>", "Close current buffer" },
-      D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
-      n = { "<Cmd>BufferLineCycleNext<Cr>", "Next buffer" },
-      p = { "<Cmd>BufferLineCyclePrev<Cr>", "Previous buffer" },
-      mn = { "<Cmd>BufferLineMoveNext<Cr>", "Move buffer next" },
-      mp = { "<Cmd>BufferLineMovePrev<Cr>", "Move buffer prev" },
-      se = { "<Cmd>BufferLineSortByExtension<Cr>", "Sort by extension" },
-      sd = { "<Cmd>BufferLineSortByDirectory<Cr>", "Sort by directory" }
-    },
-
-    p = {
+   p = {
       name = "Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
       i = { "<cmd>PackerInstall<cr>", "Install" },

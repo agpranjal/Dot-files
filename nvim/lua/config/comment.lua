@@ -1,16 +1,7 @@
 local M = {}
 
 function M.setup()
-  require "Comment".setup {
-    toggler = {
-      line = " //",
-      block = " b//"
-    },
-    opleader =  {
-      line = " /",
-      block = " b/"
-    }
-  }
+  require "Comment".setup()
 end
 
 return M
