@@ -197,14 +197,6 @@ local function plugins(use)
     end
   }
 
-  -- CSV
-  use {
-    "chrisbra/csv.vim",
-    config = function()
-      require("config.csv").setup()
-    end
-  }
-
   -- Search and Replace
   use {
     "nvim-pack/nvim-spectre",
@@ -267,6 +259,14 @@ local function plugins(use)
     'lewis6991/gitsigns.nvim',
     config = function()
       require("config.gitsigns").setup()
+    end
+  }
+
+  -- ToggleTerm
+  use {
+    "akinsho/toggleterm.nvim",
+    config = function ()
+      require("config.toggleterm").setup()
     end
   }
 
