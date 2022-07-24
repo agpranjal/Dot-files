@@ -24,6 +24,8 @@ function M.setup()
   vim.keymap.set("", "<A-7>", "<cmd>BufferLineGoToBuffer 7<cr>")
   vim.keymap.set("", "<A-8>", "<cmd>BufferLineGoToBuffer 8<cr>")
   vim.keymap.set("", "<A-9>", "<cmd>BufferLineGoToBuffer 9<cr>")
+  vim.keymap.set("", "<M->>", "<cmd>BufferLineMoveNext<cr>")
+  vim.keymap.set("", "<M-<>", "<cmd>BufferLineMovePrev<cr>")
 end
 
 return M

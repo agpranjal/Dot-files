@@ -43,5 +43,11 @@ vim.cmd [[
   set t_ZR=^[[23m
 ]]
 
--- Disable adding comments in a new ling automatically
+-- Disable extending comments in a new line automatically
 vim.cmd "autocmd FileType * set formatoptions-=cro"
+
+vim.cmd [[
+  hi ActiveWindow guibg=#21242b
+  hi InactiveWindow guibg=#282C34
+  set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+]]

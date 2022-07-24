@@ -6,27 +6,6 @@ local function plugins(use)
   -- Packer
   use { "wbthomason/packer.nvim" }
 
-  -- Colorscheme
-  use "flazz/vim-colorschemes"
-  use "mangeshrex/everblush.vim"
-  use "dracula/vim"
-  use {
-    'folke/tokyonight.nvim',
-    config = function()
-      vim.g.tokyonight_style = "night"
-      vim.cmd [[
-        colorscheme tokyonight
-      ]]
-    end
-  }
-  use "tomasr/molokai"
-  use {
-    'bluz71/vim-nightfly-guicolors',
-    config = function()
-      vim.g.nightflyNormalFloat = 1
-    end
-  }
-
   -- Startup screen
   use {
     "goolord/alpha-nvim",
@@ -244,6 +223,30 @@ local function plugins(use)
     end
   }
 
+  -- Colorscheme
+  use "flazz/vim-colorschemes"
+  use "mangeshrex/everblush.vim"
+  use "dracula/vim"
+  use {
+    'folke/tokyonight.nvim',
+    after = "nvim-bufferline.lua",
+    config = function()
+      vim.g.tokyonight_style = "night"
+      vim.g.tokyonight_italic_keywords = false
+      vim.g.tokyonight_lualine_bold = true
+      vim.cmd [[
+        colorscheme tokyonight
+      ]]
+    end
+  }
+  use "tomasr/molokai"
+  use {
+    'bluz71/vim-nightfly-guicolors',
+    config = function()
+      vim.g.nightflyNormalFloat = 1
+    end
+  }
+
 end
 
 function M.setup()
@@ -288,7 +291,6 @@ function M.setup()
   local packer = require "packer"
   packer.init(conf)
   packer.startup(plugins)
-
 end
 
 return M

@@ -70,7 +70,8 @@ function _G.delete_buffer_nvim_bufdel(bufexpr, force)
   if force or vim.fn.getbufvar(buf, '&buftype') == 'terminal' then
     vim.cmd(string.format('bd! %d', buf))
   else
-    vim.cmd(string.format('silent! confirm bd %d', buf))
+    -- vim.cmd(string.format('silent! confirm bd %d', buf))
+    vim.cmd(string.format('silent! bd %d', buf))
   end
   -- revert buffer switches if user has canceled deletion
   if vim.fn.buflisted(buf) == 1 then
