@@ -109,6 +109,9 @@ local function plugins(use)
     }
   }
 
+  -- Tabnine
+  use { "tzachar/cmp-tabnine", run = "./install.sh" }
+
   -- Auto pairs
   use {
     "windwp/nvim-autopairs",
@@ -234,7 +237,6 @@ local function plugins(use)
       vim.g.tokyonight_italic_keywords = false
       vim.g.tokyonight_lualine_bold = true
       vim.cmd [[
-        set termguicolors
         colorscheme tokyonight
       ]]
     end

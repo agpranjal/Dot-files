@@ -26,13 +26,13 @@ function M.setup()
 
   vim.keymap.set("n", "zR", require("ufo").openAllFolds)
   vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-  vim.keymap.set('n', 'P', function()
-    local winid = require('ufo').peekFoldedLinesUnderCursor()
-    if not winid then
-      -- nvimlsp
-      vim.lsp.buf.hover()
-    end
-  end)
+  -- vim.keymap.set('n', 'P', function()
+  --   local winid = require('ufo').peekFoldedLinesUnderCursor()
+  --   if not winid then
+  --     -- nvimlsp
+  --     vim.lsp.buf.hover()
+  --   end
+  -- end)
 end
 
 return M

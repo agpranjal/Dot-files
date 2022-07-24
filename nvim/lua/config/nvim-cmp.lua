@@ -20,10 +20,14 @@ function M.setup()
     formatting = {
       format = function(entry, vim_item)
         vim_item.menu = ({
+          nvim_lsp = "[LSP]",
+          cmp_tabnine = "[TabNine]",
+          treesitter = "[Treesitter]",
           buffer = "[Buffer]",
           luasnip = "[Snip]",
           nvim_lua = "[Lua]",
-          treesitter = "[Treesitter]",
+          path = "[Path]",
+          spell = "[Spell]",
         })[entry.source.name]
         vim_item.abbr = string.sub(vim_item.abbr, 1, 30)
         return vim_item
@@ -48,6 +52,7 @@ function M.setup()
     },
     sources = {
       { name = "nvim_lsp" },
+      { name = "cmp_tabnine" },
       --{ name = "treesitter" },
       { name = "buffer" },
       { name = "luasnip" },
@@ -77,7 +82,12 @@ function M.setup()
 
   -- Auto pairs
   local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
+  -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
+  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+  -- Tabnine
+  local tabnine = require "cmp_tabnine.config"
+  tabnine:setup { max_lines = 1000, max_num_results = 20, sort = true }
 end
 
 return M
