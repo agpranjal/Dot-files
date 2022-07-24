@@ -227,7 +227,7 @@ local function plugins(use)
   }
 
   -- Colorscheme
-  use "flazz/vim-colorschemes"
+  -- use "flazz/vim-colorschemes"
   use "mangeshrex/everblush.vim"
   use "dracula/vim"
   use {
@@ -236,9 +236,6 @@ local function plugins(use)
       vim.g.tokyonight_style = "night"
       vim.g.tokyonight_italic_keywords = false
       vim.g.tokyonight_lualine_bold = true
-      vim.cmd [[
-        colorscheme tokyonight
-      ]]
     end
   }
   use "tomasr/molokai"
@@ -246,6 +243,30 @@ local function plugins(use)
     'bluz71/vim-nightfly-guicolors',
     config = function()
       vim.g.nightflyNormalFloat = 1
+    end
+  }
+  use {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require("nightfox").setup {
+        options = {
+          styles = {
+            comments = "italic",
+            functions = "bold"
+          }
+        }
+      }
+
+      -- vim.cmd "colorscheme nightfox"
+      vim.cmd "colorscheme duskfox"
+    end
+  }
+
+  -- GitSigns
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require("config.gitsigns").setup()
     end
   }
 
