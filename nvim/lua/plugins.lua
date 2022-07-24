@@ -229,12 +229,12 @@ local function plugins(use)
   use "dracula/vim"
   use {
     'folke/tokyonight.nvim',
-    after = "nvim-bufferline.lua",
     config = function()
       vim.g.tokyonight_style = "night"
       vim.g.tokyonight_italic_keywords = false
       vim.g.tokyonight_lualine_bold = true
       vim.cmd [[
+        set termguicolors
         colorscheme tokyonight
       ]]
     end
