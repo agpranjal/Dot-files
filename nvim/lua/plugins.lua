@@ -129,7 +129,7 @@ local function plugins(use)
       "nvim-lsp-installer",
       "lua-dev.nvim",
       "null-ls.nvim",
-      "schemastore.nvim"
+      "schemastore.nvim",
     },
     requires = {
       "williamboman/nvim-lsp-installer",
@@ -139,6 +139,14 @@ local function plugins(use)
     },
     config = function()
       require("config.lsp").setup()
+    end
+  }
+
+  -- Fidget
+  use {
+    "j-hui/fidget.nvim",
+    config = function ()
+      require("config.fidget").setup()
     end
   }
 
@@ -228,6 +236,8 @@ local function plugins(use)
       vim.g.tokyonight_style = "night"
       vim.g.tokyonight_italic_keywords = false
       vim.g.tokyonight_lualine_bold = true
+
+      vim.cmd "colorscheme tokyonight"
     end
   }
   use "tomasr/molokai"
@@ -248,9 +258,6 @@ local function plugins(use)
           }
         }
       }
-
-      -- vim.cmd "colorscheme nightfox"
-      vim.cmd "colorscheme duskfox"
     end
   }
 
@@ -265,7 +272,7 @@ local function plugins(use)
   -- ToggleTerm
   use {
     "akinsho/toggleterm.nvim",
-    config = function ()
+    config = function()
       require("config.toggleterm").setup()
     end
   }
