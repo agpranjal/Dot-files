@@ -50,7 +50,14 @@ function M.setup()
 
     -- NvimTree
     e = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
-    ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" }
+    ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
+
+    -- Resizing
+    ["<right>"] = { "<cmd>vertical resize +5<cr>", "Increase Size" },
+    ["<left>"] = { "<cmd>vertical resize -5<cr>", "Decrease Size" },
+
+    -- Highlights
+    h = { "<cmd>nohlsearch<cr>", "Remove Search Highlights" }
   }
 
   whichkey.setup(conf)
