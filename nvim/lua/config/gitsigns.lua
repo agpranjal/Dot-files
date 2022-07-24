@@ -19,7 +19,7 @@ function M.setup()
           h = {
             name = "Hunk",
             n = { "<cmd>Gitsigns next_hunk<CR>", "Select Next Hunk" },
-            P = { "<cmd>Gitsigns prev_hunk<CR>", "Select Prev Hunk" },
+            N = { "<cmd>Gitsigns prev_hunk<CR>", "Select Prev Hunk" },
             s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },
             r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset Hunk" },
             S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
