@@ -13,7 +13,7 @@ vim.opt.smartcase = true -- Smart case
 vim.opt.updatetime = 250 -- Decrease update time
 vim.opt.splitbelow = true -- open splits below
 vim.opt.signcolumn = "yes" -- Always show sign column
-vim.opt.clipboard = "unnamedplus" -- Access system clipboard
+-- vim.opt.clipboard = "unnamedplus" -- Access system clipboard
 vim.opt.cursorline = true -- Highlight line with cursor
 vim.opt.swapfile = false -- Disable swap files
 vim.opt.timeoutlen = 300 -- Set timeout to 300ms (for whichkey)
@@ -37,7 +37,11 @@ vim.cmd [[
 -- vim.opt.foldlevelstart = -1
 -- vim.opt.foldenable = true
 
+-- For termguicolors
 vim.cmd [[
   set t_ZH=^[[3m
   set t_ZR=^[[23m
 ]]
+
+-- Disable adding comments in a new ling automatically
+vim.cmd "autocmd FileType * set formatoptions-=cro"
