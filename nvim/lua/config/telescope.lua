@@ -29,7 +29,7 @@ function M.setup()
       C = { "<cmd>Telescope commands<cr>", "Commands" },
       w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
       p = { "<cmd>lua require 'telescope'.extensions.project.project{}<cr>", "List Projects" },
-      s = { "<cmd>Telescope repo list<cr>", "Github repositories" },
+      R = { "<cmd>Telescope repo list<cr>", "Github repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume"}
     }
   }
