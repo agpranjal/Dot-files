@@ -48,7 +48,6 @@ plugins=(
   heroku
   pm2
   safe-paste
-  # sudo
   themes
   ufw
   yarn
