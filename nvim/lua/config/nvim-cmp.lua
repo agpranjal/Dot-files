@@ -19,7 +19,7 @@ function M.setup()
     },
     formatting = {
       format = function(entry, vim_item)
-        vim_item.menu = ({
+        local menu = ({
           nvim_lsp = "[LSP]",
           cmp_tabnine = "[TabNine]",
           treesitter = "[Treesitter]",
@@ -29,7 +29,20 @@ function M.setup()
           path = "[Path]",
           spell = "[Spell]",
         })[entry.source.name]
+
+        -- Max width of the completion menu
         vim_item.abbr = string.sub(vim_item.abbr, 1, 30)
+
+        -- TabNine integration
+        if entry.source.name == "cmp_tabnine" then
+          if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+            menu = entry.completion_item.data.detail .. " " .. menu
+          end
+          vim_item.kind = ""
+        end
+
+        vim_item.menu = menu
+
         return vim_item
       end,
     },
