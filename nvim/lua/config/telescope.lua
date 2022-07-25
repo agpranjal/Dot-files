@@ -47,13 +47,13 @@ function M.setup()
       },
       l = {
         name = "Lsp",
-        r = { "<cmd>Telescope lsp_references<cr>", "References" },
+        r = { "<cmd>Telescope lsp_references<cr>", "Word References" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         w = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
         d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics" },
-        i = { "<cmd>Telescope lsp_implementations<cr>", "Implementation" },
-        D = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
-        t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition" },
+        i = { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" },
+        D = { "<cmd>Telescope lsp_definitions<cr>", "Goto Definition" },
+        t = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Definition" },
       }
     }
   }
