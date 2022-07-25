@@ -21,6 +21,9 @@ function M.setup()
   local keymaps_f = {
     f = {
       name = "Find",
+      H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+      h = { "<cmd>Telescope help_tags<cr>", "Help" },
+      j = { "<cmd>Telescope jumplist<cr>", "Jump" },
       f = { "<cmd>Telescope find_files<cr>", "Files" },
       b = { "<cmd>Telescope buffers<cr>", "Buffers" },
       o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
@@ -32,7 +35,16 @@ function M.setup()
       -- p = { "<cmd>lua require 'telescope'.extensions.project.project{}<cr>", "List Projects" },
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Github repositories" },
-      r = { "<cmd>Telescope resume<cr>", "Resume"}
+      r = { "<cmd>Telescope resume<cr>", "Resume" },
+      G = {
+        name = "Git",
+        c = { "<cmd>Telescope git_commits<cr>", "Commits" },
+        b = { "<cmd>Telescope git_bcommits<cr>", "Buffer Commits" },
+        B = { "<cmd>Telescope git_branches<cr>", "Branches" },
+        s = { "<cmd>Telescope git_status<cr>", "Status" },
+        S = { "<cmd>Telescope git_stash<cr>", "Stash" }
+
+      }
     }
   }
   whichkey.register(keymaps_f, { mode = "n", prefix = "<leader>" })

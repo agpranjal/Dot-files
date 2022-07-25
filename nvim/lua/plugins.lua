@@ -288,6 +288,19 @@ local function plugins(use)
     end,
   }
 
+  -- Word Motion
+  use {
+    "chaoren/vim-wordmotion"
+  }
+
+  -- Buffer Deletion
+  use {
+    "ojroques/nvim-bufdel",
+    config = function()
+      require("config.nvim-bufdel").setup()
+    end
+  }
+
 end
 
 function M.setup()
