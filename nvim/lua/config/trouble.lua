@@ -7,7 +7,7 @@ function M.setup()
     use_diagnostic_signs = true,
   }
 
-  local keymaps_l = {
+  local keymap_l = {
     l = {
       name = "lsp",
       t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
@@ -16,6 +16,6 @@ function M.setup()
       w = { "<cmd>Trouble workspace_diagnostics<cr>", "Trouble Workspace Diagnostics" },
     }
   }
-  whichkey.register(keymaps_l, { mode = "n", prefix = "<leader>" })
+  whichkey.register(keymap_l, { mode = "n", prefix = "<leader>" })
 end
 return M

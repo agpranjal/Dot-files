@@ -15,6 +15,13 @@ local colors = {
   red = "#ec5f67",
 }
 
+local function contains(list, x)
+	for _, v in pairs(list) do
+		if v == x then return true end
+	end
+	return false
+end
+
 local function lsp_client()
   local buf_clients = vim.lsp.buf_get_clients()
   if next(buf_clients) == nil then
@@ -23,7 +30,9 @@ local function lsp_client()
   local buf_client_names = {}
   for _, client in pairs(buf_clients) do
     -- if client.name ~= "null-ls" then
-    if client.name ~= "" then
+    --   table.insert(buf_client_names, client.name)
+    -- end
+    if not contains(buf_client_names, client.name) then
       table.insert(buf_client_names, client.name)
     end
   end

@@ -280,6 +280,14 @@ local function plugins(use)
     end
   }
 
+  -- Vim UI
+  use {
+    "stevearc/dressing.nvim",
+    config = function()
+      require("config.dressing").setup()
+    end,
+  }
+
 end
 
 function M.setup()
