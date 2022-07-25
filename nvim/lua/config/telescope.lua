@@ -44,6 +44,16 @@ function M.setup()
         s = { "<cmd>Telescope git_status<cr>", "Status" },
         S = { "<cmd>Telescope git_stash<cr>", "Stash" }
 
+      },
+      l = {
+        name = "Lsp",
+        r = { "<cmd>Telescope lsp_references<cr>", "References" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        w = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
+        d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics" },
+        i = { "<cmd>Telescope lsp_implementations<cr>", "Implementation" },
+        D = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
+        t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition" },
       }
     }
   }
