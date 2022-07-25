@@ -154,7 +154,7 @@ function M.setup()
     name = "Search and Replace",
     s = {"<cmd>lua require 'spectre'.open()<CR>", "Search and Replace"}
   }
-  whichkey.register(keymap_s, { prefix = "<leader>" })
+  whichkey.register(keymap_s, { mode = "n", prefix = "<leader>" })
 end
 
 return M

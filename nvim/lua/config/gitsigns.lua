@@ -29,7 +29,7 @@ function M.setup()
         }
       }
 
-      whichkey.register(keymap_g, { prefix = "<leader>" })
+      whichkey.register(keymap_g, { mode = "n", prefix = "<leader>" })
     end
   }
 end

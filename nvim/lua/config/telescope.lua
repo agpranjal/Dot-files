@@ -35,7 +35,7 @@ function M.setup()
       r = { "<cmd>Telescope resume<cr>", "Resume"}
     }
   }
-  whichkey.register(keymaps_f, { prefix = "<leader>" })
+  whichkey.register(keymaps_f, { mode = "n", prefix = "<leader>" })
 
   -- Disable folds inside Telescope pickers
   -- vim.cmd "autocmd! FileType TelescopeResults setlocal nofoldenable"

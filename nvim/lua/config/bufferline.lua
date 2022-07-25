@@ -49,7 +49,7 @@ function M.setup()
     }
   }
 
-  whichkey.register(keymap_b, { prefix = "<leader>" })
+  whichkey.register(keymap_b, { mode = "n", prefix = "<leader>" })
 end
 
 return M

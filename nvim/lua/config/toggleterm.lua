@@ -5,6 +5,7 @@ local whichkey = require "which-key"
 function M.setup()
   require "toggleterm".setup {
     open_mapping = " t",
+    insert_mappings = false
   }
 
   local keymap_t = {
@@ -13,7 +14,7 @@ function M.setup()
 
   }
 
-  whichkey.register(keymap_t, {prefix="<leader>"})
+  whichkey.register(keymap_t, { mode = "n", prefix = "<leader>" })
 end
 
 return M

@@ -16,6 +16,6 @@ function M.setup()
       w = { "<cmd>Trouble workspace_diagnostics<cr>", "Trouble Workspace Diagnostics" },
     }
   }
-  whichkey.register(keymaps_l, { prefix = "<leader>" })
+  whichkey.register(keymaps_l, { mode = "n", prefix = "<leader>" })
 end
 return M

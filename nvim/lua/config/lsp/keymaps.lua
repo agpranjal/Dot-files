@@ -41,7 +41,7 @@ function M.setup(client, bufnr)
     keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting_seq_sync({'null-ls'})<CR>", "Format Document" }
   end
 
-  whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
+  whichkey.register(keymap_l, { mode = "n", buffer = bufnr, prefix = "<leader>" })
 end
 
 return M
