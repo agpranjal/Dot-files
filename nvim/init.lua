@@ -1,2 +1,2 @@
---Load plugins
+-- Load plugins
 require "plugins".setup()
