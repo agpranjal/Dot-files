@@ -7,6 +7,7 @@ function M.setup()
   }
 
   vim.cmd [[
+  set iskeyword+=!
   cnoreabbrev <silent> q BufDel
   cnoreabbrev <silent> q! BufDel!
   cnoreabbrev qq quit
