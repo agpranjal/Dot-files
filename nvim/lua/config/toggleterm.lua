@@ -10,7 +10,7 @@ function M.setup()
 
   local keymap_t = {
     name = "Toggle Terminal",
-    t = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" }
+    t = { "Toggle Terminal" }
 
   }
 

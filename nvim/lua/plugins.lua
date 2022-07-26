@@ -36,7 +36,6 @@ local function plugins(use)
     config = function()
       require("config.comment").setup()
     end
-
   }
 
   -- Statusline

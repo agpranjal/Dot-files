@@ -7,8 +7,8 @@ function M.setup()
   }
 
   vim.cmd [[
-  cnoreabbrev q BufDel
-  cnoreabbrev q! BufDel!
+  cnoreabbrev <silent> q BufDel
+  cnoreabbrev <silent> q! BufDel!
   cnoreabbrev qq quit
   cnoreabbrev qq! quit!
   ]]

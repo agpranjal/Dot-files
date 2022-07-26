@@ -5,7 +5,7 @@ function M.setup()
 
   local conf = {
     window = {
-      border = "double", -- none, single, double, shadow
+      border = "single", -- none, single, double, shadow
       position = "bottom", -- bottom, top
     },
     layout = {
@@ -30,6 +30,7 @@ function M.setup()
    p = {
       name = "Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
+      C = { "<cmd>PackerClean<cr>", "Clean" },
       i = { "<cmd>PackerInstall<cr>", "Install" },
       s = { "<cmd>PackerSync<cr>", "Sync" },
       S = { "<cmd>PackerStatus<cr>", "Status" },
@@ -37,7 +38,7 @@ function M.setup()
     },
 
     -- NvimTree
-    e = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
+    -- e = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
     ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
 
     -- Resizing
