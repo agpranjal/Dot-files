@@ -262,6 +262,7 @@ local function plugins(use)
     end
   }
   use "Yazeed1s/minimal.nvim"
+  use "tiagovla/tokyodark.nvim"
 
   -- GitSigns
   use {
