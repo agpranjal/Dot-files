@@ -238,7 +238,7 @@ local function plugins(use)
       vim.g.tokyonight_italic_keywords = false
       vim.g.tokyonight_lualine_bold = true
 
-      vim.cmd "colorscheme tokyonight"
+      -- vim.cmd "colorscheme tokyonight"
     end
   }
   use "tomasr/molokai"
@@ -266,9 +266,7 @@ local function plugins(use)
   use {
     'projekt0n/github-nvim-theme',
     config = function ()
-      require("github-theme").setup {
-        dark_float = true
-      }
+      require("github-theme").setup()
     end
   }
 
