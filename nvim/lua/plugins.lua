@@ -263,6 +263,14 @@ local function plugins(use)
   }
   use "Yazeed1s/minimal.nvim"
   use "tiagovla/tokyodark.nvim"
+  use {
+    'projekt0n/github-nvim-theme',
+    config = function ()
+      require("github-theme").setup {
+        dark_float = true
+      }
+    end
+  }
 
   -- GitSigns
   use {
