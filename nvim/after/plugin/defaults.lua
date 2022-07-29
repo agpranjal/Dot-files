@@ -35,7 +35,7 @@ vim.cmd [[
 -- vim.opt.foldcolumn = "1"
 -- vim.opt.foldlevel = 99
 -- vim.opt.foldlevelstart = -1
--- vim.opt.foldenable = true
+vim.opt.foldenable = false
 
 -- For termguicolors
 vim.cmd [[
@@ -45,3 +45,11 @@ vim.cmd [[
 
 -- Disable extending comments in a new line automatically
 vim.cmd "autocmd FileType * set formatoptions-=cro"
+
+-- Show numberline in help text
+vim.cmd [[
+  augroup HelpTextNumberLine
+    autocmd!
+    autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "setlocal number" end
+  augroup end
+]]

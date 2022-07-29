@@ -6,6 +6,9 @@ local function plugins(use)
   -- Packer
   use { "wbthomason/packer.nvim" }
 
+  -- Setup colorschemes
+  require("config.colorschemes").setup(use)
+
   -- Startup screen
   use {
     "goolord/alpha-nvim",
@@ -224,49 +227,6 @@ local function plugins(use)
     requires = "kevinhwang91/promise-async",
     config = function()
       require("config.nvim-ufo").setup()
-    end
-  }
-
-  -- Colorscheme
-  -- use "flazz/vim-colorschemes"
-  use "mangeshrex/everblush.vim"
-  use "dracula/vim"
-  use {
-    'folke/tokyonight.nvim',
-    config = function()
-      vim.g.tokyonight_style = "night"
-      vim.g.tokyonight_italic_keywords = false
-      vim.g.tokyonight_lualine_bold = true
-
-      -- vim.cmd "colorscheme tokyonight"
-    end
-  }
-  use "tomasr/molokai"
-  use {
-    'bluz71/vim-nightfly-guicolors',
-    config = function()
-      vim.g.nightflyNormalFloat = 1
-    end
-  }
-  use {
-    "EdenEast/nightfox.nvim",
-    config = function()
-      require("nightfox").setup {
-        options = {
-          styles = {
-            comments = "italic",
-            functions = "bold"
-          }
-        }
-      }
-    end
-  }
-  use "Yazeed1s/minimal.nvim"
-  use "tiagovla/tokyodark.nvim"
-  use {
-    'projekt0n/github-nvim-theme',
-    config = function ()
-      require("github-theme").setup()
     end
   }
 
