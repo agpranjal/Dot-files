@@ -6,6 +6,15 @@ function M.setup(use)
     "catppuccin/nvim",
     config = function()
       vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+      require "catppuccin".setup {
+        dim_inactive = {
+          enabled = true,
+          percentage = 0.85
+        },
+        integrations = {
+          which_key = true
+        }
+      }
     end
   }
   use "mangeshrex/everblush.vim"
