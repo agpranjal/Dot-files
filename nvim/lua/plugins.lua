@@ -305,7 +305,15 @@ local function plugins(use)
   use {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end
-  } 
+  }
+
+  -- Wildmenu
+  use {
+    'gelguy/wilder.nvim',
+    config = function()
+      require("config.wilder").setup()
+    end,
+  }
 
 end
 
