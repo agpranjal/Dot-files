@@ -5,7 +5,6 @@ function M.setup(use)
   use {
     "catppuccin/nvim",
     config = function()
-      vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
       require "catppuccin".setup {
         dim_inactive = {
           enabled = true,
@@ -53,6 +52,7 @@ function M.setup(use)
     'projekt0n/github-nvim-theme',
   }
 
+  vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
   vim.cmd "colorscheme catppuccin"
 end
 
