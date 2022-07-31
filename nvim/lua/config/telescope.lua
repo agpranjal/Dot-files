@@ -28,6 +28,7 @@ function M.setup()
       f = { "<cmd>Telescope find_files<cr>", "Files" },
       b = { "<cmd>Telescope buffers<cr>", "Buffers" },
       o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
+      O = { "<cmd>Telescope vim_options<cr>", "Options" },
       g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
       c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
       C = { "<cmd>Telescope commands<cr>", "Commands" },
