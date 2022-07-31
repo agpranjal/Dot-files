@@ -14,16 +14,16 @@ function M.setup()
         g = {
           name = "Gitsigns",
           b = { "<cmd>lua require'gitsigns'.blame_line{full=true}<CR>", "Blame" },
-          d = { "<cmd>Gitsigns diffthis<CR>", "Diff" },
+          d = { "<cmd>Gitsigns diffthis<CR>", "Diff Buffer" },
           R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
+          S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
           h = {
             name = "Hunk",
             n = { "<cmd>Gitsigns next_hunk<CR>", "Select Next Hunk" },
             N = { "<cmd>Gitsigns prev_hunk<CR>", "Select Prev Hunk" },
-            s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },
-            r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset Hunk" },
-            S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
-            u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Undo Stage Hunk" },
+            S = { "<cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },
+            R = { "<cmd>Gitsigns reset_hunk<CR>", "Reset Hunk" },
+            U = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Undo Stage Hunk" },
             p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk" },
           },
         }

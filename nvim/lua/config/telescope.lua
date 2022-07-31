@@ -21,6 +21,7 @@ function M.setup()
   local keymaps_f = {
     f = {
       name = "Find",
+      a = { "<cmd>Telescope autocommands<cr>", "AutoCommands" },
       H = { "<cmd>Telescope highlights<cr>", "Highlights" },
       h = { "<cmd>Telescope help_tags<cr>", "Help" },
       j = { "<cmd>Telescope jumplist<cr>", "Jump" },
@@ -58,9 +59,6 @@ function M.setup()
     }
   }
   whichkey.register(keymaps_f, { mode = "n", prefix = "<leader>" })
-
-  -- Disable folds inside Telescope pickers
-  -- vim.cmd "autocmd! FileType TelescopeResults setlocal nofoldenable"
 end
 
 return M

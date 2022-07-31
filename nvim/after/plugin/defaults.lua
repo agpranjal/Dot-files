@@ -21,7 +21,7 @@ vim.opt.timeoutlen = 400 -- Set timeout to 300ms (for whichkey)
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
-vim.cmd ":retab"
+vim.cmd "retab"
 
 -- Highlight on yank
 vim.cmd [[
@@ -60,5 +60,6 @@ vim.cmd [[
     " set guifont=Ubuntu\ Mono:h13
     set guifont=Monaco:h11
     let g:neovide_cursor_unfocused_outline_width=0.125
+    let g:neovide_cursor_animation_length=0.04
   endif
 ]]
