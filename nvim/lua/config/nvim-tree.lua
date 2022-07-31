@@ -1,5 +1,7 @@
 local M = {}
 
+local whichkey = require "which-key"
+
 function M.setup()
   require("nvim-tree").setup({
     disable_netrw = true,
@@ -30,7 +32,8 @@ function M.setup()
       highlight_git = true,
       highlight_opened_files = "all",
       indent_markers = {
-        enable = true
+        enable = true,
+        inline_arrows = false
       },
     },
     update_focused_file = {
@@ -39,8 +42,14 @@ function M.setup()
     }
   })
 
-  -- Close NvimTree  if its the last open window
-  vim.cmd "autocmd bufenter * if (winnr('$') == 1 && &filetype == 'nvimtree') | quit | endif"
+  -- Whichkey mappings for NvimTree
+  local keymap_space = {
+    ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
+  }
+  whichkey.register(keymap_space, { prefix = "<leader>" })
+
+  -- Close NvimTree if its the last open window
+  vim.cmd "autocmd BufEnter * if (winnr('$') == 1 && &filetype == 'nvimtree') | quit | endif"
 end
 
 return M
