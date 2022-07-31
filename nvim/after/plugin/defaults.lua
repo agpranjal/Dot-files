@@ -53,3 +53,11 @@ vim.cmd [[
     autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "setlocal number" end
   augroup end
 ]]
+
+-- For Neovide
+vim.cmd [[
+  if exists("g:neovide")
+    " set guifont=Ubuntu\ Mono:h13
+    set guifont=Monaco:h11
+  endif
+]]

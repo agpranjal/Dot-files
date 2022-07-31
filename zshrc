@@ -172,3 +172,6 @@ else
   export VISUAL=vi
 fi
 export EDITOR="$VISUAL"
+
+# CUSTOM: For Neovide
+alias neovide="neovide --frame NONE --noidle"
