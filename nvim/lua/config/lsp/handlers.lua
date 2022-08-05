@@ -9,16 +9,17 @@ function M.setup()
       border = "solid",
     },
     diagnostic = {
-      -- virtual_text = true,
-      virtual_text = { spacing = 10, prefix = "● " },
+      -- virtual_text = { spacing = 10, prefix = "● ", source = true },
+      virtual_text = false,
       underline = true,
-      source = true,
       update_in_insert = false,
       severity_sort = true,
       float = {
         focusable = true,
         style = "minimal",
         border = "double",
+        severity_sort = true,
+        source = true
       },
     },
   }

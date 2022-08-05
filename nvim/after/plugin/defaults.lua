@@ -60,6 +60,6 @@ vim.cmd [[
     " set guifont=Ubuntu\ Mono:h13
     set guifont=Monaco:h11
     let g:neovide_cursor_unfocused_outline_width=0.125
-    let g:neovide_cursor_animation_length=0.04
+    let g:neovide_cursor_animation_length=0.02
   endif
 ]]
