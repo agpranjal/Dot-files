@@ -132,12 +132,14 @@ local function plugins(use)
       "lua-dev.nvim",
       "null-ls.nvim",
       "schemastore.nvim",
+      "toggle-lsp-diagnostics.nvim"
     },
     requires = {
       "williamboman/nvim-lsp-installer",
       "folke/lua-dev.nvim",
       "jose-elias-alvarez/null-ls.nvim",
       "b0o/schemastore.nvim",
+      "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
     },
     config = function()
       require("config.lsp").setup()
