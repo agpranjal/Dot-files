@@ -53,7 +53,8 @@ function M.setup(use)
   }
 
   vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-  vim.cmd "colorscheme catppuccin"
+  -- vim.cmd "colorscheme catppuccin"
+  vim.cmd "colorscheme github_dark"
 end
 
 return M

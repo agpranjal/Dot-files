@@ -45,7 +45,9 @@ function M.setup()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, lsp.float)
 
   -- Toggle Diagnostic VirtualText
-  require 'toggle_lsp_diagnostics'.init({ underline = true, virtual_text = { spacing = 10, prefix = "● ", source = true } })
+  require 'toggle_lsp_diagnostics'.init({ underline = false,
+    virtual_text = { spacing = 10, prefix = "● ", source = true },
+    update_in_insert = false })
   local whichkey = require "which-key"
   local keymap_l = {
     l = {
