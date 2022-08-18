@@ -51,10 +51,55 @@ function M.setup(use)
   use {
     'projekt0n/github-nvim-theme',
   }
+  use { "ellisonleao/gruvbox.nvim" }
+  --
+  -- require("gruvbox").setup({
+  --   undercurl = true,
+  --   underline = true,
+  --   bold = true,
+  --   italic = true,
+  --   strikethrough = true,
+  --   invert_selection = false,
+  --   invert_signs = false,
+  --   invert_tabline = false,
+  --   invert_intend_guides = false,
+  --   inverse = true, -- invert background for search, diffs, statuslines and errors
+  --   contrast = "", -- can be "hard", "soft" or empty string
+  --   overrides = {},
+  -- })
+  -- vim.cmd("colorscheme gruvbox")
 
-  vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+  use 'Mofiqul/vscode.nvim'
+  local c = require('vscode.colors')
+  require('vscode').setup({
+    -- Enable transparent background
+    -- transparent = true,
+
+    -- Enable italic comment
+    italic_comments = true,
+
+    -- Disable nvim-tree background color
+    disable_nvimtree_bg = true,
+
+    -- Override colors (see ./lua/vscode/colors.lua)
+    color_overrides = {
+      vscLineNumber = '#FFFFFF',
+    },
+
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+      -- this supports the same val table as vim.api.nvim_set_hl
+      -- use colors from this colorscheme by requiring vscode.colors!
+      Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+    }
+  })
+
+  -- vim.cmd "colorscheme vscode"
+
+  -- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
   -- vim.cmd "colorscheme catppuccin"
-  vim.cmd "colorscheme github_dark"
+  -- vim.cmd "colorscheme gruvbox"
+  -- vim.cmd "colorscheme github_dark"
 end
 
 return M
