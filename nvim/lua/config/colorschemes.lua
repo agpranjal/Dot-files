@@ -94,7 +94,16 @@ function M.setup(use)
     }
   })
 
-  -- vim.cmd "colorscheme vscode"
+  use "olimorris/onedarkpro.nvim"
+
+  use 'navarasu/onedark.nvim'
+  require('onedark').setup {
+    style = 'deep'
+  }
+
+  -- vim.cmd "colorscheme molokai"
+
+  -- vim.cmd "colorscheme onedark"
 
   -- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
   -- vim.cmd "colorscheme catppuccin"

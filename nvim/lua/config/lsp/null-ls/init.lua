@@ -31,7 +31,7 @@ local sources = {
   with_root_file(b.diagnostics.selene, "selene.toml"),
   with_diagnostics_code(b.diagnostics.shellcheck),
   -- b.diagnostics.write_good,
-  b.diagnostics.flake8,
+  -- b.diagnostics.flake8,
   b.diagnostics.tsc,
   b.diagnostics.cppcheck,
   -- b.diagnostics.markdownlint,

@@ -5,6 +5,11 @@ local telescope = require "telescope"
 
 function M.setup()
   telescope.setup {
+    pickers = {
+      find_files = {
+        hidden = true
+      }
+    },
     defaults = {
       scroll_strategy = "limit", -- Disable cyclic scrolling
       prompt_prefix = "🔍 "
