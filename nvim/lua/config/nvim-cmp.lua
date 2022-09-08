@@ -18,33 +18,47 @@ function M.setup()
       end,
     },
     formatting = {
-      format = function(entry, vim_item)
-        local menu = ({
-          nvim_lsp = "[LSP]",
-          cmp_tabnine = "[TabNine]",
-          treesitter = "[Treesitter]",
-          buffer = "[Buffer]",
-          luasnip = "[Snip]",
-          nvim_lua = "[Lua]",
-          path = "[Path]",
-          spell = "[Spell]",
-        })[entry.source.name]
+      -- format = function(entry, vim_item)
+      --   local menu = ({
+      --     nvim_lsp = "[LSP]",
+      --     cmp_tabnine = "[TabNine]",
+      --     treesitter = "[Treesitter]",
+      --     buffer = "[Buffer]",
+      --     luasnip = "[Snip]",
+      --     nvim_lua = "[Lua]",
+      --     path = "[Path]",
+      --     spell = "[Spell]",
+      --   })[entry.source.name]
+      --
+      --   -- Max width of the completion menu
+      --   vim_item.abbr = string.sub(vim_item.abbr, 1, 30)
+      --
+      --   -- TabNine integration
+      --   if entry.source.name == "cmp_tabnine" then
+      --     if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+      --       menu = entry.completion_item.data.detail .. " " .. menu
+      --     end
+      --     vim_item.kind = ""
+      --   end
+      --
+      --   vim_item.menu = menu
+      --
+      --   return vim_item
+      -- end,
 
-        -- Max width of the completion menu
-        vim_item.abbr = string.sub(vim_item.abbr, 1, 30)
+      format = require "lspkind".cmp_format {
+        mode = "symbol_text",
+        maxwidth = 30,
 
-        -- TabNine integration
-        if entry.source.name == "cmp_tabnine" then
-          if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-            menu = entry.completion_item.data.detail .. " " .. menu
+        before = function(entry, vim_item)
+          -- TabNine integration
+          if entry.source.name == "cmp_tabnine" then
+            vim_item.kind = "TabNine"
           end
-          vim_item.kind = ""
+
+          return vim_item
         end
-
-        vim_item.menu = menu
-
-        return vim_item
-      end,
+      }
     },
     mapping = {
       ["<up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i" }),

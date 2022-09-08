@@ -92,6 +92,7 @@ local function plugins(use)
       require("config.nvim-cmp").setup()
     end,
     requires = {
+      "onsails/lspkind.nvim",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
@@ -106,6 +107,7 @@ local function plugins(use)
         wants = "friendly-snippets",
         config = function()
           require("config.luasnip").setup()
+          require("config.lspkind").setup()
         end
       }
     }
@@ -283,6 +285,25 @@ local function plugins(use)
     end,
   }
 
+  -- Fix Cursor Hodl
+  use {
+    "antoinemadec/FixCursorHold.nvim",
+    config = function()
+      vim.cmd "let g:cursorhold_updatetime = 100"
+    end
+  }
+
+  -- use({
+  --   'ray-x/navigator.lua',
+  --   requires = {
+  --     { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+  --     { 'neovim/nvim-lspconfig' },
+  --   },
+  --   config = function()
+  --     require 'navigator'.setup()
+  --   end
+  -- })
+
 end
 
 function M.setup()
@@ -312,7 +333,7 @@ function M.setup()
         "https://github.com/wbthomason/packer.nvim",
         install_path,
       }
-      vim.cmd [[packadd packer.nvim]]
+      -- vim.cmd [[packadd packer.nvim]]
     end
     -- vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
   end
