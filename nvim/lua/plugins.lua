@@ -293,6 +293,13 @@ local function plugins(use)
     end
   }
 
+  use {
+    "nguyenvukhang/nvim-toggler",
+    config = function()
+      require("config.nvim-toggler").setup()
+    end
+  }
+
   -- use({
   --   'ray-x/navigator.lua',
   --   requires = {
