@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Terminal
-[ -f ~/.zshrc ] && cp ~/.zshrc zshrc
-[ -f ~/.tmux.conf ] && cp ~/.tmux.conf tmux.conf
-[ -f ~/.hyper.js ] && cp ~/.hyper.js hyper.js
+[ -f ~/.zshrc ] && cp ~/.zshrc zsh/.zshrc
+[ -f ~/.tmux.conf ] && cp ~/.tmux.conf tmux/.tmux.conf
+[ -f ~/.hyper.js ] && cp ~/.hyper.js hyper/.hyper.js
 
 # Editor
 # [ -f ~/.vimrc ] && cp ~/.vimrc vimrc
