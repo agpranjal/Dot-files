@@ -52,22 +52,22 @@ function M.setup(use)
     'projekt0n/github-nvim-theme',
   }
   use { "ellisonleao/gruvbox.nvim" }
-  --
-  -- require("gruvbox").setup({
-  --   undercurl = true,
-  --   underline = true,
-  --   bold = true,
-  --   italic = true,
-  --   strikethrough = true,
-  --   invert_selection = false,
-  --   invert_signs = false,
-  --   invert_tabline = false,
-  --   invert_intend_guides = false,
-  --   inverse = true, -- invert background for search, diffs, statuslines and errors
-  --   contrast = "", -- can be "hard", "soft" or empty string
-  --   overrides = {},
-  -- })
-  -- vim.cmd("colorscheme gruvbox")
+
+  require("gruvbox").setup({
+    undercurl = true,
+    underline = true,
+    bold = true,
+    italic = true,
+    strikethrough = true,
+    invert_selection = false,
+    invert_signs = false,
+    invert_tabline = false,
+    invert_intend_guides = false,
+    inverse = true, -- invert background for search, diffs, statuslines and errors
+    contrast = "", -- can be "hard", "soft" or empty string
+    overrides = {},
+  })
+  vim.cmd("colorscheme gruvbox")
 
   use 'Mofiqul/vscode.nvim'
   local c = require('vscode.colors')
@@ -79,7 +79,7 @@ function M.setup(use)
     italic_comments = true,
 
     -- Disable nvim-tree background color
-    disable_nvimtree_bg = true,
+    disable_nvimtree_bg = false,
 
     -- Override colors (see ./lua/vscode/colors.lua)
     color_overrides = {
@@ -102,6 +102,9 @@ function M.setup(use)
   }
 
   use "sam4llis/nvim-tundra"
+
+  use "martinsione/darkplus.nvim"
+  vim.cmd "colorscheme darkplus"
 
   -- vim.cmd "colorscheme molokai"
 
