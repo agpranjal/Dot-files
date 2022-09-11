@@ -22,6 +22,7 @@ function M.setup()
   telescope.load_extension "repo"
   telescope.load_extension "file_browser"
   telescope.load_extension "projects" -- project.nvim
+  telescope.load_extension "software-licenses"
 
   local keymaps_f = {
     f = {
@@ -43,6 +44,7 @@ function M.setup()
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Github repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume" },
+      s = { "<cmd>Telescope software-licenses find<cr>", "Insert Software License" },
       G = {
         name = "Git",
         c = { "<cmd>Telescope git_commits<cr>", "Commits" },

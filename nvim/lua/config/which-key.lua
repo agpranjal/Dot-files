@@ -27,7 +27,7 @@ function M.setup()
     ["w"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
     ["q"] = { "<cmd>quit!<CR>", "Quit" },
 
-   p = {
+    p = {
       name = "Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
       C = { "<cmd>PackerClean<cr>", "Clean" },

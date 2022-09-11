@@ -101,6 +101,8 @@ function M.setup(use)
     style = 'deep'
   }
 
+  use "sam4llis/nvim-tundra"
+
   -- vim.cmd "colorscheme molokai"
 
   -- vim.cmd "colorscheme onedark"

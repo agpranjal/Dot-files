@@ -1,7 +1,7 @@
 local M = {}
 
 -- Plugins
-local function plugins(use)
+function M.setup(use)
 
   -- Packer
   use { "wbthomason/packer.nvim" }
@@ -92,6 +92,7 @@ local function plugins(use)
       require("config.nvim-cmp").setup()
     end,
     requires = {
+      { "tzachar/cmp-tabnine", run = "./install.sh" },
       "onsails/lspkind.nvim",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -112,9 +113,6 @@ local function plugins(use)
       }
     }
   }
-
-  -- Tabnine
-  use { "tzachar/cmp-tabnine", run = "./install.sh" }
 
   -- Auto pairs
   use {
@@ -178,7 +176,8 @@ local function plugins(use)
       "telescope-repo.nvim",
       "telescope-file-browser.nvim",
       "project.nvim",
-      "glow.nvim"
+      "glow.nvim",
+      "telescope-software-licenses.nvim",
     },
     requires = {
       "nvim-lua/popup.nvim",
@@ -194,6 +193,7 @@ local function plugins(use)
           require("project_nvim").setup {}
         end,
       },
+      "chip/telescope-software-licenses.nvim",
     },
   }
 
@@ -285,14 +285,15 @@ local function plugins(use)
     end,
   }
 
-  -- Fix Cursor Hodl
+  -- Fix Cursor Hold
   use {
     "antoinemadec/FixCursorHold.nvim",
     config = function()
-      vim.cmd "let g:cursorhold_updatetime = 100"
+      require("config.fixcursorhold").setup()
     end
   }
 
+  -- Inverse word in-place
   use {
     "nguyenvukhang/nvim-toggler",
     config = function()
@@ -300,61 +301,14 @@ local function plugins(use)
     end
   }
 
-  -- use({
-  --   'ray-x/navigator.lua',
-  --   requires = {
-  --     { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-  --     { 'neovim/nvim-lspconfig' },
-  --   },
-  --   config = function()
-  --     require 'navigator'.setup()
-  --   end
-  -- })
-
-end
-
-function M.setup()
-  -- Indicate first time installation
-  local packer_bootstrap = false
-
-  -- packer.nvim configuration
-  local conf = {
-    display = {
-      open_fn = function()
-        return require("packer.util").float { border = "rounded" }
-      end
-    }
+  -- Run code
+  use {
+    "arjunmahishi/run-code.nvim",
+    config = function()
+      require("config.run-code").setup()
+    end
   }
 
-  -- Check if packer.nvim is installed
-  -- Run PackerCompile if there are changes in this file
-  local function packer_init()
-    local fn = vim.fn
-    local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-    if fn.empty(fn.glob(install_path)) > 0 then
-      packer_bootstrap = fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-      }
-      -- vim.cmd [[packadd packer.nvim]]
-    end
-    -- vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
-  end
-
-  if packer_bootstrap then
-    print "Restart Neovim required after installation!"
-    require("packer").sync()
-  end
-
-  packer_init()
-
-  local packer = require "packer"
-  packer.init(conf)
-  packer.startup(plugins)
 end
 
 return M
