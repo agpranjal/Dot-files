@@ -103,9 +103,6 @@ function M.setup(use)
 
   use "sam4llis/nvim-tundra"
 
-  use "martinsione/darkplus.nvim"
-  vim.cmd "colorscheme darkplus"
-
   -- vim.cmd "colorscheme molokai"
 
   -- vim.cmd "colorscheme onedark"
