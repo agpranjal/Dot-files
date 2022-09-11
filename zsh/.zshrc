@@ -175,4 +175,4 @@ export EDITOR="$VISUAL"
 
 # CUSTOM: For Neovide
 # alias neovide="neovide --frame NONE --noidle"
-alias neovide="neovide --noidle"
+alias neovide="neovide --noidle --multigrid"
