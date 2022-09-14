@@ -11,7 +11,9 @@ function M.setup()
       ["Install"] = "Uninstall",
       ["install"] = "uninstall",
       ["Add"] = "Remove",
-      ["add"] = "remove"
+      ["add"] = "remove",
+      ["Check"] = "Uncheck",
+      ["check"] = "uncheck",
     }
   }
 
