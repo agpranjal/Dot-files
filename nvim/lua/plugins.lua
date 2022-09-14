@@ -309,6 +309,12 @@ function M.setup(use)
     end
   }
 
+  -- Git DiffView (TODO)
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  -- Git Blamer
+  use { "APZelos/blamer.nvim" }
+
 end
 
 return M

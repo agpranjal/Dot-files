@@ -4,6 +4,7 @@ local whichkey = require "which-key"
 
 function M.setup()
   require "gitsigns".setup {
+    numhl = true,
     on_attach = function(bufnr)
       local function map(mode, lhs, rhs, opts)
         opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
@@ -13,7 +14,7 @@ function M.setup()
       local keymap_g = {
         g = {
           name = "Gitsigns",
-          b = { "<cmd>lua require'gitsigns'.blame_line{full=true}<CR>", "Blame" },
+          B = { "<cmd>lua require'gitsigns'.blame_line{full=true}<CR>", "Blame Preview" },
           d = { "<cmd>Gitsigns diffthis<CR>", "Diff Buffer" },
           R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
           S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
