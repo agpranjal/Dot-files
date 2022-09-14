@@ -13,11 +13,13 @@ function _G.close_buffer_or_window(force)
       end
     else -- NvimTree + current window + more windows (splits) are open
       if force then
-        vim.cmd "BufDel!"
-        vim.cmd "quit!"
+        -- vim.cmd "BufDel!"
+        -- vim.cmd "quit!"
+        vim.cmd "bd!"
       else
-        vim.cmd "BufDel"
-        vim.cmd "quit"
+        -- vim.cmd "BufDel"
+        -- vim.cmd "quit"
+        vim.cmd "bd"
       end
     end
   else -- NvimTree is closed
@@ -29,11 +31,13 @@ function _G.close_buffer_or_window(force)
       end
     else -- Current window + more windows (splits) are open
       if force then
-        vim.cmd "BufDel!"
-        vim.cmd "quit!"
+        -- vim.cmd "BufDel!"
+        -- vim.cmd "quit!"
+        vim.cmd "bd!"
       else
-        vim.cmd "BufDel"
-        vim.cmd "quit"
+        -- vim.cmd "BufDel"
+        -- vim.cmd "quit"
+        vim.cmd "bd"
       end
     end
   end

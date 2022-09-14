@@ -6,7 +6,7 @@ function M.setup()
   require "toggleterm".setup {
     open_mapping = " t",
     insert_mappings = false,
-    direction = "horizontal",
+    direction = "float",
     terminal_mappings = false,
   }
 

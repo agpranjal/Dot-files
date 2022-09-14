@@ -61,5 +61,6 @@ vim.cmd [[
     let g:neovide_cursor_unfocused_outline_width=0.125
     let g:neovide_cursor_animation_length=0.02
     let g:neovide_remember_window_size = v:true
-  endif
+    let g:neovide_cursor_antialiasing=v:true
+    endif
 ]]
