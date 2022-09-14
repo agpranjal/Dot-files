@@ -313,7 +313,12 @@ function M.setup(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- Git Blamer
-  use { "APZelos/blamer.nvim" }
+  use {
+    "APZelos/blamer.nvim",
+    config = function()
+      require("config.blamer").setup()
+    end
+  }
 
 end
 

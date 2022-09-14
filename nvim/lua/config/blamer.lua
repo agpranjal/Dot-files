@@ -6,6 +6,7 @@ function M.setup()
     let g:blamer_delay = 50
     let g:blamer_relative_time = 1
     let g:blamer_template = "                       <committer> • <committer-time> • <summary>"
+    highlight link Blamer gitcommitHeader
   ]]
 end
 
