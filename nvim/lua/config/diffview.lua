@@ -14,6 +14,8 @@ function M.setup()
         c = { "<cmd>DiffviewClose<cr>", "Close Diff View (All Files)" },
         t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle Files Panel" },
         r = { "<cmd>DiffviewRefresh<cr>", "Refresh Files Panel" },
+        p = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files Panel" },
+        l = { "<cmd>DiffviewLog<cr>", "Diff View Logs" },
       }
     }
   }
