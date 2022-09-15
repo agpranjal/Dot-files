@@ -178,6 +178,7 @@ function M.setup(use)
       "project.nvim",
       "glow.nvim",
       "telescope-software-licenses.nvim",
+      "telescope-frecency.nvim"
     },
     requires = {
       "nvim-lua/popup.nvim",
@@ -186,6 +187,10 @@ function M.setup(use)
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       "cljoly/telescope-repo.nvim",
       "nvim-telescope/telescope-project.nvim",
+      {
+        "nvim-telescope/telescope-frecency.nvim",
+        requires = { "kkharji/sqlite.lua" }
+      },
       "ellisonleao/glow.nvim",
       {
         "ahmedkhalf/project.nvim",

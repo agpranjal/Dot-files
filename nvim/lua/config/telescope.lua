@@ -13,6 +13,11 @@ function M.setup()
     defaults = {
       scroll_strategy = "limit", -- Disable cyclic scrolling
       prompt_prefix = "🔍 "
+    },
+    extensions = {
+      frecency = {
+        ignore_patterns = { "*.git/*" },
+      }
     }
   }
 
@@ -23,6 +28,7 @@ function M.setup()
   telescope.load_extension "file_browser"
   telescope.load_extension "projects" -- project.nvim
   telescope.load_extension "software-licenses"
+  telescope.load_extension "frecency"
 
   local keymaps_f = {
     f = {
@@ -30,19 +36,20 @@ function M.setup()
       a = { "<cmd>Telescope autocommands<cr>", "Vim AutoCommands" },
       H = { "<cmd>Telescope highlights<cr>", "Vim Highlights" },
       h = { "<cmd>Telescope help_tags<cr>", "Vim Help" },
-      j = { "<cmd>Telescope jumplist<cr>", "Jump" },
-      f = { "<cmd>Telescope find_files<cr>", "Files" },
-      b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+      j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
+      f = { "<cmd>Telescope find_files<cr>", "Files Within Workspace" },
+      F = { "<cmd>Telescope frecency<cr>", "Frequently Visited Files" },
+      b = { "<cmd>Telescope buffers<cr>", "All Buffers" },
       o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
       O = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
-      g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+      g = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
       c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
       C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
       -- w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
       ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
       -- p = { "<cmd>lua require 'telescope'.extensions.project.project{}<cr>", "List Projects" },
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
-      R = { "<cmd>Telescope repo list<cr>", "Github repositories" },
+      R = { "<cmd>Telescope repo list<cr>", "Github Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
       G = {
         name = "Git",
