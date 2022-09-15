@@ -48,8 +48,8 @@ function M.setup()
   }
   whichkey.register(keymap_space, { prefix = "<leader>" })
 
-  -- Close NvimTree if its the last open window
-  vim.cmd "autocmd BufEnter * if (winnr('$') == 1 && &filetype == 'nvimtree') | quit | endif"
+  -- Close nvim if NvimTree is the last open window
+  vim.cmd "autocmd BufEnter * if (winnr('$') == 1 && &filetype == 'NvimTree') | quit | endif"
 end
 
 return M

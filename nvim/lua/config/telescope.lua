@@ -44,7 +44,6 @@ function M.setup()
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Github repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
-      s = { "<cmd>Telescope software-licenses find<cr>", "Insert Software License" },
       G = {
         name = "Git",
         c = { "<cmd>Telescope git_commits<cr>", "Commits" },
@@ -67,7 +66,16 @@ function M.setup()
       }
     }
   }
+
   whichkey.register(keymaps_f, { mode = "n", prefix = "<leader>" })
+
+  local keymaps_git = {
+    g = {
+      name = "Git",
+      l = { "<cmd>Telescope software-licenses find<cr>", "Insert Software License" },
+    }
+  }
+  whichkey.register(keymaps_git, { mode = "n", prefix = "<leader>" })
 end
 
 return M

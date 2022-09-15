@@ -1,8 +1,6 @@
 local M = {}
 
 function _G.close_buffer_or_window(force)
-  -- local total_windows = #vim.api.nvim_list_wins()
-
   vim.cmd [[
     let total_windows = len(filter(nvim_list_wins(), {k,v->nvim_win_get_config(v).relative==""}))
   ]]
@@ -10,6 +8,7 @@ function _G.close_buffer_or_window(force)
   local total_windows = vim.api.nvim_eval("g:total_windows") -- Total no. of non-floating windows
   local is_tree_open = require "nvim-tree.view".is_visible() -- If NvimTree is open
 
+  -- Do not include NvimTree window
   if is_tree_open then
     total_windows = total_windows - 1
   end
@@ -27,44 +26,6 @@ function _G.close_buffer_or_window(force)
       vim.cmd "bd"
     end
   end
-
-  -- if is_tree_open then -- NvimTree is open
-  --   if total_windows == 2 then -- Only NvimTree and current window is open
-  --     if force then
-  --       vim.cmd "BufDel!"
-  --     else
-  --       vim.cmd "BufDel"
-  --     end
-  --   else -- NvimTree + current window + more windows (splits) are open
-  --     if force then
-  --       -- vim.cmd "BufDel!"
-  --       -- vim.cmd "quit!"
-  --       vim.cmd "bd!"
-  --     else
-  --       -- vim.cmd "BufDel"
-  --       -- vim.cmd "quit"
-  --       vim.cmd "bd"
-  --     end
-  --   end
-  -- else -- NvimTree is closed
-  --   if total_windows == 1 then -- Only current window is open
-  --     if force then
-  --       vim.cmd "BufDel!"
-  --     else
-  --       vim.cmd "BufDel"
-  --     end
-  --   else -- Current window + more windows (splits) are open
-  --     if force then
-  --       -- vim.cmd "BufDel!"
-  --       -- vim.cmd "quit!"
-  --       vim.cmd "bd!"
-  --     else
-  --       -- vim.cmd "BufDel"
-  --       -- vim.cmd "quit"
-  --       vim.cmd "bd"
-  --     end
-  --   end
-  -- end
 end
 
 function M.setup()

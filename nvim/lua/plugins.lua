@@ -310,7 +310,13 @@ function M.setup(use)
   }
 
   -- Git DiffView (TODO)
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require("config.diffview").setup()
+    end
+  }
 
   -- Git Blamer
   use {
