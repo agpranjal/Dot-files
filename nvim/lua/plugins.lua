@@ -1,6 +1,5 @@
 local M = {}
 
--- Plugins
 function M.setup(use)
 
   -- Packer
