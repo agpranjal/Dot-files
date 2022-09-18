@@ -17,11 +17,13 @@ vim.opt.signcolumn = "yes" -- Always show sign column
 vim.opt.cursorline = true -- Highlight line with cursor
 vim.opt.swapfile = false -- Disable swap files
 vim.opt.timeoutlen = 400 -- Set timeout to 300ms (for whichkey)
+vim.opt.wrap = false -- Disable wrapping
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.cmd "retab"
+
 
 -- Highlight on yank
 vim.cmd [[
