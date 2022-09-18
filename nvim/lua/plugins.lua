@@ -32,14 +32,6 @@ function M.setup(use)
     end
   }
 
-  -- Comments
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require("config.comment").setup()
-    end
-  }
-
   -- Statusline
   use {
     "nvim-lualine/lualine.nvim",
@@ -327,6 +319,25 @@ function M.setup(use)
     "APZelos/blamer.nvim",
     config = function()
       require("config.blamer").setup()
+    end
+  }
+
+  -- Autotags for html/xml
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("config.nvim-ts-autotag").setup()
+    end
+  }
+
+  -- Comments
+  use {
+    'numToStr/Comment.nvim',
+    requires = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    config = function()
+      require("config.comment").setup()
     end
   }
 
