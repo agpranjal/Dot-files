@@ -348,6 +348,11 @@ function M.setup(use)
       require("config.zen-mode").setup()
     end
   }
+
+  -- Editor Config
+  use {
+    "gpanders/editorconfig.nvim"
+  }
 end
 
 return M
