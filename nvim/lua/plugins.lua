@@ -353,6 +353,14 @@ function M.setup(use)
   use {
     "gpanders/editorconfig.nvim"
   }
+
+  -- Window Shift
+  use {
+    "sindrets/winshift.nvim",
+    config = function()
+      require("config.winshift-nvim").setup()
+    end
+  }
 end
 
 return M

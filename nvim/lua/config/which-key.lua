@@ -24,7 +24,7 @@ function M.setup()
 
   local mappings = {
     -- ["w"] = { "<cmd>update!<CR>", "Save" },
-    ["w"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
+    ["W"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
     ["q"] = { "<cmd>quit!<CR>", "Quit" },
 
     p = {
