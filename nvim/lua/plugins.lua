@@ -341,6 +341,13 @@ function M.setup(use)
     end
   }
 
+  -- Zen Mode
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("config.zen-mode").setup()
+    end
+  }
 end
 
 return M
