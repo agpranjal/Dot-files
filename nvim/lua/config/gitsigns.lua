@@ -11,7 +11,7 @@ function M.setup()
         vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
       end
 
-      -- 'gl' is being used in Telescope to insert git license
+      -- keybinding 'gl' is present in Telescope conf file to insert git license
       local keymap_g = {
         g = {
           name = "Git",
@@ -19,6 +19,7 @@ function M.setup()
           -- D = { "<cmd>Gitsigns diffthis<CR>", "Diff Buffer" },
           R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
           S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
+          t = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle Line Change Highlight" },
           h = {
             name = "Hunk",
             n = { "<cmd>Gitsigns next_hunk<CR>", "Select Next Hunk" },
