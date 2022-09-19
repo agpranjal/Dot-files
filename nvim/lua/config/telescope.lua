@@ -38,7 +38,7 @@ function M.setup()
       h = { "<cmd>Telescope help_tags<cr>", "Vim Help" },
       j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
       f = { "<cmd>Telescope find_files<cr>", "Files Within Workspace" },
-      F = { "<cmd>Telescope frecency<cr>", "Frequently Visited Files" },
+      F = { "<cmd>Telescope frecency<cr>", "Frequently Visited Files (Frecency)" },
       b = { "<cmd>Telescope buffers<cr>", "All Buffers" },
       o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
       O = { "<cmd>Telescope vim_options<cr>", "Vim Options" },

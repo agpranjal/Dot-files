@@ -23,8 +23,8 @@ function M.setup()
       adaptive_size = true,
       mappings = {
         list = {
-          { key = "s", action = "split" },
-          { key = "v", action = "vsplit" }
+          { key = "s", action = "vsplit" },
+          { key = "h", action = "split" }
         }
       }
     },

@@ -48,7 +48,7 @@ vim.cmd [[
 -- Disable extending comments in a new line automatically
 vim.cmd "autocmd FileType * set formatoptions-=cro"
 
--- Show numberline in help text
+-- Show numberline in vim help buffers
 vim.cmd [[
   augroup HelpTextNumberLine
     autocmd!
@@ -62,6 +62,5 @@ vim.cmd [[
     set guifont=Monaco:h11
     let g:neovide_cursor_unfocused_outline_width=0.125
     let g:neovide_cursor_animation_length=0.02
-    let g:neovide_remember_window_size = v:true
     endif
 ]]
