@@ -361,6 +361,11 @@ function M.setup(use)
       require("config.winshift-nvim").setup()
     end
   }
+
+  -- Tetris
+  use {
+    "alec-gibson/nvim-tetris"
+  }
 end
 
 return M
