@@ -44,7 +44,8 @@ function M.setup()
 
   -- Whichkey mappings for NvimTree
   local keymap_space = {
-    ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
+    -- ["<leader>"] = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
+    e = { "<cmd>lua require('nvim-tree').toggle(false, true)<cr>", "Explorer" },
   }
   whichkey.register(keymap_space, { prefix = "<leader>" })
 

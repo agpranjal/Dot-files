@@ -38,8 +38,8 @@ function M.setup()
     },
 
     -- Resizing
-    ["<right>"] = { "<cmd>vertical resize +5<cr>", "Increase Size" },
-    ["<left>"] = { "<cmd>vertical resize -5<cr>", "Decrease Size" },
+    -- ["<right>"] = { "<cmd>vertical resize +5<cr>", "Increase Size" },
+    -- ["<left>"] = { "<cmd>vertical resize -5<cr>", "Decrease Size" },
 
     -- Highlights
     h = { "<cmd>nohlsearch<cr>", "Remove Search Highlights" }

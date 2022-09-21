@@ -361,6 +361,14 @@ function M.setup(use)
       require("config.winshift-nvim").setup()
     end
   }
+
+  -- Window Resizer
+  use {
+    "simeji/winresizer",
+    config = function()
+      require("config.winresizer").setup()
+    end
+  }
 end
 
 return M
