@@ -5,16 +5,14 @@ local whichkey = require "which-key"
 function M.setup()
   require "neo-tree".setup {
     close_if_last_window = true,
-    -- indent = {
-    --   indent_size = 4,
-    --   padding = 4
-    -- },
+    default_component_configs = {
+      indent = {
+        indent_size = 3,
+      },
+    },
     window = {
       mappings = {
-        ["<space>"] = {
-          "toggle_node",
-          nowait = false
-        }
+        ["<space>"] = nil
       }
     },
     filesystem = {
