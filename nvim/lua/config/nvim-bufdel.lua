@@ -6,9 +6,9 @@ function _G.close_buffer_or_window(force)
   ]]
 
   local total_windows = vim.api.nvim_eval("g:total_windows") -- Total no. of non-floating windows
-  local is_tree_open = require "nvim-tree.view".is_visible() -- If NvimTree is open
+  -- local is_tree_open = require "nvim-tree.view".is_visible() -- If NvimTree is open
+  local is_tree_open = vim.fn.bufname("^neo-tree") ~= ""
 
-  -- Do not include NvimTree window
   if is_tree_open then
     total_windows = total_windows - 1
   end

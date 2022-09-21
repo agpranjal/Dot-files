@@ -24,7 +24,7 @@ function M.setup()
       mappings = {
         list = {
           { key = "s", action = "vsplit" },
-          { key = "h", action = "split" }
+          { key = "S", action = "split" }
         }
       }
     },
