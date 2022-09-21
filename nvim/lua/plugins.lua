@@ -44,17 +44,6 @@ function M.setup(use)
     end
   }
 
-  -- NvimTree
-  -- use {
-  --   "kyazdani42/nvim-tree.lua",
-  --   requires = {
-  --     "kyazdani42/nvim-web-devicons",
-  --   },
-  --   config = function()
-  --     require("config.nvim-tree").setup()
-  --   end
-  -- }
-
   -- Buffer
   use {
     "akinsho/nvim-bufferline.lua",
