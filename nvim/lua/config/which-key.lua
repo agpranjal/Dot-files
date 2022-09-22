@@ -10,6 +10,16 @@ function M.setup()
     },
     layout = {
       height = { min = 4, max = 10 },
+    },
+    key_labels = {
+      ["<space>"] = "SPC",
+      ["<Space>"] = "SPC",
+      ["<tab>"] = "TAB",
+      ["<Tab>"] = "TAB",
+      ["<left>"] = "Left Arrow",
+      ["<Left>"] = "Left Arrow",
+      ["<right>"] = "Right Arrow",
+      ["<Right>"] = "Right Arrow",
     }
   }
 
