@@ -111,6 +111,7 @@ function M.setup(use)
   -- vim.cmd "colorscheme catppuccin"
   -- vim.cmd "colorscheme gruvbox"
   -- vim.cmd "colorscheme github_dark"
+  -- vim.cmd "colorscheme duskfox"
 end
 
 return M
