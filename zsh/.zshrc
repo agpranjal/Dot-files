@@ -1,3 +1,4 @@
+# ------------------------------------------------------------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -56,44 +57,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# start tmux when shell starts
-if [[ ! $TERM =~ screen ]]; then
-  export TERM=screen-256color
-  exec tmux -u
-fi
-
-ZLE_SPACE_SUFFIX_CHARS=$'|&'
-
-# Load ~/.fzf.zsh if exists, else download fzf and install
-if [ -f ~/.fzf.zsh ]
-then
-  source ~/.fzf.zsh
-else
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
-fi
-
-# CUSTOM: aliases for clear
-alias cl="clear"
-alias cle="clear"
-alias clea="clear"
-alias rls="ls"
-
-# CUSTOM: customised git log
-alias gitshow="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-export LANG=en_US.UTF-8
-
-export PATH="$PATH:/usr/local/python3/bin"
-
-# Install thefuck (if not installed)
-if [ ! -x "$(command -v thefuck)" ]
-then
-  sudo apt install thefuck -y
-fi
-
-eval "$(thefuck --alias)"
-
 # Install zsh-autosuggestions (if not installed)
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]
 then
@@ -103,31 +66,38 @@ fi
 # CUSTOM: use Ctrl-Space to accept zsh suggestion
 bindkey "^ " autosuggest-accept
 
+# Install thefuck (if not installed)
+if [ ! -x "$(command -v thefuck)" ]
+then
+  sudo apt install thefuck -y
+fi
+
+eval "$(thefuck --alias)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Install pyenv (if not already installed)
-if [ ! -d ~/.pyenv ]
-then
-  sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
-    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-    libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
-      curl https://pyenv.run | bash
+# ------------------------------------------------------------------------
+# start tmux when shell starts
+if [[ ! $TERM =~ screen ]]; then
+  export TERM=screen-256color
+  exec tmux -u
 fi
 
-# Add pyenv to PATH
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+ZLE_SPACE_SUFFIX_CHARS=$'|&'
 
-# CUSTOM: config for less pager program
-export LESS='--quit-if-one-screen --incsearch --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
+export LANG=en_US.UTF-8
 
-# Install bat (if not installed)
-if ! [ -x "$(command -v batcat)" ]
+export PATH="$PATH:/usr/local/python3/bin"
+
+# ------------------------------------------------------------------------------------
+# Load ~/.fzf.zsh if exists, else download fzf and install
+if [ -f ~/.fzf.zsh ]
 then
-  sudo apt install bat -y
+  source ~/.fzf.zsh
+else
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 fi
 
 # Default options for fzf
@@ -146,21 +116,49 @@ export FZF_DEFAULT_OPTS="
 --bind 'tab:accept'
 "
 
-# Use fd (if installed) as backend for fzf
-if [ -x "$(command -v fdfind)" ]
+# Install bat (if not installed)
+if ! [ -x "$(command -v batcat)" ]
+then
+  sudo apt install bat -y
+  sudo ln -s batcat /usr/bin/bat
+fi
+
+# Use fd/rg (if installed) as backend for fzf
+# if [ -x "$(command -v fdfind)" ]
+if [ -x "$(command -v rg)" ]
 then
   #export FZF_DEFAULT_COMMAND='fdfind . --hidden'
   export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore-vcs"
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 else
-  sudo apt install fd-find -y
+  # sudo apt install fd-find -y
   sudo apt install ripgrep
 fi
 
-# CUSTOM: use Ctrl-f to trigger fzf (just like Ctrl-T)
-bindkey "^f" fzf-file-widget
+# CUSTOM: use CTRL-f to trigger fzf (just like Ctrl-T)
+# bindkey "^f" fzf-file-widget
 
+# CUSTOM: use CTRL-f to trigger fzf command line completion (instead of CTRL-r)
+bindkey "^f" fzf-history-widget
+
+# ------------------------------------------------------------------------
+# Install pyenv (if not already installed)
+if [ ! -d ~/.pyenv ]
+then
+  sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+    libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
+      curl https://pyenv.run | bash
+fi
+
+# Add pyenv to PATH
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# ------------------------------------------------------------------------
 # CUSTOM: set default editor for the shell
 if [ -x "$(command -v nvim)" ]
 then
@@ -173,6 +171,19 @@ else
 fi
 export EDITOR="$VISUAL"
 
+# ------------------------------------------------------------------------
+# CUSTOM: customised git log
+alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# CUSTOM: config for less pager program
+export LESS='--quit-if-one-screen --incsearch --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
+
 # CUSTOM: For Neovide
 # alias neovide="neovide --frame NONE --noidle"
 alias neovide="neovide --noidle --multigrid --geometry=130x100"
+
+# CUSTOM: aliases for clear and ls
+alias cl="clear"
+alias cle="clear"
+alias clea="clear"
+alias rls="ls"
