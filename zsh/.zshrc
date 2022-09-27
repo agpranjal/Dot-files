@@ -44,7 +44,6 @@ plugins=(
   aws
   npm 
   pip
-  fancy-ctrl-z
   gitfast
   heroku
   pm2
@@ -63,7 +62,7 @@ then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
-# CUSTOM: use Ctrl-Space to accept zsh suggestion
+# Use Ctrl-Space to accept zsh suggestion
 bindkey "^ " autosuggest-accept
 
 # Install thefuck (if not installed)
@@ -132,10 +131,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
 
-# CUSTOM: use CTRL-f to trigger fzf (just like Ctrl-T)
+# Use CTRL-f to trigger fzf (just like Ctrl-T)
 # bindkey "^f" fzf-file-widget
 
-# CUSTOM: use CTRL-f to trigger fzf command line completion (instead of CTRL-r)
+# Use CTRL-f to trigger fzf command line completion (instead of CTRL-r)
 # bindkey "^f" fzf-history-widget
 
 # ------------------------------------------------------------------------
@@ -155,7 +154,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # ------------------------------------------------------------------------
-# CUSTOM: set default editor for the shell
+# Set default editor for the shell
 if [ -x "$(command -v nvim)" ]
 then
   export VISUAL=nvim
@@ -168,17 +167,17 @@ fi
 export EDITOR="$VISUAL"
 
 # ------------------------------------------------------------------------
-# CUSTOM: customised git log
+# Customised git log
 alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-# CUSTOM: config for less pager program
+# Config for less pager program
 export LESS='--quit-if-one-screen --incsearch --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-5'
 
-# CUSTOM: For Neovide
+# For Neovide
 # alias neovide="neovide --frame NONE --noidle"
 alias neovide="neovide --noidle --multigrid --geometry=130x100"
 
-# CUSTOM: aliases for clear and ls
+# Aliases for clear and ls
 alias cl="clear"
 alias cle="clear"
 alias clea="clear"
