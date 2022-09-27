@@ -15,7 +15,7 @@ function M.setup()
         -- 0 turns off fuzzy matching
         -- 1 turns on fuzzy matching
         -- 2 partial fuzzy matching (match does not have to begin with the same first letter)
-        fuzzy = 1,
+        fuzzy = 2,
       }),
       wilder.python_search_pipeline({
         -- can be set to wilder#python_fuzzy_delimiter_pattern() for stricter fuzzy matching
@@ -45,6 +45,14 @@ function M.setup()
       wilder.python_search_pipeline()
     ),
   })
+
+  wilder.set_option('renderer', wilder.wildmenu_renderer({
+    -- highlighter applies highlighting to the candidates
+    highlighter = wilder.basic_highlighter(),
+    -- separator = ' · ',
+    -- left = { ' ', wilder.wildmenu_spinner(), ' ' },
+    right = { ' ', wilder.wildmenu_index() },
+  }))
 end
 
 return M

@@ -278,14 +278,6 @@ function M.setup(use)
     end
   }
 
-  -- Inverse word in-place
-  use {
-    "nguyenvukhang/nvim-toggler",
-    config = function()
-      require("config.nvim-toggler").setup()
-    end
-  }
-
   -- Run code
   use {
     "arjunmahishi/run-code.nvim",
