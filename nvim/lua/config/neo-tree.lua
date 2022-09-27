@@ -10,11 +10,6 @@ function M.setup()
         indent_size = 3,
       },
     },
-    window = {
-      mappings = {
-        ["<space>"] = nil
-      }
-    },
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,

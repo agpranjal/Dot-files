@@ -20,6 +20,9 @@ function M.setup()
       ["<Left>"] = "Left Arrow",
       ["<right>"] = "Right Arrow",
       ["<Right>"] = "Right Arrow",
+    },
+    disable = {
+      filetypes = { "neo-tree", "TelescopePrompt" }
     }
   }
 
@@ -47,12 +50,8 @@ function M.setup()
       u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    -- Resizing
-    -- ["<right>"] = { "<cmd>vertical resize +5<cr>", "Increase Size" },
-    -- ["<left>"] = { "<cmd>vertical resize -5<cr>", "Decrease Size" },
-
     -- Highlights
-    h = { "<cmd>nohlsearch<cr>", "Remove Search Highlights" }
+    h = { "<cmd>set hlsearch!<cr>", "Toggle Search Highlights" }
   }
 
   whichkey.setup(conf)
