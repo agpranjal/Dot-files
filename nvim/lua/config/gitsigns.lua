@@ -15,7 +15,10 @@ function M.setup()
       local keymap_g = {
         g = {
           name = "Git",
-          b = { "<cmd>lua require'gitsigns'.blame_line{full=true}<CR>", "Blame Preview" },
+          b = {
+            name = "Blame",
+            p = { "<cmd>lua require'gitsigns'.blame_line{full=true}<CR>", "Preview" },
+          },
           -- D = { "<cmd>Gitsigns diffthis<CR>", "Diff Buffer" },
           R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
           S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },

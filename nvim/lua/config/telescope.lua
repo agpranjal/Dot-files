@@ -7,7 +7,10 @@ function M.setup()
   telescope.setup {
     pickers = {
       find_files = {
-        hidden = true
+        hidden = true,
+        no_ignore = true,
+        no_ignore_parent = true,
+        follow = true
       }
     },
     defaults = {
