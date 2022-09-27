@@ -100,22 +100,6 @@ else
   ~/.fzf/install
 fi
 
-# Default options for fzf
-export FZF_DEFAULT_OPTS="
---cycle
---layout=reverse
---border=sharp
---info=inline
---multi
---preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
---color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
---prompt='∼ ' --pointer='▶' --marker='✓'
---bind '?:toggle-preview'
---bind 'ctrl-s:toggle'
---bind 'ctrl-a:toggle-all'
---bind 'tab:accept'
-"
-
 # Install bat (if not installed)
 if ! [ -x "$(command -v batcat)" ]
 then
@@ -123,24 +107,36 @@ then
   sudo ln -s batcat /usr/bin/bat
 fi
 
-# Use fd/rg (if installed) as backend for fzf
-# if [ -x "$(command -v fdfind)" ]
-if [ -x "$(command -v rg)" ]
+# Install ripgrep
+if ! [ -x "$(command -v rg)" ]
 then
-  #export FZF_DEFAULT_COMMAND='fdfind . --hidden'
-  export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore-vcs"
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-else
-  # sudo apt install fd-find -y
   sudo apt install ripgrep
 fi
+
+# Default options for fzf
+export FZF_DEFAULT_OPTS="
+--cycle
+--layout=reverse
+--border=sharp
+--info=inline
+--multi
+--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
+--prompt='∼ ' --pointer='▶' --marker='✓'
+--bind '?:toggle-preview'
+--bind 'ctrl-s:toggle'
+--bind 'ctrl-a:toggle-all'
+--bind 'tab:accept'
+"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore-vcs"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
 
 # CUSTOM: use CTRL-f to trigger fzf (just like Ctrl-T)
 # bindkey "^f" fzf-file-widget
 
 # CUSTOM: use CTRL-f to trigger fzf command line completion (instead of CTRL-r)
-bindkey "^f" fzf-history-widget
+# bindkey "^f" fzf-history-widget
 
 # ------------------------------------------------------------------------
 # Install pyenv (if not already installed)
