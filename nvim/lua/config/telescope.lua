@@ -15,7 +15,11 @@ function M.setup()
     },
     defaults = {
       scroll_strategy = "limit", -- Disable cyclic scrolling
-      prompt_prefix = "🔍 "
+      prompt_prefix = "🔍 ",
+      mappings = {
+        i = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
+        n = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
+      }
     },
     extensions = {
       frecency = {

@@ -386,6 +386,13 @@ function M.setup(use)
       require("config.neo-tree").setup()
     end
   }
+
+  use {
+    "luukvbaal/stabilize.nvim",
+    config = function()
+      require("stabilize").setup()
+    end
+  }
 end
 
 return M
