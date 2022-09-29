@@ -387,6 +387,7 @@ function M.setup(use)
     end
   }
 
+  -- Window content stabilizer
   use {
     "luukvbaal/stabilize.nvim",
     config = function()
