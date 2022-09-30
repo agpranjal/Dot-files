@@ -22,7 +22,7 @@ function M.setup()
       ["<Right>"] = "Right Arrow",
     },
     disable = {
-      filetypes = { "neo-tree", "TelescopePrompt" }
+      filetypes = { "TelescopePrompt" }
     }
   }
 
