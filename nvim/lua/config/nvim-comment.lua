@@ -12,7 +12,7 @@ function M.setup()
 
   require "nvim_comment".setup {
     create_mappings = true,
-    line_mapping = "none",
+    line_mapping = nil,
     operator_mapping = " /",
     hook = function()
       require("ts_context_commentstring.internal").update_commentstring()

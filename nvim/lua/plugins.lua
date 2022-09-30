@@ -8,6 +8,9 @@ function M.setup(use)
   -- Setup colorschemes
   require("config.colorschemes").setup(use)
 
+  -- Buffer delete
+  require("config.nvim-bufdel")
+
   -- Startup screen
   use {
     "goolord/alpha-nvim",
@@ -246,14 +249,6 @@ function M.setup(use)
   -- Word Motion
   use {
     "chaoren/vim-wordmotion"
-  }
-
-  -- Buffer Deletion
-  use {
-    "ojroques/nvim-bufdel",
-    config = function()
-      require("config.nvim-bufdel").setup()
-    end
   }
 
   -- Markdown Preview
