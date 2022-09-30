@@ -24,9 +24,9 @@ local function packer_init()
       "https://github.com/wbthomason/packer.nvim",
       install_path,
     }
-    -- vim.cmd [[packadd packer.nvim]]
+    vim.cmd [[packadd packer.nvim]]
   end
-  -- vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
+  vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
 end
 
 if packer_bootstrap then
