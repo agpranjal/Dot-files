@@ -10,6 +10,7 @@ function M.setup()
     line_sep_start = '┌-----------------------------------------',
     result_padding = '¦  ',
     line_sep       = '└-----------------------------------------',
+    is_insert_mode = true,
     highlight      = {
       ui = "String",
       search = "DiffChange",
