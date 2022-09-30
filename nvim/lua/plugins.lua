@@ -311,17 +311,6 @@ function M.setup(use)
     end
   }
 
-  -- Comments
-  use {
-    'numToStr/Comment.nvim',
-    requires = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-    config = function()
-      require("config.comment").setup()
-    end
-  }
-
   -- Zen Mode
   use {
     "folke/zen-mode.nvim",
@@ -392,6 +381,17 @@ function M.setup(use)
     "luukvbaal/stabilize.nvim",
     config = function()
       require("stabilize").setup()
+    end
+  }
+
+  -- Comment
+  use {
+    "terrortylor/nvim-comment",
+    requires = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    config = function()
+      require("config.nvim-comment").setup()
     end
   }
 end
