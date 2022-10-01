@@ -9,7 +9,7 @@ function M.setup()
     let g:blamer_relative_time = 1
     let g:blamer_template = "                       <committer> • <committer-time> • <summary>"
 
-    function SetGitBlamerHighlight()
+    function! SetGitBlamerHighlight()
       highlight link Blamer Comment
       
       if g:colors_name == "vscode"
