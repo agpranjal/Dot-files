@@ -35,9 +35,9 @@ vim.cmd [[
 
 -- vim.opt.foldmethod = "indent" -- Fold by indent
 -- vim.opt.foldcolumn = "1"
-vim.opt.foldlevel = 99
+-- vim.opt.foldlevel = 99
 -- vim.opt.foldlevelstart = -1
-vim.opt.foldenable = true
+-- vim.opt.foldenable = true
 
 -- For termguicolors
 vim.cmd [[
