@@ -17,6 +17,7 @@ function M.setup()
     },
     filesystem = {
       filtered_items = {
+        visible = true,
         hide_dotfiles = false,
         hide_gitignored = false,
         hide_hidden = false,
@@ -25,6 +26,7 @@ function M.setup()
       use_libuv_file_watcher = true
     },
     buffers = {
+      follow_current_file = true,
       group_empty_dirs = true
     }
   }
