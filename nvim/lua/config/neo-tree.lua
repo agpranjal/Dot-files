@@ -35,12 +35,12 @@ function M.setup()
   vim.cmd [[
     augroup NeoTreeOpenOnStartup
       autocmd!
-      autocmd VimEnter * silent! NeoTreeShow
+      autocmd VimEnter * silent! Neotree reveal_force_cwd show
     augroup end
   ]]
 
   local keymap = {
-    e = { "<cmd>NeoTreeShow<cr>", "Explorer" }
+    e = { "<cmd>Neotree reveal_force_cwd show toggle<cr>", "Explorer" }
   }
   whichkey.register(keymap, { mode = "n", prefix = "<leader>" })
 end
