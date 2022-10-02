@@ -30,7 +30,6 @@ function M.setup()
 
   -- Load Telescope extensions
   telescope.load_extension "fzf"
-  telescope.load_extension "project" -- telescope-project.nvim
   telescope.load_extension "repo"
   telescope.load_extension "file_browser"
   telescope.load_extension "projects" -- project.nvim
@@ -52,9 +51,7 @@ function M.setup()
       g = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
       c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
       C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
-      -- w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
       ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
-      -- p = { "<cmd>lua require 'telescope'.extensions.project.project{}<cr>", "List Projects" },
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
