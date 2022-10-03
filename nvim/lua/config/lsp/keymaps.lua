@@ -38,7 +38,7 @@ function M.setup(client, bufnr)
   -- Use null-ls as formatter when original LSP does not provide formatting
   if client.resolved_capabilities.document_formatting then
     -- keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" }
-    keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting_seq_sync(nil, 1000000, {'null-ls'})<CR>", "Format Document" }
+    keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting_seq_sync({}, 100000000, {'null-ls'})<CR>", "Format Document" }
   end
 
   whichkey.register(keymap_l, { mode = "n", buffer = bufnr, prefix = "<leader>" })
