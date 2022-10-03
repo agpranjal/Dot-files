@@ -173,10 +173,13 @@ function M.setup(use)
         requires = { "kkharji/sqlite.lua" }
       },
       "ellisonleao/glow.nvim",
+      -- Change cwd to project root automatically
       {
         "ahmedkhalf/project.nvim",
         config = function()
-          require("project_nvim").setup {}
+          require("project_nvim").setup {
+            detection_methods = { "pattern", "lsp" }
+          }
         end,
       },
       "chip/telescope-software-licenses.nvim",
@@ -387,6 +390,14 @@ function M.setup(use)
       require("config.nvim-comment").setup()
     end
   }
+
+  -- Project Rooter
+  -- use {
+  --   "notjedi/nvim-rooter.lua",
+  --   config = function()
+  --     require 'nvim-rooter'.setup()
+  --   end
+  -- }
 end
 
 return M
