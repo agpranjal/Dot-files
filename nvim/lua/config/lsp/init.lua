@@ -86,6 +86,9 @@ function M.setup()
 
   -- Installer
   require("config.lsp.installer").setup(servers, opts)
+
+  -- Set LSP log level
+  vim.lsp.set_log_level("debug")
 end
 
 return M
