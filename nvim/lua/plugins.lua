@@ -391,13 +391,6 @@ function M.setup(use)
     end
   }
 
-  -- Project Rooter
-  -- use {
-  --   "notjedi/nvim-rooter.lua",
-  --   config = function()
-  --     require 'nvim-rooter'.setup()
-  --   end
-  -- }
 end
 
 return M
