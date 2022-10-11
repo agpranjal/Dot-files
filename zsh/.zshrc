@@ -52,6 +52,7 @@ plugins=(
   ufw
   yarn
   zsh-z
+  fancy-ctrl-z
 )
 
 source $ZSH/oh-my-zsh.sh
