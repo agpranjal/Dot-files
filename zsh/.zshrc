@@ -79,7 +79,12 @@ eval "$(thefuck --alias)"
 
 # ------------------------------------------------------------------------
 # start tmux when shell starts
-if [[ ! $TERM =~ screen ]]; then
+# if [[ ! $TERM =~ screen ]]; then
+#   export TERM=screen-256color
+#   exec tmux -u
+# fi
+
+if [ "$TMUX" = "" ]; then
   export TERM=screen-256color
   exec tmux -u
 fi
