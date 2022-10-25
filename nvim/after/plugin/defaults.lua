@@ -59,7 +59,8 @@ vim.cmd [[
 -- For Neovide
 vim.cmd [[
   if exists("g:neovide")
-    set guifont=Monaco:h11
+    " set guifont=Monaco:h11
+    set guifont=CaskaydiaCove\ NF\ Mono:h12
     let g:neovide_cursor_unfocused_outline_width=0.125
     let g:neovide_cursor_animation_length=0.02
     endif
