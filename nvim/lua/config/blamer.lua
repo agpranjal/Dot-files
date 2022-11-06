@@ -19,7 +19,7 @@ function M.setup()
 
     call SetGitBlamerHighlight()
 
-    augroup VimColorScheme
+    augroup VimGitBlamerColorSchemeFix
       autocmd!
       autocmd ColorScheme * silent! call SetGitBlamerHighlight()
     augroup end

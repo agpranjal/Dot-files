@@ -112,6 +112,21 @@ function M.setup(use)
   -- vim.cmd "colorscheme gruvbox"
   -- vim.cmd "colorscheme github_dark"
   -- vim.cmd "colorscheme duskfox"
+
+  vim.cmd [[
+    function! SetMatchingParenHighlight()
+      if g:colors_name == "molokai"
+        highlight MatchParen guibg=black guifg=#FD971F
+      endif
+    endfunction
+
+    call SetMatchingParenHighlight()
+
+    augroup VimMolokaiColorSchemeFix
+      autocmd!
+      autocmd ColorScheme * silent! call SetMatchingParenHighlight()
+    augroup end
+  ]]
 end
 
 return M
