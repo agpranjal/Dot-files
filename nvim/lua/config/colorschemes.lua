@@ -103,7 +103,7 @@ function M.setup(use)
 
   use "sam4llis/nvim-tundra"
 
-  -- vim.cmd "colorscheme molokai"
+  vim.cmd "colorscheme molokai"
 
   -- vim.cmd "colorscheme onedark"
 
