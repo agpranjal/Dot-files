@@ -12,7 +12,7 @@ function M.setup()
     function! SetGitBlamerHighlight()
       highlight link Blamer Comment
       
-      if g:colors_name == "vscode"
+      if get(g:, "colors_name") == "vscode"
         highlight link Blamer gitcommitHeader
       endif
     endfunction
