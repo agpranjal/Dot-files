@@ -388,6 +388,11 @@ function M.setup(use)
     end
   }
 
+  -- Vim Fugitive
+  use {
+    "tpope/vim-fugitive"
+  }
+
   -- Setup colorschemes
   require("config.colorschemes").setup(use)
 end
