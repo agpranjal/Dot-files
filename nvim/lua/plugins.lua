@@ -5,9 +5,6 @@ function M.setup(use)
   -- Packer
   use { "wbthomason/packer.nvim" }
 
-  -- Setup colorschemes
-  require("config.colorschemes").setup(use)
-
   -- Buffer delete
   require("config.nvim-bufdel")
 
@@ -112,14 +109,14 @@ function M.setup(use)
     wants = {
       "cmp-nvim-lsp",
       "nvim-lsp-installer",
-      "lua-dev.nvim",
+      "neodev.nvim",
       "null-ls.nvim",
       "schemastore.nvim",
       "toggle-lsp-diagnostics.nvim"
     },
     requires = {
       "williamboman/nvim-lsp-installer",
-      "folke/lua-dev.nvim",
+      "folke/neodev.nvim",
       "jose-elias-alvarez/null-ls.nvim",
       "b0o/schemastore.nvim",
       "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
@@ -391,6 +388,8 @@ function M.setup(use)
     end
   }
 
+  -- Setup colorschemes
+  require("config.colorschemes").setup(use)
 end
 
 return M
