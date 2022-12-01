@@ -47,7 +47,6 @@ function M.setup(use)
   -- Buffer
   use {
     "akinsho/nvim-bufferline.lua",
-    wants = "nvim-web-devicons",
     config = function()
       require("config.bufferline").setup()
     end
@@ -67,7 +66,6 @@ function M.setup(use)
   -- Completion
   use {
     "hrsh7th/nvim-cmp",
-    wants = { "LuaSnip" },
     config = function()
       require("config.nvim-cmp").setup()
     end,
@@ -85,7 +83,6 @@ function M.setup(use)
       "rafamadriz/friendly-snippets",
       {
         "L3MON4D3/LuaSnip",
-        wants = "friendly-snippets",
         config = function()
           require("config.luasnip").setup()
           require("config.lspkind").setup()
@@ -97,7 +94,6 @@ function M.setup(use)
   -- Auto pairs
   use {
     "windwp/nvim-autopairs",
-    wants = "nvim-treesitter",
     config = function()
       require("config.nvim-autopairs").setup()
     end,
@@ -106,14 +102,6 @@ function M.setup(use)
   -- LSP
   use {
     "neovim/nvim-lspconfig",
-    wants = {
-      "cmp-nvim-lsp",
-      "nvim-lsp-installer",
-      "neodev.nvim",
-      "null-ls.nvim",
-      "schemastore.nvim",
-      "toggle-lsp-diagnostics.nvim"
-    },
     requires = {
       "williamboman/nvim-lsp-installer",
       "folke/neodev.nvim",
@@ -148,17 +136,6 @@ function M.setup(use)
     config = function()
       require("config.telescope").setup()
     end,
-    wants = {
-      "plenary.nvim",
-      "popup.nvim",
-      "telescope-fzf-native.nvim",
-      "telescope-repo.nvim",
-      "telescope-file-browser.nvim",
-      "project.nvim",
-      "glow.nvim",
-      "telescope-software-licenses.nvim",
-      "telescope-frecency.nvim"
-    },
     requires = {
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
@@ -213,7 +190,6 @@ function M.setup(use)
   -- Folding
   -- use {
   --   "kevinhwang91/nvim-ufo",
-  --   wants = { "promise-async" },
   --   requires = "kevinhwang91/promise-async",
   --   config = function()
   --     require("config.nvim-ufo").setup()
