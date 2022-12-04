@@ -39,6 +39,7 @@ function M.setup()
   local keymaps_f = {
     f = {
       name = "Find/Search",
+      c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
       v = {
         name = "Vim",
         a = { "<cmd>Telescope autocommands<cr>", "Vim AutoCommands" },
@@ -47,7 +48,6 @@ function M.setup()
         j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
         O = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
         C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
-        c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
       },
       f = { "<cmd>Telescope find_files<cr>", "Files Within Workspace" },
       F = { "<cmd>Telescope frecency<cr>", "Frequently Visited Files (Frecency)" },
