@@ -366,7 +366,10 @@ function M.setup(use)
 
   -- Vim Fugitive
   use {
-    "tpope/vim-fugitive"
+    "tpope/vim-fugitive",
+    config = function()
+      require("config.fugitive").setup()
+    end
   }
 
   -- VGit

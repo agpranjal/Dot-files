@@ -26,6 +26,4 @@ function M.input(prompt, fn)
   )
 end
 
--- M.input()
-
 return M
