@@ -119,6 +119,10 @@ local function close_buffer_or_window(force)
     total_windows = total_windows - 1
   end
 
+  -- Incase same buffer is open in different windows
+  local current_buffer_windows = vim.fn.win_findbuf(vim.fn.bufnr('%'))
+  local is_buffer_duplicate = #current_buffer_windows > 1
+
   if total_windows <= 1 then -- No splits open
     if force then
       vim.cmd "BufDel!"
@@ -127,9 +131,17 @@ local function close_buffer_or_window(force)
     end
   else -- Splits open
     if force then
-      vim.cmd "bd!"
+      if is_buffer_duplicate then -- Delete the window (not buffer)
+        vim.cmd "quit!"
+      else
+        vim.cmd "bd!"
+      end
     else
-      vim.cmd "bd"
+      if is_buffer_duplicate then -- Delete the window (not buffer)
+        vim.cmd "quit"
+      else
+        vim.cmd "bd"
+      end
     end
   end
 end

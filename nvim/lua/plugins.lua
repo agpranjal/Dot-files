@@ -197,12 +197,12 @@ function M.setup(use)
   -- }
 
   -- GitSigns
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require("config.gitsigns").setup()
-    end
-  }
+  -- use {
+  --   'lewis6991/gitsigns.nvim',
+  --   config = function()
+  --     require("config.gitsigns").setup()
+  --   end
+  -- }
 
   -- ToggleTerm
   use {
@@ -367,6 +367,18 @@ function M.setup(use)
   -- Vim Fugitive
   use {
     "tpope/vim-fugitive"
+  }
+
+  -- VGit
+  use {
+    "tanvirtin/vgit.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+    config = function()
+      require("config.vgit").setup()
+    end
   }
 
   -- Setup colorschemes
