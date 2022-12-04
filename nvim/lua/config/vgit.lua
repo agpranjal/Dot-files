@@ -1,6 +1,7 @@
 local M = {}
 
 local whichkey = require "which-key"
+
 function M.setup()
   require "vgit".setup {
     settings = {
@@ -14,6 +15,10 @@ function M.setup()
     g = {
       name = "Git",
       t = { "<cmd>lua require 'vgit'.toggle_diff_preference()<cr>", "Toggle Unified/Split Diff" },
+      c = { "<cmd>Telescope git_commits<cr>", "Commits" },
+      C = { "<cmd>Telescope git_branches<cr>", "Branches" },
+      s = { "<cmd>Telescope git_status<cr>", "Status" },
+      S = { "<cmd>Telescope git_stash<cr>", "Stash" },
       h = {
         name = "Hunk",
         n = { "<cmd>lua require 'vgit'.hunk_down()<cr>", "Next Hunk" },
@@ -31,6 +36,7 @@ function M.setup()
         R = { "<cmd>lua require 'vgit'.buffer_reset()<cr>", "Discard Unstaged Changes" },
         d = { "<cmd>lua require 'vgit'.buffer_diff_preview()<cr>", "Buffer Diff" },
         D = { "<cmd>lua require 'vgit'.buffer_diff_staged_preview()<cr>", "Staged Buffer Diff" },
+        c = { "<cmd>Telescope git_bcommits<cr>", "Buffer Commits" },
       },
       B = {
         name = "Blame",

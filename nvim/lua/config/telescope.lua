@@ -38,19 +38,22 @@ function M.setup()
 
   local keymaps_f = {
     f = {
-      name = "Find",
-      a = { "<cmd>Telescope autocommands<cr>", "Vim AutoCommands" },
-      H = { "<cmd>Telescope highlights<cr>", "Vim Highlights" },
-      h = { "<cmd>Telescope help_tags<cr>", "Vim Help" },
-      j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
+      name = "Find/Search",
+      v = {
+        name = "Vim",
+        a = { "<cmd>Telescope autocommands<cr>", "Vim AutoCommands" },
+        H = { "<cmd>Telescope highlights<cr>", "Vim Highlights" },
+        h = { "<cmd>Telescope help_tags<cr>", "Vim Help" },
+        j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
+        O = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
+        C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
+        c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
+      },
       f = { "<cmd>Telescope find_files<cr>", "Files Within Workspace" },
       F = { "<cmd>Telescope frecency<cr>", "Frequently Visited Files (Frecency)" },
       b = { "<cmd>Telescope buffers<cr>", "All Buffers" },
       o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
-      O = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
       g = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
-      c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
-      C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
       ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
@@ -62,7 +65,6 @@ function M.setup()
         B = { "<cmd>Telescope git_branches<cr>", "Branches" },
         s = { "<cmd>Telescope git_status<cr>", "Status" },
         S = { "<cmd>Telescope git_stash<cr>", "Stash" }
-
       },
       l = {
         name = "Lsp",
