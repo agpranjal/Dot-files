@@ -1,5 +1,16 @@
 local M = {}
 
+local input = require "utils.ui".input
+
+-- Execute shell command
+function M._input_cmd()
+  input("Enter a Shell Command:", function(ip)
+    if ip then
+      vim.cmd("! " .. ip)
+    end
+  end)
+end
+
 function M.setup()
   local whichkey = require "which-key"
 
@@ -51,7 +62,10 @@ function M.setup()
     },
 
     -- Highlights
-    h = { "<cmd>set hlsearch!<cr>", "Toggle Search Highlights" }
+    h = { "<cmd>set hlsearch!<cr>", "Toggle Search Highlights" },
+
+    -- Shell Command
+    c = { "<cmd>lua require 'config.which-key'._input_cmd()<cr>", "Execute Shell CMD" }
   }
 
   whichkey.setup(conf)

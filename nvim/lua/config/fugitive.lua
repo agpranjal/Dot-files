@@ -15,7 +15,8 @@ function M.setup()
   local keymap_g = {
     g = {
       name = "Git",
-      e = { "<cmd>lua require 'config.fugitive'._git_cmd_input()<cr>", "Execute CMD" }
+      e = { "<cmd>lua require 'config.fugitive'._git_cmd_input()<cr>", "Execute CMD" },
+      o = { "<cmd>:G<cr>", "Open" },
     }
   }
 

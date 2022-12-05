@@ -28,7 +28,7 @@ function M.setup()
   local keymap = {
     g = {
       name = "Git",
-      b = {
+      B = {
         name = "Blame",
         t = { "<cmd>BlamerToggle<cr>", "Toggle" }
       }

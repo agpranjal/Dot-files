@@ -64,3 +64,13 @@ vim.cmd [[
     let g:neovide_cursor_animation_length=0.02
     endif
 ]]
+
+vim.cmd [[
+  " Triger `autoread` when files changes on disk
+      autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+              \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+
+  " Notification after file change
+  autocmd FileChangedShellPost *
+    \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+]]
