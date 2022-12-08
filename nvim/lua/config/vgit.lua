@@ -17,9 +17,6 @@ function M.setup()
   local keymap_vg = {
     g = {
       name = "Git",
-      c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
-      C = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
-      S = { "<cmd>Telescope git_stash<cr>", "Show Stash" },
       o = {
         name = "Options",
         t = { "<cmd>lua require 'vgit'.toggle_diff_preference()<cr>", "Toggle Unified/Split Diff" },
