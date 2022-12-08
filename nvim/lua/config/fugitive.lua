@@ -16,11 +16,18 @@ function M.setup()
     g = {
       name = "Git",
       e = { "<cmd>lua require 'config.fugitive'._git_cmd_input()<cr>", "Execute CMD" },
-      s = { "<cmd>:G<cr>", "Summary" },
+      g = { "<cmd>:G<cr>", "Summary" },
     }
   }
 
   whichkey.register(keymap_g, { mode = "n", prefix = "<leader>" })
+
+  vim.cmd [[
+    augroup FugitiveExit
+      autocmd!
+      autocmd BufEnter * lua if (vim.bo.filetype == "fugitive") then vim.cmd "nnoremap <buffer> <esc> :quit <cr>" end
+    augroup end
+  ]]
 end
 
 return M
