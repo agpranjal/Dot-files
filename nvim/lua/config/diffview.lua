@@ -63,7 +63,7 @@ function M.setup()
           r = { "<cmd>DiffviewRefresh<cr>", "Refresh Files Panel" },
           f = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files Panel" },
           l = { "<cmd>DiffviewLog<cr>", "Project Diff View Logs" },
-          c = { "<cmd>lua require 'diffview.actions'.cycle_layout()<cr>", "Cycle Thru Layouts" }
+          c = { "<cmd>lua require 'diffview.actions'.cycle_layout()<cr>", "Change Layouts" }
         },
       }
     }

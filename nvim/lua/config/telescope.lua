@@ -58,13 +58,6 @@ function M.setup()
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
-      G = {
-        name = "Git",
-        c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
-        b = { "<cmd>Telescope git_bcommits<cr>", "Show Buffer Commits" },
-        B = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
-        S = { "<cmd>Telescope git_stash<cr>", "Show Stash" }
-      },
       l = {
         name = "Lsp",
         r = { "<cmd>Telescope lsp_references<cr>", "Word References (Document)" },

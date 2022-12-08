@@ -17,11 +17,13 @@ function M.setup()
   local keymap_vg = {
     g = {
       name = "Git",
-      t = { "<cmd>lua require 'vgit'.toggle_diff_preference()<cr>", "Toggle Unified/Split Diff" },
-      c = { "<cmd>Telescope git_commits<cr>", "Commits" },
-      C = { "<cmd>Telescope git_branches<cr>", "Branches" },
-      s = { "<cmd>Telescope git_status<cr>", "Status" },
-      S = { "<cmd>Telescope git_stash<cr>", "Stash" },
+      c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
+      C = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
+      S = { "<cmd>Telescope git_stash<cr>", "Show Stash" },
+      o = {
+        name = "Options",
+        t = { "<cmd>lua require 'vgit'.toggle_diff_preference()<cr>", "Toggle Unified/Split Diff" },
+      },
       h = {
         name = "Hunk",
         n = { "<cmd>lua require 'vgit'.hunk_down()<cr>", "Next Hunk" },
@@ -45,9 +47,6 @@ function M.setup()
         name = "Blame",
         p = { "<cmd>lua require 'vgit'.buffer_blame_preview()<cr>", "Preview Current Line" },
         b = { "<cmd>lua require 'vgit'.buffer_gutter_blame_preview()<cr>", "Preview Buffer" },
-      },
-      d = {
-        name = "Diff View",
       },
       p = {
         name = "Project",
