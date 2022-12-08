@@ -60,10 +60,10 @@ function M.setup()
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
       G = {
         name = "Git",
-        c = { "<cmd>Telescope git_commits<cr>", "Commits" },
-        b = { "<cmd>Telescope git_bcommits<cr>", "Buffer Commits" },
-        B = { "<cmd>Telescope git_branches<cr>", "Branches" },
-        S = { "<cmd>Telescope git_stash<cr>", "Stash" }
+        c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
+        b = { "<cmd>Telescope git_bcommits<cr>", "Show Buffer Commits" },
+        B = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
+        S = { "<cmd>Telescope git_stash<cr>", "Show Stash" }
       },
       l = {
         name = "Lsp",

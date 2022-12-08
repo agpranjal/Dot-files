@@ -48,15 +48,15 @@ function M.setup()
   local keymap = {
     g = {
       name = "Git",
+      H = {
+        name = "History",
+        f = { "<cmd>DiffviewFileHistory %<cr>", "Current File History" },
+        a = { "<cmd>DiffviewFileHistory<cr>", "All Files History" },
+      },
       p = {
         name = "Project",
         d = { "<cmd>DiffviewOpen<cr>", "Open Project Diff" },
         c = { "<cmd>DiffviewClose<cr>", "Close Project Diff" },
-        h = {
-          name = "History",
-          f = { "<cmd>DiffviewFileHistory %<cr>", "Current File History" },
-          a = { "<cmd>DiffviewFileHistory<cr>", "All Files History" },
-        },
         o = {
           name = "Options (DiffView)",
           t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle Files Panel" },
