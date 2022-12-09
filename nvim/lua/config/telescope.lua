@@ -80,7 +80,7 @@ function M.setup()
       l = { "<cmd>Telescope software-licenses find<cr>", "Insert Software License" },
       c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
       C = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
-      s = { "<cmd>Telescope git_stash<cr>", "Show Stash" },
+      S = { "<cmd>Telescope git_stash<cr>", "Show Stash" },
     }
   }
   whichkey.register(keymaps_git, { mode = "n", prefix = "<leader>" })

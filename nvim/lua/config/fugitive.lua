@@ -16,7 +16,7 @@ function M.setup()
     g = {
       name = "Git",
       e = { "<cmd>lua require 'config.fugitive'._git_cmd_input()<cr>", "Execute CMD" },
-      g = { "<cmd>:G<cr>", "Summary" },
+      s = { "<cmd>:G<cr>", "Summary" },
     }
   }
 
