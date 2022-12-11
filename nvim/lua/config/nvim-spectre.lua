@@ -155,10 +155,10 @@ function M.setup()
 
   -- Key mapping
   local keymap_s = {
-    name = "Search and Replace",
+    name = "Search/Replace",
     -- s = { "<cmd>lua require 'spectre'.open()<CR>", "Search and Replace" }
     s = {
-      name = "Search and Replace",
+      name = "Search/Replace",
       s = { "<cmd>lua require 'spectre'.open()<CR>", "Open" },
       d = { "<cmd>lua require('spectre').toggle_line()<CR>", "Toggle Current Item" },
       ["<CR>"] = { "<cmd>lua require('spectre.actions').select_entry()<CR>", "Goto Current File" },

@@ -6,17 +6,30 @@ function M.setup()
   require "trouble".setup {
     use_diagnostic_signs = true,
     padding = false,
+    action_keys = {
+      close = "q"
+    }
   }
 
   local keymap_l = {
     l = {
       name = "lsp",
-      t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
-      R = { "<cmd>Trouble lsp_references<cr>", "References" },
-      d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
-      w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+      t = {
+        name = "Trouble",
+        t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
+        s = {
+          name = "Symbols",
+          r = { "<cmd>Trouble lsp_references<cr>", "Current Word References (Workspace)" },
+        },
+        d = {
+          name = "Diagnostics",
+          d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
+          w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+        }
+      },
     }
   }
   whichkey.register(keymap_l, { mode = "n", prefix = "<leader>" })
 end
+
 return M

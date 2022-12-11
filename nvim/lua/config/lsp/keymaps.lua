@@ -20,10 +20,16 @@ function M.setup(client, bufnr)
   local keymap_l = {
     l = {
       name = "Lsp",
-      r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-      D = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
+      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+      d = {
+        name = "Diagnostics",
+        l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
+      },
+      s = {
+        name = "Symbols",
+        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Current Symbol (across workspace)" },
+      },
       g = {
         name = "Goto",
         d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },

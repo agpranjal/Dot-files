@@ -1,7 +1,16 @@
 local M = {}
 
+local input = require "utils.ui".input
 local whichkey = require "which-key"
 local telescope = require "telescope"
+
+function M._input_sym_query()
+  input("Enter Symbol To Search:", function(ip)
+    if ip then
+      vim.cmd("Telescope lsp_workspace_symbols query=" .. ip)
+    end
+  end)
+end
 
 function M.setup()
   telescope.setup {
@@ -36,19 +45,11 @@ function M.setup()
   telescope.load_extension "software-licenses"
   telescope.load_extension "frecency"
 
-  local keymaps_f = {
+  local keymap_f = {
     f = {
       name = "Find/Search",
+      s = { "<cmd>Telescope spell_suggest<cr>", "Spell Suggest Current Word" },
       c = { "<cmd>lua require 'telescope.builtin'.colorscheme {enable_preview=true}<cr>", "Colorscheme" },
-      v = {
-        name = "Vim",
-        a = { "<cmd>Telescope autocommands<cr>", "Vim AutoCommands" },
-        H = { "<cmd>Telescope highlights<cr>", "Vim Highlights" },
-        h = { "<cmd>Telescope help_tags<cr>", "Vim Help" },
-        j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
-        O = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
-        C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
-      },
       f = { "<cmd>Telescope find_files<cr>", "Files Within Workspace" },
       F = { "<cmd>Telescope frecency<cr>", "Frequently Visited Files (Frecency)" },
       b = { "<cmd>Telescope buffers<cr>", "All Buffers" },
@@ -58,32 +59,56 @@ function M.setup()
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
-      l = {
-        name = "Lsp",
-        r = { "<cmd>Telescope lsp_references<cr>", "Word References (Document)" },
-        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        W = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
-        w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
-        d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
-        i = { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" },
-        D = { "<cmd>Telescope lsp_definitions<cr>", "Goto Definition" },
-        t = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Definition" },
-      }
+      v = {
+        name = "Vim",
+        a = { "<cmd>Telescope autocommands<cr>", "AutoCommands" },
+        H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+        h = { "<cmd>Telescope help_tags<cr>", "Help" },
+        j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
+        o = { "<cmd>Telescope vim_options<cr>", "Options" },
+        c = { "<cmd>Telescope command_history<cr>", "Command History" },
+        C = { "<cmd>Telescope commands<cr>", "Commands" },
+      },
     }
   }
 
-  whichkey.register(keymaps_f, { mode = "n", prefix = "<leader>" })
+  whichkey.register(keymap_f, { mode = "n", prefix = "<leader>" })
 
-  local keymaps_git = {
+  local keymap_g = {
     g = {
       name = "Git",
       l = { "<cmd>Telescope software-licenses find<cr>", "Insert Software License" },
       c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
       C = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
       S = { "<cmd>Telescope git_stash<cr>", "Show Stash" },
+      b = {
+        name = "Buffer",
+        c = { "<cmd>Telescope git_bcommits<cr>", "Buffer Commits" },
+      }
     }
   }
-  whichkey.register(keymaps_git, { mode = "n", prefix = "<leader>" })
+
+  whichkey.register(keymap_g, { mode = "n", prefix = "<leader>" })
+
+  local keymap_l = {
+    l = {
+      name = "Lsp",
+      d = {
+        name = "Diagnostics",
+        w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+      },
+      s = {
+        name = "Symbols",
+        R = { "<cmd>Telescope lsp_references<cr>", "Show Current Symbol References (workspace)" },
+        d = { "<cmd>Telescope lsp_document_symbols<cr>", "Show All Document Symbols" },
+        w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Show ALl Workspace Symbols" },
+        q = { "<cmd>lua require 'config.telescope'._input_sym_query()<cr>", "Query Workspace For Symbol" },
+      },
+    }
+  }
+
+  whichkey.register(keymap_l, { mode = "n", prefix = "<leader>" })
 end
 
 return M

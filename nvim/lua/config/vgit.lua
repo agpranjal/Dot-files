@@ -38,7 +38,6 @@ function M.setup()
         R = { "<cmd>lua require 'vgit'.buffer_reset()<cr>", "Discard Unstaged Changes" },
         d = { "<cmd>lua require 'vgit'.buffer_diff_preview()<cr>", "Buffer Diff" },
         D = { "<cmd>lua require 'vgit'.buffer_diff_staged_preview()<cr>", "Staged Buffer Diff" },
-        c = { "<cmd>Telescope git_bcommits<cr>", "Buffer Commits" },
       },
       B = {
         name = "Blame",

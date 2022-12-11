@@ -45,15 +45,20 @@ function M.setup()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, lsp.float)
 
   -- Toggle Diagnostic VirtualText
-  require 'toggle_lsp_diagnostics'.init({ underline = false,
+  require 'toggle_lsp_diagnostics'.init({
+    underline = false,
     virtual_text = { spacing = 10, prefix = "● ", source = true },
-    update_in_insert = false })
+    update_in_insert = false
+  })
   local whichkey = require "which-key"
   local keymap_l = {
     l = {
       name = "Lsp",
       v = { "<Plug>(toggle-lsp-diag-vtext)<CR>", "Toggle VirtualText" },
-      u = { "<Plug>(toggle-lsp-diag-underline)", "Toggle Diagnostic Underline" }
+      d = {
+        name = "Diagnostics",
+        u = { "<Plug>(toggle-lsp-diag-underline)", "Toggle Diagnostic Underline" }
+      }
     }
   }
   whichkey.register(keymap_l, { prefix = "<leader>" })

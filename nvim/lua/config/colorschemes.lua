@@ -121,8 +121,8 @@ function M.setup(use)
     " latte, frappe, macchiato, mocha
     " vim.g.catppuccin_flavour = "mocha" 
 
-    " colorscheme molokai
-    colorscheme vscode
+    colorscheme molokai
+    " colorscheme vscode
   ]]
 end
 
