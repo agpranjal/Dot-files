@@ -4,6 +4,9 @@ local packer_bootstrap = false
 -- packer.nvim configuration
 local conf = {
   display = {
+    keybindings = {
+      quit = "<esc>"
+    },
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
     end

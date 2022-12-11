@@ -4,6 +4,7 @@ function M.setup(use)
   use "mangeshrex/everblush.vim"
   use "dracula/vim"
   use "tomasr/molokai"
+  use "fmoralesc/molokayo"
   use "Yazeed1s/minimal.nvim"
   use "tiagovla/tokyodark.nvim"
   use 'projekt0n/github-nvim-theme'
