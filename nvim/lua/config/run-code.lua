@@ -13,9 +13,9 @@ function M.setup()
   local keymap = {
     r = {
       name = "Run Code",
-      f = { "<cmd>RunCodeFile<cr>", "Run Entire File" },
+      f = { "<cmd>RunCodeFile<cr>", "Run Current File" },
       o = { "<cmd>RunCodeLastOutput<cr>", "Show Last Output" },
-      l = { "<cmd>RunCodeLauncher<cr>", "Custom Commands" },
+      l = { "<cmd>RunCodeLauncher<cr>", "Run/Create Custom Commands" },
       p = { "<cmd>RunCodeLastCustomCmd<cr>", "Run Previous Command" },
       b = { "<cmd>RunCodeBlock<cr>", "Run Code Block (Markdown)" }
     }
