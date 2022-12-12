@@ -103,7 +103,7 @@ function M.setup(use)
   -- Custom Fix hl groups
   vim.cmd [[
     function! SetMatchingParenHighlight()
-      if get(g:, "colors_name") == "molokai"
+      if get(g:, "colors_name") == "molokai" || get(g:, "colors_name") == "molokayo"
         highlight MatchParen guibg=black guifg=#FD971F
       endif
     endfunction
