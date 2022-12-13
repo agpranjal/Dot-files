@@ -13,3 +13,6 @@ vim.api.nvim_create_user_command("Wq", "wq", { nargs = 0 })
 -- Scroll half screen up and down with pageup and pagedown
 vim.keymap.set("", "<pageup>", "7<up>")
 vim.keymap.set("", "<pagedown>", "7<down>")
+
+vim.keymap.set("i", "<pageup>", "<esc>7<up>i")
+vim.keymap.set("i", "<pagedown>", "<esc>7<down>i")

@@ -23,7 +23,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.cmd "retab"
-vim.cmd "set fillchars+=diff:/"
+vim.cmd "set fillchars+=diff:/" -- Deleted lines in git diff will show as //// instead of ----
 
 
 -- Highlight on yank
