@@ -4,6 +4,7 @@ local whichkey = require "which-key"
 
 function M.setup()
   require "toggleterm".setup {
+    size = 10,
     open_mapping = " t",
     insert_mappings = false,
     direction = "horizontal",
