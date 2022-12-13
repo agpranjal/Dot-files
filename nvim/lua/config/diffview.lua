@@ -53,7 +53,7 @@ function M.setup()
         f = { "<cmd>DiffviewFileHistory %<cr>", "Current File History" },
         a = { "<cmd>DiffviewFileHistory<cr>", "All Files History" },
         o = {
-          name = "Options (DiffView)",
+          name = "Options",
           t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle Files Panel" },
           d = { "<cmd>lua require 'diffview.actions'.open_in_diffview()<cr>", "Open File in DiffView" },
           l = { "<cmd>lua require 'diffview.actions'.listing_style()<cr>", "Change File Listing Style" },
@@ -68,7 +68,7 @@ function M.setup()
           d = { "<cmd>DiffviewOpen<cr>", "Open Project Diff" },
           -- c = { "<cmd>DiffviewClose<cr>", "Close Project Diff" },
           o = {
-            name = "Options (DiffView)",
+            name = "Options",
             r = { "<cmd>DiffviewRefresh<cr>", "Refresh Files Panel" },
             -- f = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files Panel" },
             t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle Files Panel" },
