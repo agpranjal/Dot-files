@@ -48,7 +48,7 @@ function M.setup()
         name = "Project",
         S = { "<cmd>lua require 'vgit'.project_stage_all() vim.cmd ':e' <cr>", "Stage All Files" },
         U = { "<cmd>lua require 'vgit'.project_unstage_all() vim.cmd ':e' <cr>", "Unstage All Files" },
-        R = { "<cmd>lua require 'vgit'.project_reset_all() vim.cmd ':e' <cr>", "Discard Unstaged Changes" },
+        R = { "<cmd>lua require 'vgit'.project_reset_all() vim.cmd ':e' <cr>", "Discard All Unstaged Changes" },
       }
     }
   }

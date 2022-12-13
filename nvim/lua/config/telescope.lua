@@ -59,6 +59,7 @@ function M.setup()
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
+      n = { "<cmd>Telescope notify<cr>", "Notification History" },
       v = {
         name = "Vim",
         a = { "<cmd>Telescope autocommands<cr>", "AutoCommands" },
@@ -102,8 +103,7 @@ function M.setup()
         name = "Symbols",
         R = { "<cmd>Telescope lsp_references<cr>", "Show Current Symbol References (workspace)" },
         d = { "<cmd>Telescope lsp_document_symbols<cr>", "Show All Document Symbols" },
-        w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Show ALl Workspace Symbols" },
-        q = { "<cmd>lua require 'config.telescope'._input_sym_query()<cr>", "Query Workspace For Symbol" },
+        w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Show All Workspace Symbols" },
       },
     }
   }

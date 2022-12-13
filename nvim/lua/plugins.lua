@@ -384,6 +384,14 @@ function M.setup(use)
     end
   }
 
+  -- Notifier
+  use {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("config.nvim-notify").setup()
+    end
+  }
+
   -- Setup colorschemes
   require("config.colorschemes").setup(use)
 end

@@ -55,16 +55,23 @@ function M.setup()
       },
       p = {
         name = "Project",
-        d = { "<cmd>DiffviewOpen<cr>", "Open Project Diff" },
-        c = { "<cmd>DiffviewClose<cr>", "Close Project Diff" },
-        o = {
-          name = "Options (DiffView)",
-          t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle Files Panel" },
-          r = { "<cmd>DiffviewRefresh<cr>", "Refresh Files Panel" },
-          f = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files Panel" },
-          l = { "<cmd>DiffviewLog<cr>", "Project Diff View Logs" },
-          c = { "<cmd>lua require 'diffview.actions'.cycle_layout()<cr>", "Change Layouts" }
-        },
+        d = {
+          name = "Diff",
+          d = { "<cmd>DiffviewOpen<cr>", "Open Project Diff" },
+          -- c = { "<cmd>DiffviewClose<cr>", "Close Project Diff" },
+          o = {
+            name = "Options (DiffView)",
+            r = { "<cmd>DiffviewRefresh<cr>", "Refresh Files Panel" },
+            -- t = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files Panel" },
+            f = { "<cmd>DiffviewToggleFiles<cr>", "Toggle Files Panel" },
+            l = { "<cmd>lua require 'diffview.actions'.listing_style()<cr>", "Change file listing style" },
+            c = { "<cmd>lua require 'diffview.actions'.cycle_layout()<cr>", "Change Layouts" },
+            s = { "<cmd>lua require 'diffview.actions'.toggle_stage_entry()<cr>", "Stage/Unstage Entry" },
+            S = { "<cmd>lua require 'diffview.actions'.stage_all()<cr>", "Stage All Entries" },
+            U = { "<cmd>lua require 'diffview.actions'.unstage_all()<cr>", "Unstage All Entries" },
+            R = { "<cmd>lua require 'diffview.actions'.restore_entry()<cr>", "Remove Unstaged Changes (current entry)" }
+          },
+        }
       }
     }
   }

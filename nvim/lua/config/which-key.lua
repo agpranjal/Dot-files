@@ -16,7 +16,8 @@ function M.setup()
 
   whichkey.setup({
     window = {
-      border = "single", -- none, single, double, shadow
+      -- border = "single", -- none, single, double, shadow
+      border = "none", -- none, single, double, shadow
       position = "bottom", -- bottom, top
     },
     layout = {
@@ -42,7 +43,7 @@ function M.setup()
   local keymap = {
     -- ["w"] = { "<cmd>update!<CR>", "Save" },
     ["W"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
-    ["q"] = { "<cmd>quit!<CR>", "Quit" },
+    ["q"] = { "<cmd>q<CR>", "Quit" },
 
     -- Packer
     p = {
