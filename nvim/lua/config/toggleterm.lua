@@ -9,6 +9,7 @@ function M.setup()
     direction = "horizontal",
     terminal_mappings = false,
     shade_terminals = true,
+    shading_factor = 2
   }
 
   local keymap_t = {
@@ -21,6 +22,8 @@ function M.setup()
   function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    -- vim.keymap.set('t', '<esc><esc>', [[<cmd>quit<cr>]], opts)
+    vim.keymap.set('n', '<esc>', [[<cmd>quit<cr>]], opts)
     vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
     vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
