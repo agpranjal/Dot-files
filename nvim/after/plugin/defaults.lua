@@ -66,7 +66,7 @@ vim.cmd [[
 
 -- Escape from git buffer using <esc>
 vim.cmd [[
-  augroup HelpTextEscape
+  augroup GitBufferEscape
     autocmd!
     autocmd BufEnter * lua if (vim.bo.filetype == "git") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
   augroup end

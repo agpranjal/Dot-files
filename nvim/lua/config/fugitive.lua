@@ -25,7 +25,7 @@ function M.setup()
   vim.cmd [[
     augroup FugitiveExit
       autocmd!
-      autocmd BufEnter * lua if (vim.bo.filetype == "fugitive") then vim.cmd "nnoremap <buffer> <silent> <esc> :quit <cr>" end
+      autocmd BufEnter * lua if (vim.bo.filetype == "fugitive") then vim.cmd "nnoremap <buffer> <silent> <esc> :q <cr>" end
     augroup end
   ]]
 end

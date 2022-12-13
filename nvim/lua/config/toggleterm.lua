@@ -6,8 +6,9 @@ function M.setup()
   require "toggleterm".setup {
     open_mapping = " t",
     insert_mappings = false,
-    direction = "float",
+    direction = "horizontal",
     terminal_mappings = false,
+    shade_terminals = true,
   }
 
   local keymap_t = {
