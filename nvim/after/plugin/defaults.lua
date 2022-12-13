@@ -64,6 +64,14 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Escape from git buffer using <esc>
+vim.cmd [[
+  augroup HelpTextEscape
+    autocmd!
+    autocmd BufEnter * lua if (vim.bo.filetype == "git") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
+  augroup end
+]]
+
 -- For Neovide
 vim.cmd [[
   if exists("g:neovide")
