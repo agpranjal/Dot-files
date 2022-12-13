@@ -40,7 +40,7 @@ function M.setup()
   ]]
 
   local keymap = {
-    e = { "<cmd>Neotree reveal_force_cwd show toggle<cr>", "Explorer" }
+    e = { "<cmd>Neotree reveal_force_cwd show toggle<cr>", "Explorer (toggle)" }
   }
   whichkey.register(keymap, { mode = "n", prefix = "<leader>" })
 end

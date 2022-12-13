@@ -13,8 +13,8 @@ function M.setup()
   }
 
   local keymap_t = {
-    name = "Toggle Terminal",
-    t = { "Toggle Terminal" }
+    name = "Terminal (toggle)",
+    t = { "Terminal (toggle)" }
   }
 
   whichkey.register(keymap_t, { mode = "n", prefix = "<leader>" })
@@ -22,7 +22,6 @@ function M.setup()
   function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-    -- vim.keymap.set('t', '<esc><esc>', [[<cmd>quit<cr>]], opts)
     vim.keymap.set('n', '<esc>', [[<cmd>quit<cr>]], opts)
     vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)

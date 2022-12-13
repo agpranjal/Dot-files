@@ -21,7 +21,7 @@ function M.setup()
 
   -- Normal mode
   local keymap_n = {
-    ["/"] = { "<cmd>CommentToggle<cr>", "Comment Toggle" }
+    ["/"] = { "<cmd>CommentToggle<cr>", "Comment (toggle)" }
   }
   whichkey.register(keymap_n, { mode = "n", prefix = "<leader>" })
 

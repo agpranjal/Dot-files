@@ -42,7 +42,7 @@ function M.setup()
 
   local keymap = {
     -- ["w"] = { "<cmd>update!<CR>", "Save" },
-    ["W"] = { "<cmd>set wrap!<CR>", "Toggle wrap" },
+    ["W"] = { "<cmd>set wrap!<CR>", "Wrap (toggle)" },
     ["q"] = { "<cmd>q<CR>", "Quit" },
 
     -- Packer
@@ -57,7 +57,7 @@ function M.setup()
     },
 
     -- Highlights
-    h = { "<cmd>set hlsearch!<cr>", "Toggle Search Highlights" },
+    h = { "<cmd>set hlsearch!<cr>", "Search Highlights (toggle)" },
 
     -- Shell Command
     c = { "<cmd>lua require 'config.which-key'._input_cmd()<cr>", "Execute Shell CMD" }

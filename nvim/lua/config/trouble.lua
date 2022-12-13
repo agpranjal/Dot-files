@@ -16,7 +16,7 @@ function M.setup()
       name = "lsp",
       t = {
         name = "Trouble",
-        t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
+        t = { "<cmd>TroubleToggle<CR>", "Trouble (toggle)" },
         s = {
           name = "Symbols",
           r = { "<cmd>Trouble lsp_references<cr>", "Current Word References (Workspace)" },

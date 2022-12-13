@@ -160,7 +160,7 @@ function M.setup()
     s = {
       name = "Search/Replace",
       s = { "<cmd>lua require 'spectre'.open()<CR>", "Open" },
-      d = { "<cmd>lua require('spectre').toggle_line()<CR>", "Toggle Current Item" },
+      d = { "<cmd>lua require('spectre').toggle_line()<CR>", "Current Item (toggle)" },
       ["<CR>"] = { "<cmd>lua require('spectre.actions').select_entry()<CR>", "Goto Current File" },
       q = { "<cmd>lua require('spectre.actions').send_to_qf()<CR>", "Send All Items To Quickfix" },
       c = { "<cmd>lua require('spectre.actions').replace_cmd()<CR>", "Input Replace Vim Command" },
@@ -168,9 +168,9 @@ function M.setup()
       r = { "<cmd>lua require('spectre.actions').run_current_replace()<CR>", "Replace Current Line" },
       R = { "<cmd>lua require('spectre.actions').run_replace()<CR>", "Replace All" },
       v = { "<cmd>lua require('spectre').change_view()<CR>", "Change Result View Mode" },
-      u = { "<cmd>lua require('spectre').toggle_live_update()<CR>", "Toggle Live Update" },
-      i = { "<cmd>lua require('spectre').change_options('ignore-case')<CR>", "Toggle Ignore Case" },
-      h = { "<cmd>lua require('spectre').change_options('hidden')<CR>", "Toggle Hidden" }
+      u = { "<cmd>lua require('spectre').toggle_live_update()<CR>", "Live Update (toggle)" },
+      i = { "<cmd>lua require('spectre').change_options('ignore-case')<CR>", "Ignore Case (toggle)" },
+      h = { "<cmd>lua require('spectre').change_options('hidden')<CR>", "Hidden (toggle)" }
     }
   }
   whichkey.register(keymap_s, { mode = "n", prefix = "<leader>" })

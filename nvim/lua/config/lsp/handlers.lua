@@ -54,10 +54,10 @@ function M.setup()
   local keymap_l = {
     l = {
       name = "Lsp",
-      v = { "<Plug>(toggle-lsp-diag-vtext)<CR>", "Toggle VirtualText" },
+      v = { "<Plug>(toggle-lsp-diag-vtext)<CR>", "VirtualText (toggle)" },
       d = {
         name = "Diagnostics",
-        u = { "<Plug>(toggle-lsp-diag-underline)", "Toggle Diagnostic Underline" }
+        u = { "<Plug>(toggle-lsp-diag-underline)", "Diagnostic Underline (toggle)" }
       }
     }
   }

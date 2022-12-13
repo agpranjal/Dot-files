@@ -16,7 +16,7 @@ function M.setup()
   }
 
   local keymap = {
-    z = { "<cmd>ZenMode<cr>", "Toggle Zen Mode" }
+    z = { "<cmd>ZenMode<cr>", "Zen Mode (toggle)" }
   }
 
   whichkey.register(keymap, { mode = "n", prefix = "<leader>" })

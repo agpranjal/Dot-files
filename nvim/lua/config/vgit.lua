@@ -19,7 +19,7 @@ function M.setup()
       name = "Git",
       o = {
         name = "Options",
-        t = { "<cmd>lua require 'vgit'.toggle_diff_preference()<cr>", "Toggle Unified/Split Diff" },
+        t = { "<cmd>lua require 'vgit'.toggle_diff_preference()<cr>", "Unified/Split Diff (toggle)" },
       },
       h = {
         name = "Hunk",

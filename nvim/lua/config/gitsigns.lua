@@ -22,7 +22,7 @@ function M.setup()
           -- D = { "<cmd>Gitsigns diffthis<CR>", "Diff Buffer" },
           R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
           S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
-          t = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle Line Change Highlight" },
+          t = { "<cmd>Gitsigns toggle_linehl<cr>", "Highlight Line Change (toggle)" },
           h = {
             name = "Hunk",
             n = { "<cmd>Gitsigns next_hunk<CR>", "Select Next Hunk" },
