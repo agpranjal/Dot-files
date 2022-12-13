@@ -73,6 +73,14 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Escape from nvim-notify using <esc>
+vim.cmd [[
+  augroup NvimNotifyEscape
+    autocmd!
+    autocmd BufEnter * lua if (vim.bo.filetype == "notify") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
+  augroup end
+]]
+
 -- For Neovide
 vim.cmd [[
   if exists("g:neovide")
@@ -88,6 +96,8 @@ vim.cmd [[
               \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
 
   " Notification after file change
+  " autocmd FileChangedShellPost *
+  "   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
   autocmd FileChangedShellPost *
-    \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+  \ lua vim.notify("File changed on disk. Buffer reloaded.", "warn", {title="Nvim"})
 ]]

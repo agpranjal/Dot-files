@@ -44,6 +44,7 @@ function M.setup()
   telescope.load_extension "projects" -- project.nvim
   telescope.load_extension "software-licenses"
   telescope.load_extension "frecency"
+  telescope.load_extension "notify"
 
   local keymap_f = {
     f = {
