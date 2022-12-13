@@ -73,11 +73,11 @@ vim.cmd [[
   augroup end
 ]]
 
--- Escape from nvim-notify using <esc>
+-- Escape from quickfix window using <esc>
 vim.cmd [[
-  augroup NvimNotifyEscape
+  augroup QuickFixEscapeShortcut
     autocmd!
-    autocmd BufEnter * lua if (vim.bo.filetype == "notify") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
+    autocmd FileType qf nnoremap <buffer> <silent> <esc> :q<cr>
   augroup end
 ]]
 

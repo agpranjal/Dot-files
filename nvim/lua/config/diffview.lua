@@ -59,6 +59,7 @@ function M.setup()
           f = { "<cmd>lua require 'diffview.actions'.listing_style()<cr>", "File Listing Style (toggle)" },
           l = { "<cmd>lua require 'diffview.actions'.cycle_layout()<cr>", "Diff Layout (toggle)" },
           L = { "<cmd>lua require 'diffview.actions'.open_commit_log()<cr>", "Open Commit Log (current entry)" },
+          o = { "<cmd>lua require 'diffview.actions'.goto_file_split()<cr>", "Open File in Split" },
         },
       },
       p = {
@@ -77,7 +78,8 @@ function M.setup()
             s = { "<cmd>lua require 'diffview.actions'.toggle_stage_entry()<cr>", "Stage/Unstage (current entry)" },
             S = { "<cmd>lua require 'diffview.actions'.stage_all()<cr>", "Stage All Entries" },
             U = { "<cmd>lua require 'diffview.actions'.unstage_all()<cr>", "Unstage All Entries" },
-            R = { "<cmd>lua require 'diffview.actions'.restore_entry()<cr>", "Remove Unstaged Changes (current entry)" }
+            R = { "<cmd>lua require 'diffview.actions'.restore_entry()<cr>", "Remove Unstaged Changes (current entry)" },
+            o = { "<cmd>lua require 'diffview.actions'.goto_file_split()<cr>", "Open File in Split" },
           },
         }
       }

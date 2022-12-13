@@ -61,6 +61,7 @@ function M.setup()
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
       n = { "<cmd>Telescope notify<cr>", "Notification History" },
+      q = { "<cmd>Telescope quickfixhistory<cr>", "Quickfix History" },
       v = {
         name = "Vim",
         a = { "<cmd>Telescope autocommands<cr>", "AutoCommands" },
