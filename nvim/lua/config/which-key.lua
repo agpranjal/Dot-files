@@ -31,6 +31,8 @@ function M.setup()
       ["<Left>"] = "Left Arrow",
       ["<right>"] = "Right Arrow",
       ["<Right>"] = "Right Arrow",
+      ["<CR>"] = "Enter",
+      ["<cr>"] = "Enter"
     },
     disable = {
       filetypes = { "TelescopePrompt" }
