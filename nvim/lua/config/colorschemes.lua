@@ -102,17 +102,21 @@ function M.setup(use)
 
   -- Custom Fix hl groups
   vim.cmd [[
-    function! SetMatchingParenHighlight()
+    function! ColorschemeFix()
       if get(g:, "colors_name") == "molokai" || get(g:, "colors_name") == "molokayo"
         highlight MatchParen guibg=black guifg=#FD971F
       endif
+
+      if get(g:, "colors_name") == "molokayo"
+        set guicursor=i:ver25-iCursor
+      endif
     endfunction
   
-    call SetMatchingParenHighlight()
+    call ColorschemeFix()
   
     augroup VimMolokaiColorSchemeFix
       autocmd!
-      autocmd ColorScheme * silent! call SetMatchingParenHighlight()
+      autocmd ColorScheme * silent! call ColorschemeFix()
     augroup end
   ]]
 
