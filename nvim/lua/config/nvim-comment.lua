@@ -27,7 +27,7 @@ function M.setup()
 
   -- Visual mode
   local keymap_v = {
-    ["/"] = { "Comment Toggle" }
+    ["/"] = { "Comment (toggle)" }
   }
   whichkey.register(keymap_v, { mode = "v", prefix = "<leader>" })
 end
