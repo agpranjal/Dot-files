@@ -30,6 +30,14 @@ function M.setup()
     }
   }
   whichkey.register(keymap_l, { mode = "n", prefix = "<leader>" })
+
+  -- Escape from Trouble buffer using <esc>
+  vim.cmd [[
+    augroup TroubleEscapeShortcut
+      autocmd!
+      autocmd FileType * lua if (vim.bo.filetype == "Trouble") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
+    augroup end
+  ]]
 end
 
 return M
