@@ -83,6 +83,14 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Escape from vim window using <esc>
+vim.cmd [[
+  augroup QuickFixEscapeShortcut
+    autocmd!
+    autocmd FileType vim nnoremap <buffer> <silent> <esc> :q<cr>
+  augroup end
+]]
+
 -- For Neovide
 vim.cmd [[
   if exists("g:neovide")
