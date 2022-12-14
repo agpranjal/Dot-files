@@ -22,8 +22,9 @@ function M.setup()
 
   function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
-    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-    vim.keymap.set('n', '<esc>', [[<cmd>quit<cr>]], opts)
+    -- vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    -- vim.keymap.set('n', '<esc>', [[<cmd>quit<cr>]], opts)
+    vim.keymap.set('t', '<esc>', [[<cmd>quit<cr>]], opts)
     vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', '<C-w><up>', [[<Cmd>wincmd k<CR>]], opts)
     vim.keymap.set('t', '<C-w><down>', [[<Cmd>wincmd j<CR>]], opts)
