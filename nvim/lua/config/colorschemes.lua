@@ -134,7 +134,8 @@ function M.setup(use)
   -- Set final colorscheme here
   vim.cmd [[
     " Vscode is default scheme if no colorscheme if specified
-    " colorscheme vscode
+
+    colorscheme molokayo
   ]]
 end
 
