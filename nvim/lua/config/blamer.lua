@@ -12,10 +12,11 @@ function M.setup()
 
     function! SetGitBlamerHighlight()
       highlight link Blamer Comment
+      hi Blamer guifg=#666666
       
-      if get(g:, "colors_name") == "vscode"
-        highlight link Blamer gitcommitHeader
-      endif
+      " if get(g:, "colors_name") == "vscode"
+      "   highlight link Blamer gitcommitHeader
+      " endif
     endfunction
 
     call SetGitBlamerHighlight()

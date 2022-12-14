@@ -108,6 +108,7 @@ function M.setup(use)
     function! ColorschemeFix()
       if get(g:, "colors_name") == "molokai" || get(g:, "colors_name") == "molokayo"
         highlight MatchParen guibg=black guifg=#FD971F
+        highlight Comment cterm=italic gui=italic
       endif
 
       if get(g:, "colors_name") == "molokayo"
