@@ -10,6 +10,9 @@ function M.setup(use)
   use 'projekt0n/github-nvim-theme'
   use "olimorris/onedarkpro.nvim"
   use "sam4llis/nvim-tundra"
+  use "tomasiser/vim-code-dark"
+  use "tanvirtin/monokai.nvim"
+  use "cpea2506/one_monokai.nvim"
 
   -- Catppuccin
   use "catppuccin/nvim"
@@ -120,13 +123,16 @@ function M.setup(use)
     augroup end
   ]]
 
+  -- require "monokai".setup()
+  -- require "one_monokai".setup()
+
   -- Set final colorscheme here
+  -- Vscode is default scheme if no colorscheme if specified
   vim.cmd [[
     " latte, frappe, macchiato, mocha
     " vim.g.catppuccin_flavour = "mocha" 
 
     colorscheme molokai
-    " colorscheme vscode
   ]]
 end
 
