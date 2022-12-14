@@ -106,13 +106,17 @@ function M.setup(use)
   -- Custom Fix hl groups
   vim.cmd [[
     function! ColorschemeFix()
-      if get(g:, "colors_name") == "molokai" || get(g:, "colors_name") == "molokayo"
+      if index(["molokai", "molokayo"], get(g:, "colors_name")) >= 0
         highlight MatchParen guibg=black guifg=#FD971F
         highlight Comment cterm=italic gui=italic
       endif
 
-      if get(g:, "colors_name") == "molokayo"
+      if index(["molokayo"], get(g:, "colors_name")) >= 0
         set guicursor=i:ver25-iCursor
+      endif
+
+      if index(["molokai", "molokayo", "vscode"], get(g:, "colors_name")) >= 0
+        hi NeoTreeNormal guibg=#131313
       endif
     endfunction
   
@@ -128,12 +132,9 @@ function M.setup(use)
   -- require "one_monokai".setup()
 
   -- Set final colorscheme here
-  -- Vscode is default scheme if no colorscheme if specified
   vim.cmd [[
-    " latte, frappe, macchiato, mocha
-    " vim.g.catppuccin_flavour = "mocha" 
-
-    colorscheme molokai
+    " Vscode is default scheme if no colorscheme if specified
+    " colorscheme vscode
   ]]
 end
 
