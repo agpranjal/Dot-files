@@ -111,18 +111,24 @@ function M.setup(use)
         highlight Comment cterm=italic gui=italic
       endif
 
+      if index(["vscode"], get(g:, "colors_name")) >= 0
+        highlight @comment gui=italic
+      endif
+
+      " Set cursor style
       if index(["molokayo"], get(g:, "colors_name")) >= 0
         set guicursor=i:ver25-iCursor
       endif
 
+      " Make neo-tree background darker
       if index(["molokai", "molokayo", "vscode"], get(g:, "colors_name")) >= 0
         hi NeoTreeNormal guibg=#131313
       endif
     endfunction
   
-    call ColorschemeFix()
+    " call ColorschemeFix()
   
-    augroup VimMolokaiColorSchemeFix
+    augroup VimColorSchemeFix
       autocmd!
       autocmd ColorScheme * silent! call ColorschemeFix()
     augroup end
