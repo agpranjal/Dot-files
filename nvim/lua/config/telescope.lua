@@ -70,7 +70,7 @@ function M.setup()
         j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
         o = { "<cmd>Telescope vim_options<cr>", "Options" },
         c = { "<cmd>Telescope command_history<cr>", "Command History" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
+        C = { "<cmd>Telescope commands<cr>", "All Commands" },
       },
     }
   }
