@@ -10,7 +10,11 @@ function M.setup()
     direction = "float",
     terminal_mappings = false,
     shade_terminals = true,
-    shading_factor = 2
+    shading_factor = 1,
+    float_opts = {
+      border = "curved",
+      winblend = 12
+    }
   }
 
   local keymap_t = {
