@@ -1,5 +1,7 @@
 local M = {}
 
+local whichkey = require "which-key"
+
 function M.setup()
   require("notify").setup {
     -- stages = 'fade_in_slide_out',
@@ -19,6 +21,17 @@ function M.setup()
       autocmd BufEnter * lua if (vim.bo.filetype == "notify") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
     augroup end
   ]]
+
+  require "telescope".load_extension "notify"
+  local keymap_n = {
+    n = {
+      name = "Notifications",
+      h = { "<cmd>Telescope notify<cr>", "Notification History" },
+      d = { "<cmd>lua require 'notify'.dismiss()<cr>", "Dismiss All Notifications" }
+    }
+  }
+  whichkey.register(keymap_n, { mode = "n", prefix = "<leader>" })
+
 end
 
 return M

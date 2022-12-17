@@ -44,7 +44,6 @@ function M.setup()
   telescope.load_extension "projects" -- project.nvim
   telescope.load_extension "software-licenses"
   telescope.load_extension "frecency"
-  telescope.load_extension "notify"
 
   local keymap_f = {
     f = {
@@ -60,7 +59,6 @@ function M.setup()
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
       R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
-      n = { "<cmd>Telescope notify<cr>", "Notification History" },
       q = { "<cmd>Telescope quickfixhistory<cr>", "Quickfix History" },
       v = {
         name = "Vim",
