@@ -26,15 +26,15 @@ function M.setup(use)
     }
   }
 
-  -- Tokyonight
-  use {
-    'folke/tokyonight.nvim',
-    config = function()
-      vim.g.tokyonight_style = "night"
-      vim.g.tokyonight_italic_keywords = false
-      vim.g.tokyonight_lualine_bold = true
-    end
-  }
+  -- -- Tokyonight
+  -- use {
+  --   'folke/tokyonight.nvim',
+  --   config = function()
+  --     vim.g.tokyonight_style = "night"
+  --     vim.g.tokyonight_italic_keywords = false
+  --     vim.g.tokyonight_lualine_bold = true
+  --   end
+  -- }
 
   -- vim-nightfly-guicolors
   use {
