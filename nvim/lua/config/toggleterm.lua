@@ -7,7 +7,7 @@ function M.setup()
     size = 10,
     open_mapping = " t",
     insert_mappings = false,
-    direction = "horizontal",
+    direction = "float",
     terminal_mappings = false,
     shade_terminals = true,
     shading_factor = 2

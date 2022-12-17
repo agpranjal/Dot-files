@@ -85,12 +85,13 @@ vim.cmd [[
 
 -- Switch to normal mode when changing buffers
 -- Required because toggleterm enabled insert mode after window being resized (from another window)
-vim.cmd [[
-  augroup TerminalResizeFix
-    autocmd!
-    autocmd BufEnter * stopinsert
-  augroup end
-]]
+-- vim.cmd [[
+--   augroup TerminalResizeFix
+--     autocmd!
+--     autocmd BufEnter * stopinsert
+--     autocmd BufEnter toggleterm startinsert
+--   augroup end
+-- ]]
 
 -- For Neovide
 vim.cmd [[
