@@ -264,13 +264,13 @@ function M.setup(use)
     end
   }
 
-  -- Git Blamer
-  use {
-    "APZelos/blamer.nvim",
-    config = function()
-      require("config.blamer").setup()
-    end
-  }
+  -- -- Git Blamer
+  -- use {
+  --   "APZelos/blamer.nvim",
+  --   config = function()
+  --     require("config.blamer").setup()
+  --   end
+  -- }
 
   -- Autotags for html/xml
   use {
