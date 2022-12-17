@@ -1,5 +1,7 @@
 local M = {}
 
+local whichkey = require "which-key"
+
 function M.setup()
   -- LSP handlers configuration
   local lsp = {
@@ -50,7 +52,6 @@ function M.setup()
     virtual_text = { spacing = 10, prefix = "● ", source = true },
     update_in_insert = false
   })
-  local whichkey = require "which-key"
   local keymap_l = {
     l = {
       name = "Lsp",
