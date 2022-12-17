@@ -67,16 +67,16 @@ local opts = {
 }
 
 function M.setup()
-  -- null-ls
+  -- Configure null-ls
   require("config.lsp.null-ls").setup(opts)
 
-  -- Setup LSP handlers
+  -- Setup LSP handlers and lsp progress bar
   require("config.lsp.handlers").setup()
-
-  -- Installer
-  require("config.lsp.installer").setup(servers, opts)
-
   require("config.lsp.progress").setup()
+
+  -- Install lsp servers automatically (if not already installed)
+  -- And setup them
+  require("config.lsp.installer").setup(servers, opts)
 
   -- Set LSP log level
   -- vim.lsp.set_log_level("debug")
