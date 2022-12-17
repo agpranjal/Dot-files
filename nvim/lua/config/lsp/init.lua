@@ -75,7 +75,7 @@ function M.setup()
   require("config.lsp.progress").setup()
 
   -- Install lsp servers automatically (if not already installed)
-  -- And setup them
+  -- And setup them as well
   require("config.lsp.installer").setup(servers, opts)
 
   -- Set LSP log level
