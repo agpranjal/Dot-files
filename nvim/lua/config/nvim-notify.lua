@@ -9,7 +9,6 @@ function M.setup()
     fps = 30,
     background_colour = 'FloatShadow',
     timeout = 1000,
-    max_width = 100,
     max_height = 20
   }
   vim.notify = require("notify")
