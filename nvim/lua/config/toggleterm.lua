@@ -11,6 +11,7 @@ function M.setup()
     terminal_mappings = false,
     shade_terminals = true,
     shading_factor = 1,
+    autochdir = true,
     float_opts = {
       border = "curved",
       winblend = 12
