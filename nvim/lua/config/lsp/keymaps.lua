@@ -22,6 +22,7 @@ function M.setup(client, bufnr)
       name = "Lsp",
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+      I = { "<cmd>LspInstallInfo<CR>", "Lsp Install Info" },
       d = {
         name = "Diagnostics",
         l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
