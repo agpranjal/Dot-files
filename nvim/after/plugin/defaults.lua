@@ -83,11 +83,12 @@ vim.cmd [[
   augroup end
 ]]
 
--- Escape from vim window using <esc>
+-- Switch to normal mode when changing buffers
+-- Required because toggleterm enabled insert mode after window being resized (from another window)
 vim.cmd [[
-  augroup QuickFixEscapeShortcut
+  augroup TerminalResizeFix
     autocmd!
-    autocmd FileType vim nnoremap <buffer> <silent> <esc> :q<cr>
+    autocmd BufEnter * stopinsert
   augroup end
 ]]
 
