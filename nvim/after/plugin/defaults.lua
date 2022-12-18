@@ -27,7 +27,6 @@ vim.opt.expandtab = true
 vim.cmd "retab"
 vim.cmd "set fillchars+=diff:/" -- Deleted lines in git diff will show as //// instead of ----
 
-
 -- Highlight on yank
 vim.cmd [[
   augroup YankHighlight
@@ -97,7 +96,7 @@ vim.cmd [[
     set guifont=AurulentSansMono\ NFM:h12
     let g:neovide_cursor_unfocused_outline_width=0.125
     let g:neovide_cursor_animation_length=0.02
-    endif
+  endif
 ]]
 
 vim.cmd [[
