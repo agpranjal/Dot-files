@@ -48,7 +48,7 @@ function M.setup()
             '     %s • %s • %s',
             author,
             string.format(
-              '     %s %s ago',
+              '%s %s ago',
               time >= 0 and math.floor(time + 0.5) or math.ceil(time - 0.5),
               time_postfix
             ),
