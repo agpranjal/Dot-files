@@ -89,7 +89,7 @@ function M.setup()
       },
       B = {
         name = "Blame",
-        t = {"<cmd>lua require 'vgit'.toggle_live_blame()<cr>", "Toggle Live Blame"},
+        t = {"<cmd>lua require 'vgit'.toggle_live_blame()<cr>", "Live Blame (toggle)"},
         p = { "<cmd>lua require 'vgit'.buffer_blame_preview()<cr>", "Preview Current Line" },
         b = { "<cmd>lua require 'vgit'.buffer_gutter_blame_preview()<cr>", "Preview Buffer" },
       },
