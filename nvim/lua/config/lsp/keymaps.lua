@@ -44,7 +44,8 @@ function M.setup(client, bufnr)
   -- Use null-ls as formatter when original LSP does not provide formatting
   -- if client.resolved_capabilities.document_formatting then
   if client.server_capabilities.documentFormattingProvider then
-    keymap_l.l.f = { "<cmd>lua vim.lsp.buf.format({timeout_ms=2000})<cr>", "Format Document" }
+    -- keymap_l.l.f = { "<cmd>lua vim.lsp.buf.format({timeout_ms=10000})<cr>", "Format Document" }
+    keymap_l.l.f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format Document" }
   end
 
   whichkey.register(keymap_l, { mode = "n", buffer = bufnr, prefix = "<leader>" })

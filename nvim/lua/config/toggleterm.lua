@@ -13,7 +13,7 @@ function M.setup()
     shading_factor = 1,
     autochdir = true,
     float_opts = {
-      border = "curved",
+      border = "shadow",
       winblend = 12
     }
   }
