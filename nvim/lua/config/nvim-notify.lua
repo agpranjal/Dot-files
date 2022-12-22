@@ -8,7 +8,7 @@ function M.setup()
     stages = "slide",
     fps = 30,
     background_colour = 'FloatShadow',
-    timeout = 700,
+    timeout = 500,
     max_height = 20
   }
   vim.notify = require("notify")

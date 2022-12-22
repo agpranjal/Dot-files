@@ -64,7 +64,7 @@ function M.setup()
 
     -- split current buffer
     v = { "<cmd>leftabove vertical sbN 1 | wincmd p<cr>", "Vertical Split" },
-    -- V = { "<cmd>lua require 'config.which_key'.horizontal_split()<cr>", "Horizontal Split" },
+    H = { "<cmd>leftabove horizontal sbN 1 | wincmd p<cr>", "Horizotnal Split" },
   }
 
   local keymap_opts = {
