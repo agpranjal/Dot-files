@@ -60,7 +60,11 @@ function M.setup()
     h = { "<cmd>set hlsearch!<cr>", "Search Highlights (toggle)" },
 
     -- Shell Command
-    c = { "<cmd>lua require 'config.which-key'._input_cmd()<cr>", "Execute Shell CMD" }
+    c = { "<cmd>lua require 'config.which-key'._input_cmd()<cr>", "Execute Shell CMD" },
+
+    -- split current buffer
+    v = { "<cmd>leftabove vertical sbN 1 | wincmd p<cr>", "Vertical Split" },
+    -- V = { "<cmd>lua require 'config.which_key'.horizontal_split()<cr>", "Horizontal Split" },
   }
 
   local keymap_opts = {
