@@ -11,6 +11,56 @@ function M._input_cmd()
   end)
 end
 
+-- Open current buffer in vertical split and change to last hidden buffer in previous window
+function M._vert_split()
+  vim.cmd [[
+    let lastused = 0
+    let bufnum = 0
+
+    for buf in getbufinfo({'bufloaded': 1, 'buflisted': 1})
+        if buf.lastused > lastused && buf.hidden
+          let lastused = buf.lastused
+          let bufnum = buf.bufnr
+        endif
+      endfor
+
+    vsplit
+    if bufnum > 0
+      wincmd p
+      execute "buffer "..bufnum
+      wincmd p
+    endif
+
+    unlet lastused
+    unlet bufnum
+  ]]
+end
+
+-- Open current buffer in horizontal split and change to last hidden buffer in previous window
+function M._horz_split()
+  vim.cmd [[
+    let lastused = 0
+    let bufnum = 0
+
+    for buf in getbufinfo({'bufloaded': 1, 'buflisted': 1})
+        if buf.lastused > lastused && buf.hidden
+          let lastused = buf.lastused
+          let bufnum = buf.bufnr
+        endif
+      endfor
+
+    split
+    if bufnum > 0
+      wincmd p
+      execute "buffer "..bufnum
+      wincmd p
+    endif
+
+    unlet lastused
+    unlet bufnum
+  ]]
+end
+
 function M.setup()
   local whichkey = require "which-key"
 
@@ -63,8 +113,8 @@ function M.setup()
     c = { "<cmd>lua require 'config.which-key'._input_cmd()<cr>", "Execute Shell CMD" },
 
     -- split current buffer
-    v = { "<cmd>leftabove vertical sbN 1 | wincmd p<cr>", "Vertical Split" },
-    H = { "<cmd>leftabove horizontal sbN 1 | wincmd p<cr>", "Horizotnal Split" },
+    v = { "<cmd>lua require 'config.which-key'._vert_split()<cr>", "Vertical Split" },
+    H = { "<cmd>lua require 'config.which-key'._horz_split()<cr>", "Horizontal Split" },
   }
 
   local keymap_opts = {
