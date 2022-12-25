@@ -53,6 +53,8 @@ plugins=(
   yarn
   zsh-z
   fancy-ctrl-z
+  gitignore
+  terraform
 )
 
 source $ZSH/oh-my-zsh.sh
