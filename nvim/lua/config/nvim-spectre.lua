@@ -155,7 +155,11 @@ function M.setup()
     name = "Search/Replace",
     s = {
       name = "Search/Replace",
-      o = { "<cmd>lua require 'spectre'.open()<CR>", "Open" },
+      o = {
+        name = "Open",
+        w = { "<cmd>lua require 'spectre'.open()<CR>", "Open (workspace)" },
+        f = { "<cmd>lua require 'spectre'.open_file_search()<CR>", "Open (current file)" },
+      },
       -- ["<CR>"] = { "<cmd>lua require('spectre.actions').select_entry()<CR>", "Goto Current File" },
       -- q = { "<cmd>lua require('spectre.actions').send_to_qf()<CR>", "Send All Items To Quickfix" },
       -- -- c = { "<cmd>lua require('spectre.actions').replace_cmd()<CR>", "Input Replace Vim Command" },
