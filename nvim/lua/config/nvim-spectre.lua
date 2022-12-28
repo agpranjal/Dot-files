@@ -45,12 +45,12 @@ function M.setup()
         desc = "Show Options"
       },
       ['run_current_replace'] = {
-        map = "<leader>sr",
+        map = "<leader>src",
         cmd = "<cmd>lua require('spectre.actions').run_current_replace()<CR>",
         desc = "Replace Current Line"
       },
       ['run_replace'] = {
-        map = "<leader>sR",
+        map = "<leader>sra",
         cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
         desc = "Replace All"
       },
@@ -178,8 +178,11 @@ function M.setup()
       ["<CR>"] = { "Goto Current File" },
       q = { "Send All Items To Quickfix" },
       O = { "Show Options" },
-      r = { "Replace Current Item" },
-      R = { "Replace All" },
+      r = {
+        name = "Replace",
+        c = { "Replace Current Item" },
+        a = { "Replace All" },
+      },
       v = { "Change Result View Mode" },
       u = { "Live Update (toggle)" },
       i = { "Ignore Case (toggle)" },

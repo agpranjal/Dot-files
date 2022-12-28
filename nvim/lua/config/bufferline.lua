@@ -36,6 +36,10 @@ function M.setup()
       name = "Buffer",
       n = { "<Cmd>BufferLineCycleNext<Cr>", "Next buffer" },
       p = { "<Cmd>BufferLineCyclePrev<Cr>", "Previous buffer" },
+      -- q = { "<Cmd>silent! execute '%bd|e#|bd#' | silent! Neotree reveal_force_cwd show<cr>",
+      --   "Quit all buffers except current" },
+      q = { "<Cmd>silent! execute '%bd|e#|bd#| silent! Neotree reveal_force_cwd show'<cr>",
+        "Quit all buffers except current" },
       m = {
         name = "Move Buffer",
         n = { "<Cmd>BufferLineMoveNext<Cr>", "Move buffer next" },
