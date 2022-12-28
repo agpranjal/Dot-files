@@ -67,7 +67,6 @@ function M.setup()
         d = {
           name = "Diff",
           d = { "<cmd>DiffviewOpen<cr>", "Open Project Diff" },
-          -- c = { "<cmd>DiffviewClose<cr>", "Close Project Diff" },
           o = {
             name = "Options",
             r = { "<cmd>DiffviewRefresh<cr>", "Refresh Files Panel" },
@@ -80,6 +79,10 @@ function M.setup()
             U = { "<cmd>lua require 'diffview.actions'.unstage_all()<cr>", "Unstage All Entries" },
             R = { "<cmd>lua require 'diffview.actions'.restore_entry()<cr>", "Remove Unstaged Changes (current entry)" },
             o = { "<cmd>lua require 'diffview.actions'.goto_file_split()<cr>", "Open File in Split" },
+            c = {
+              name = "Conflict",
+              o = { "<cmd>lua require 'diffview.actions'.conflict_choose('ours')<cr>", "Choose Our Version" },
+            }
           },
         }
       }
