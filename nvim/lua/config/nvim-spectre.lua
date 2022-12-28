@@ -157,8 +157,8 @@ function M.setup()
       name = "Search/Replace",
       o = {
         name = "Open",
-        w = { "<cmd>lua require 'spectre'.open()<CR>", "Workspace" },
-        f = { "<cmd>lua require 'spectre'.open_file_search()<CR>", "Current File" },
+        w = { "<cmd>lua require 'spectre'.open()<CR>", "Search Across Workspace" },
+        f = { "<cmd>lua require 'spectre'.open_file_search()<CR>", "Search In Current File" },
       },
       -- ["<CR>"] = { "<cmd>lua require('spectre.actions').select_entry()<CR>", "Goto Current File" },
       -- q = { "<cmd>lua require('spectre.actions').send_to_qf()<CR>", "Send All Items To Quickfix" },
@@ -186,7 +186,7 @@ function M.setup()
       v = { "Change Result View Mode" },
       u = { "Live Update (toggle)" },
       i = { "Ignore Case (toggle)" },
-      h = { "Show From Hidden Files (toggle)" }
+      h = { "Search Hidden Files (toggle)" }
     }
   }
   whichkey.register(keymap_s, { mode = "n", prefix = "<leader>" })
