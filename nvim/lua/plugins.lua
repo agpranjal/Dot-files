@@ -392,6 +392,18 @@ function M.setup(use)
     end
   }
 
+  -- Clipboard manager
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      'nvim-telescope/telescope.nvim',
+      { 'kkharji/sqlite.lua', module = 'sqlite' }
+    },
+    config = function()
+      require('config.neoclip').setup()
+    end,
+  }
+
   -- Setup colorschemes
   require("config.colorschemes").setup(use)
 end
