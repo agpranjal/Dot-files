@@ -93,7 +93,7 @@ function M.setup()
   local keymap = {
     -- ["w"] = { "<cmd>update!<CR>", "Save" },
     ["W"] = { "<cmd>set wrap!<CR>", "Wrap (toggle)" },
-    ["q"] = { "<cmd>q<CR>", "Quit" },
+    -- ["q"] = { "<cmd>q<CR>", "Quit" },
 
     -- Packer
     p = {

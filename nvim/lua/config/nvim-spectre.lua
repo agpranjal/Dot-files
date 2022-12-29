@@ -190,6 +190,17 @@ function M.setup()
     }
   }
   whichkey.register(keymap_s, { mode = "n", prefix = "<leader>" })
+
+  local keymap_s_visual = {
+    s = {
+      name = "Search/Replace",
+      o = {
+        name = "Open",
+        v = { ":'<,'>lua require('spectre').open_visual()<cr>", "Search Visual Selection (workspace)" }
+      }
+    }
+  }
+  whichkey.register(keymap_s_visual, { mode = "v", prefix = "<leader>" })
 end
 
 return M
