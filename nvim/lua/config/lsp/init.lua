@@ -17,13 +17,6 @@ end
 
 local servers = {
   html = {},
-  jsonls = {
-    settings = {
-      json = {
-        schemas = require "schemastore".json.schemas(),
-      },
-    },
-  },
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
@@ -33,6 +26,15 @@ local servers = {
   bashls = {},
   terraformls = {},
   tflint = {},
+  dockerls = {},
+  sqlls = {},
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require "schemastore".json.schemas(),
+      },
+    },
+  },
   sumneko_lua = {
     settings = {
       Lua = {
