@@ -79,9 +79,9 @@ function M.setup()
     g = {
       name = "Git",
       l = { "<cmd>Telescope software-licenses find<cr>", "Insert Software License" },
-      c = { "<cmd>Telescope git_commits<cr>", "Show Commits" },
-      C = { "<cmd>Telescope git_branches<cr>", "Show Branches" },
-      S = { "<cmd>Telescope git_stash<cr>", "Show Stash" },
+      c = { "<cmd>Telescope git_commits<cr>", "Commits" },
+      C = { "<cmd>Telescope git_branches<cr>", "Branches" },
+      S = { "<cmd>Telescope git_stash<cr>", "Stash" },
       b = {
         name = "Buffer",
         c = { "<cmd>Telescope git_bcommits<cr>", "Buffer Commits" },
@@ -101,9 +101,9 @@ function M.setup()
       },
       s = {
         name = "Symbols",
-        R = { "<cmd>Telescope lsp_references<cr>", "Show Current Symbol References (workspace)" },
-        d = { "<cmd>Telescope lsp_document_symbols<cr>", "Show All Document Symbols" },
-        w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Show All Workspace Symbols" },
+        R = { "<cmd>Telescope lsp_references<cr>", "Current Symbol References (workspace)" },
+        d = { "<cmd>Telescope lsp_document_symbols<cr>", "All Document Symbols" },
+        w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "All Workspace Symbols" },
       },
     }
   }

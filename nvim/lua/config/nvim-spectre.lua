@@ -42,7 +42,7 @@ function M.setup()
       ['show_option_menu'] = {
         map = "<leader>so",
         cmd = "<cmd>lua require('spectre').show_options()<CR>",
-        desc = "Show Options"
+        desc = "Options"
       },
       ['run_current_replace'] = {
         map = "<leader>src",
@@ -177,7 +177,7 @@ function M.setup()
       s = { "Select/Unselect Current Item" },
       ["<CR>"] = { "Goto Current File" },
       q = { "Send All Items To Quickfix" },
-      O = { "Show Options" },
+      O = { "Options" },
       r = {
         name = "Replace",
         c = { "Replace Current Item" },

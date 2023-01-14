@@ -77,7 +77,7 @@ function M.setup()
         P = { "<cmd>lua require 'vgit'.buffer_hunk_staged_preview()<cr>", "Staged Preview Hunk" },
         S = { "<cmd>lua require 'vgit'.buffer_hunk_stage()<cr>", "Stage Hunk" },
         R = { "<cmd>lua require 'vgit'.buffer_hunk_reset()<cr>", "Reset Hunk" },
-        a = { "<cmd>lua require 'vgit'.project_hunks_qf()<cr>", "Show All Hunks" },
+        a = { "<cmd>lua require 'vgit'.project_hunks_qf()<cr>", "All Hunks" },
       },
       b = {
         name = "Buffer",
