@@ -74,7 +74,7 @@ function M.setup()
 
   -- Setup LSP handlers and lsp progress bar
   require("config.lsp.handlers").setup()
-  require("config.lsp.progress").setup()
+  -- require("config.lsp.progress").setup()
 
   -- Install lsp servers automatically (if not already installed)
   -- And setup them as well
