@@ -23,11 +23,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
-#ZSH_THEME="gentoo"
-#ZSH_THEME="mh"
-#ZSH_THEME="michelebologna"
-#ZSH_THEME="minimal"
+# ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
+# ZSH_THEME="gentoo"
+# ZSH_THEME="mh"
+# ZSH_THEME="michelebologna"
+# ZSH_THEME="minimal"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
