@@ -10,8 +10,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Install oh-my-zsh (if not installed)
-if [ ! -d ~/.oh-my-zsh ]
-then
+if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
@@ -60,8 +59,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Install zsh-autosuggestions (if not installed)
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]
-then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
@@ -69,8 +67,7 @@ fi
 bindkey "^ " autosuggest-accept
 
 # Install thefuck (if not installed)
-if [ ! -x "$(command -v thefuck)" ]
-then
+if [ ! -x "$(command -v thefuck)" ]; then
   sudo apt install thefuck -y
 fi
 
@@ -99,8 +96,7 @@ export PATH="$PATH:/usr/local/python3/bin"
 
 # ------------------------------------------------------------------------------------
 # Load ~/.fzf.zsh if exists, else download fzf and install
-if [ -f ~/.fzf.zsh ]
-then
+if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
 else
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -108,15 +104,13 @@ else
 fi
 
 # Install bat (if not installed)
-if ! [ -x "$(command -v batcat)" ]
-then
+if ! [ -x "$(command -v batcat)" ]; then
   sudo apt install bat -y
   sudo ln -s batcat /usr/bin/bat
 fi
 
 # Install ripgrep
-if ! [ -x "$(command -v rg)" ]
-then
+if ! [ -x "$(command -v rg)" ]; then
   sudo apt install ripgrep
 fi
 
@@ -147,8 +141,7 @@ export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --colo
 
 # ------------------------------------------------------------------------
 # Install pyenv (if not already installed)
-if [ ! -d ~/.pyenv ]
-then
+if [ ! -d ~/.pyenv ]; then
   sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
@@ -163,11 +156,9 @@ eval "$(pyenv virtualenv-init -)"
 
 # ------------------------------------------------------------------------
 # Set default editor for the shell
-if [ -x "$(command -v nvim)" ]
-then
+if [ -x "$(command -v nvim)" ]; then
   export VISUAL=nvim
-elif [ -x "$(command -v vim)" ]
-then
+elif [ -x "$(command -v vim)" ]; then
   export VISUAL=vim
 else
   export VISUAL=vi
@@ -195,3 +186,10 @@ alias rls="ls"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias hdfc-connect="warp-cli disconnect && warp-cli teams-enroll retire100"
+alias opslyft-connect="warp-cli disconnect && warp-cli teams-enroll opslyft"
+alias wa="warp-cli account"
+alias ws="warp-cli status"
+alias wc="warp-cli connect"
+alias wd="warp-cli disconnect"

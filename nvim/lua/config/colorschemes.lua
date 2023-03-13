@@ -142,6 +142,7 @@ function M.setup(use)
     " Vscode is default scheme if no colorscheme if specified
 
     colorscheme molokayo
+    " colorscheme molokai
   ]]
 end
 

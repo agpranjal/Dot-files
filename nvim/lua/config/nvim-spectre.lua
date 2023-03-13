@@ -46,12 +46,12 @@ function M.setup()
       },
       ['run_current_replace'] = {
         map = "<leader>src",
-        cmd = "<cmd>lua require('spectre.actions').run_current_replace()<CR>",
+        cmd = "<cmd>silent! lua require('spectre.actions').run_current_replace()<CR>",
         desc = "Replace Current Line"
       },
       ['run_replace'] = {
         map = "<leader>sra",
-        cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
+        cmd = "<cmd>silent! lua require('spectre.actions').run_replace()<CR>",
         desc = "Replace All"
       },
       ['change_view_mode'] = {
