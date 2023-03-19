@@ -1,7 +1,6 @@
 local M = {}
 
 function M.setup(use)
-  use "mangeshrex/everblush.vim"
   use "dracula/vim"
   use "tomasr/molokai"
   use "fmoralesc/molokayo"
@@ -9,7 +8,6 @@ function M.setup(use)
   use "tiagovla/tokyodark.nvim"
   use 'projekt0n/github-nvim-theme'
   use "olimorris/onedarkpro.nvim"
-  use "sam4llis/nvim-tundra"
   use "tomasiser/vim-code-dark"
   use "tanvirtin/monokai.nvim"
   use "cpea2506/one_monokai.nvim"
