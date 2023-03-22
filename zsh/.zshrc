@@ -48,7 +48,7 @@ plugins=(
   pm2
   safe-paste
   themes
-  ufw
+  # ufw
   yarn
   zsh-z
   fancy-ctrl-z
