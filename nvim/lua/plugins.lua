@@ -122,11 +122,19 @@ function M.setup(use)
     end
   }
 
+  -- -- Indent lines
+  -- use {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   config = function()
+  --     require("config.indent-blankline").setup()
+  --   end
+  -- }
+
   -- Indent lines
   use {
-    "lukas-reineke/indent-blankline.nvim",
+    "Yggdroot/indentLine",
     config = function()
-      require("config.indent-blankline").setup()
+      require("config.indentLine").setup()
     end
   }
 
