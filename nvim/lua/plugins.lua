@@ -123,20 +123,20 @@ function M.setup(use)
   }
 
   -- -- Indent lines
-  use {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("config.indent-blankline").setup()
-    end
-  }
-
-  -- Indent lines
   -- use {
-  --   "Yggdroot/indentLine",
+  --   "lukas-reineke/indent-blankline.nvim",
   --   config = function()
-  --     require("config.indentLine").setup()
+  --     require("config.indent-blankline").setup()
   --   end
   -- }
+
+  -- Indent lines
+  use {
+    "Yggdroot/indentLine",
+    config = function()
+      require("config.indentLine").setup()
+    end
+  }
 
   -- Telescope
   use {
