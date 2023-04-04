@@ -16,3 +16,9 @@ vim.keymap.set("", "<pagedown>", "7<down>")
 
 vim.keymap.set("i", "<pageup>", "<esc>7<up>i")
 vim.keymap.set("i", "<pagedown>", "<esc>7<down>i")
+
+vim.keymap.set("", "<s-up>", "7<up>")
+vim.keymap.set("", "<s-down>", "7<down>")
+
+vim.keymap.set("i", "<s-up>", "<esc>7<up>")
+vim.keymap.set("i", "<s-down>", "<esc>7<down>")
