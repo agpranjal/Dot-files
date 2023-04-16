@@ -7,7 +7,7 @@ function M.setup(use)
   use "Yazeed1s/minimal.nvim"
   use "tiagovla/tokyodark.nvim"
   use 'projekt0n/github-nvim-theme'
-  -- use "olimorris/onedarkpro.nvim"
+  use "olimorris/onedarkpro.nvim"
   use "tomasiser/vim-code-dark"
   use "tanvirtin/monokai.nvim"
   use "cpea2506/one_monokai.nvim"
@@ -25,14 +25,14 @@ function M.setup(use)
   }
 
   -- -- Tokyonight
-  -- use {
-  --   'folke/tokyonight.nvim',
-  --   config = function()
-  --     vim.g.tokyonight_style = "night"
-  --     vim.g.tokyonight_italic_keywords = false
-  --     vim.g.tokyonight_lualine_bold = true
-  --   end
-  -- }
+  use {
+    'folke/tokyonight.nvim',
+    config = function()
+      vim.g.tokyonight_style = "night"
+      vim.g.tokyonight_italic_keywords = false
+      vim.g.tokyonight_lualine_bold = true
+    end
+  }
 
   -- vim-nightfly-guicolors
   use {
@@ -54,52 +54,52 @@ function M.setup(use)
   }
 
   -- Gruvbox
-  -- use "ellisonleao/gruvbox.nvim"
-  -- require("gruvbox").setup({
-  --   undercurl = true,
-  --   underline = true,
-  --   bold = true,
-  --   -- italic = true,
-  --   strikethrough = true,
-  --   invert_selection = false,
-  --   invert_signs = false,
-  --   invert_tabline = false,
-  --   invert_intend_guides = false,
-  --   inverse = true, -- invert background for search, diffs, statuslines and errors
-  --   contrast = "", -- can be "hard", "soft" or empty string
-  --   overrides = {},
-  -- })
+  use "ellisonleao/gruvbox.nvim"
+  require("gruvbox").setup({
+    undercurl = true,
+    underline = true,
+    bold = true,
+    -- italic = true,
+    strikethrough = true,
+    invert_selection = false,
+    invert_signs = false,
+    invert_tabline = false,
+    invert_intend_guides = false,
+    inverse = true, -- invert background for search, diffs, statuslines and errors
+    contrast = "", -- can be "hard", "soft" or empty string
+    overrides = {},
+  })
 
   -- Vscode
-  -- use 'Mofiqul/vscode.nvim'
-  -- require('vscode').setup({
-  --   -- Enable transparent background
-  --   -- transparent = true,
-  --
-  --   -- Enable italic comment
-  --   italic_comments = true,
-  --
-  --   -- Disable nvim-tree background color
-  --   disable_nvimtree_bg = false,
-  --
-  --   -- Override colors (see ./lua/vscode/colors.lua)
-  --   color_overrides = {
-  --     vscLineNumber = '#FFFFFF',
-  --   },
-  --
-  --   -- Override highlight groups (see ./lua/vscode/theme.lua)
-  --   group_overrides = {
-  --     -- this supports the same val table as vim.api.nvim_set_hl
-  --     -- use colors from this colorscheme by requiring vscode.colors!
-  --     Cursor = { fg = require("vscode.colors").vscDarkBlue, bg = require("vscode.colors").vscLightGreen, bold = true },
-  --   }
-  -- })
+  use 'Mofiqul/vscode.nvim'
+  require('vscode').setup({
+    -- Enable transparent background
+    -- transparent = true,
+  
+    -- Enable italic comment
+    italic_comments = true,
+  
+    -- Disable nvim-tree background color
+    disable_nvimtree_bg = false,
+  
+    -- Override colors (see ./lua/vscode/colors.lua)
+    color_overrides = {
+      vscLineNumber = '#FFFFFF',
+    },
+  
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+      -- this supports the same val table as vim.api.nvim_set_hl
+      -- use colors from this colorscheme by requiring vscode.colors!
+      Cursor = { fg = require("vscode.colors").vscDarkBlue, bg = require("vscode.colors").vscLightGreen, bold = true },
+    }
+  })
 
   -- Onedark
-  -- use 'navarasu/onedark.nvim'
-  -- require('onedark').setup {
-  --   style = 'deep'
-  -- }
+  use 'navarasu/onedark.nvim'
+  require('onedark').setup {
+    style = 'deep'
+  }
 
   -- Custom Fix hl groups
   vim.cmd [[

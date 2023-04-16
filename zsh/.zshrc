@@ -194,3 +194,6 @@ alias wa="warp-cli account"
 alias ws="warp-cli status"
 alias wc="warp-cli connect"
 alias wd="warp-cli disconnect"
+
+# Max limit of open file descriptors - required for macos
+ulimit -n 1024
