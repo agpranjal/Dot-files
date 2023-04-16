@@ -21,7 +21,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="awesomepanda"
+#ZSH_THEME="robbyrussell"
 # ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
 # ZSH_THEME="gentoo"
 # ZSH_THEME="mh"
@@ -36,7 +37,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   colored-man-pages 
   zsh-autosuggestions
-  thefuck
+  #thefuck
   jsontools
   docker
   docker-compose
@@ -68,7 +69,7 @@ bindkey "^ " autosuggest-accept
 
 # Install thefuck (if not installed)
 if [ ! -x "$(command -v thefuck)" ]; then
-  sudo apt install thefuck -y
+  #sudo apt install thefuck -y
 fi
 
 eval "$(thefuck --alias)"
@@ -83,10 +84,10 @@ eval "$(thefuck --alias)"
 #   exec tmux -u
 # fi
 
-if [ "$TMUX" = "" ]; then
-  export TERM=screen-256color
-  exec tmux -u
-fi
+#if [ "$TMUX" = "" ]; then
+#  export TERM=screen-256color
+#  exec tmux -u
+#fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
 
@@ -105,13 +106,13 @@ fi
 
 # Install bat (if not installed)
 if ! [ -x "$(command -v batcat)" ]; then
-  sudo apt install bat -y
-  sudo ln -s batcat /usr/bin/bat
+  #sudo apt install bat -y
+  #sudo ln -s batcat /usr/bin/bat
 fi
 
 # Install ripgrep
 if ! [ -x "$(command -v rg)" ]; then
-  sudo apt install ripgrep
+  #sudo apt install ripgrep
 fi
 
 # Default options for fzf
@@ -142,10 +143,10 @@ export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --colo
 # ------------------------------------------------------------------------
 # Install pyenv (if not already installed)
 if [ ! -d ~/.pyenv ]; then
-  sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
-    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-    libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
-      curl https://pyenv.run | bash
+  #sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+  #  libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+    #libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
+      #curl https://pyenv.run | bash
 fi
 
 # Add pyenv to PATH
