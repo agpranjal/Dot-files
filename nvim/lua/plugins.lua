@@ -149,7 +149,7 @@ function M.setup(use)
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-      "cljoly/telescope-repo.nvim",
+      -- "cljoly/telescope-repo.nvim",
       {
         "nvim-telescope/telescope-frecency.nvim",
         requires = { "kkharji/sqlite.lua" }
@@ -164,7 +164,7 @@ function M.setup(use)
           }
         end,
       },
-      "chip/telescope-software-licenses.nvim",
+      -- "chip/telescope-software-licenses.nvim",
     },
   }
 
