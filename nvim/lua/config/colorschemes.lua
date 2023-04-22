@@ -142,7 +142,8 @@ function M.setup(use)
     " colorscheme molokayo
     " colorscheme molokai
     " colorscheme elflord
-    colorscheme duskfox
+    " colorscheme duskfox
+    colorscheme default
   ]]
 end
 
