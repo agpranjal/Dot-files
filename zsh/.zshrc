@@ -188,8 +188,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias hdfc-connect="warp-cli delete && warp-cli disconnect && warp-cli teams-enroll retire100"
-alias opslyft-connect="warp-cli delete && warp-cli disconnect && warp-cli teams-enroll opslyft"
+# alias hdfc-connect="warp-cli delete && warp-cli disconnect && warp-cli teams-enroll retire100"
+# alias opslyft-connect="warp-cli delete && warp-cli disconnect && warp-cli teams-enroll opslyft"
 alias wa="warp-cli account"
 alias ws="warp-cli status"
 alias wc="warp-cli connect"
