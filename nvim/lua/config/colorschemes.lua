@@ -139,11 +139,11 @@ function M.setup(use)
   vim.cmd [[
     " Vscode is default scheme if no colorscheme if specified
 
-    " colorscheme molokayo
+    colorscheme molokayo
     " colorscheme molokai
     " colorscheme elflord
     " colorscheme duskfox
-    colorscheme default
+    " colorscheme default
   ]]
 end
 

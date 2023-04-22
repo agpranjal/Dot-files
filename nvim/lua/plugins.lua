@@ -412,6 +412,13 @@ function M.setup(use)
     end,
   }
 
+  use{
+  'anuvyklack/pretty-fold.nvim',
+   config = function()
+      require('config.pretty-fold').setup()
+   end
+  }
+
   -- Setup colorschemes
   require("config.colorschemes").setup(use)
 end
