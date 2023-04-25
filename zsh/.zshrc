@@ -197,3 +197,6 @@ alias wd="warp-cli disconnect"
 
 # Max limit of open file descriptors - required for macos
 ulimit -n 1024
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
