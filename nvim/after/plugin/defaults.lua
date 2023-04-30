@@ -111,3 +111,9 @@ vim.cmd [[
   autocmd FileChangedShellPost *
   \ lua vim.notify("File changed on disk. Buffer reloaded.", "warn", {title="Nvim"})
 ]]
+
+vim.cmd [[
+  " Jump cursor to previous window after closing a windo
+  autocmd WinClosed * lua vim.cmd "wincmd p"
+]]
+
