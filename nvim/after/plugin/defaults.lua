@@ -114,6 +114,7 @@ vim.cmd [[
 
 vim.cmd [[
   " Jump cursor to previous window after closing a windo
-  autocmd WinClosed * lua vim.cmd "wincmd p"
+
+  autocmd WinClosed * lua if (vim.bo.filetype == "fugitive" or vim.bo.filetype == "Trouble") then vim.cmd "wincmd p" end
 ]]
 
