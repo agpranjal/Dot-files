@@ -30,6 +30,14 @@ function M.setup()
     ["/"] = { "Comment (toggle)" }
   }
   whichkey.register(keymap_v, { mode = "v", prefix = "<leader>" })
+
+  -- Required bcos comment don't seem to be working for terraform files
+  vim.cmd [[
+    augroup CommentStringExceptions
+      autocmd!
+      autocmd FileType terraform lua vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
+    augroup end
+  ]]
 end
 
 return M
