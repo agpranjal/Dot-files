@@ -25,10 +25,10 @@ function M.setup()
   vim.keymap.set("", "<A-7>", "<cmd>BufferLineGoToBuffer 7<cr>")
   vim.keymap.set("", "<A-8>", "<cmd>BufferLineGoToBuffer 8<cr>")
   vim.keymap.set("", "<A-9>", "<cmd>BufferLineGoToBuffer 9<cr>")
-  vim.keymap.set("", "<A-Right>", "<cmd>BufferLineCycleNext<cr>")
-  vim.keymap.set("", "<A-Left>", "<cmd>BufferLineCyclePrev<cr>")
-  vim.keymap.set("", "<A->>", "<cmd>BufferLineMoveNext<cr>")
-  vim.keymap.set("", "<A-<>", "<cmd>BufferLineMovePrev<cr>")
+  vim.keymap.set("", "<S-Right>", "<cmd>BufferLineCycleNext<cr>")
+  vim.keymap.set("", "<S-Left>", "<cmd>BufferLineCyclePrev<cr>")
+  vim.keymap.set("", "<S->>", "<cmd>BufferLineMoveNext<cr>")
+  vim.keymap.set("", "<S-<>", "<cmd>BufferLineMovePrev<cr>")
 
 
   local keymap_b = {

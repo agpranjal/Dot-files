@@ -199,4 +199,3 @@ alias wd="warp-cli disconnect"
 ulimit -n 1024
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
