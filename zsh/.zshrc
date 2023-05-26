@@ -198,4 +198,17 @@ alias wd="warp-cli disconnect"
 # Max limit of open file descriptors - required for macos
 ulimit -n 1024
 
+# Export AWS KEYS to environment
+function export-opslyft-aws()
+{
+  export AWS_ACCESS_KEY_ID=$(crudini --get ~/.aws/credentials default aws_access_key_id)
+  export AWS_SECRET_ACCESS_KEY=$(crudini --get ~/.aws/credentials default aws_secret_access_key)
+}
+
+function export-hdfc-staging-aws()
+{
+  export AWS_ACCESS_KEY_ID=$(crudini --get ~/.aws/credentials hdfc-staging aws_access_key_id)
+  export AWS_SECRET_ACCESS_KEY=$(crudini --get ~/.aws/credentials hdfc-staging aws_secret_access_key)
+}
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

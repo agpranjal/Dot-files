@@ -144,7 +144,7 @@ function M.setup(use)
     " colorscheme elflord
     " colorscheme duskfox
     " colorscheme default
-    colorscheme vscode
+    " colorscheme vscode
   ]]
 end
 
