@@ -21,7 +21,11 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   vimls = {},
-  yamlls = {},
+  yamlls = {
+    settings = {
+      keyOrdering = false
+    }
+  },
   clangd = {},
   bashls = {},
   -- terraformls = {},
