@@ -57,7 +57,7 @@ function M.setup()
       g = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
       ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
       p = { "<cmd>Telescope projects<cr>", "Recent Projects" },
-      -- R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
+      R = { "<cmd>Telescope repo list<cr>", "Git Repositories" },
       r = { "<cmd>Telescope resume<cr>", "Resume Last Telescope Picker" },
       q = { "<cmd>Telescope quickfixhistory<cr>", "Quickfix History" },
       v = {
