@@ -257,12 +257,12 @@ function M.setup(use)
   }
 
   -- Run code
-  use {
-    "arjunmahishi/run-code.nvim",
-    config = function()
-      require("config.run-code").setup()
-    end
-  }
+  -- use {
+  --   "arjunmahishi/run-code.nvim",
+  --   config = function()
+  --     require("config.run-code").setup()
+  --   end
+  -- }
 
   -- Git DiffView (TODO)
   use {
