@@ -140,7 +140,7 @@ function M.setup(use)
     " Vscode is default scheme if no colorscheme if specified
 
     " colorscheme molokayo
-    " colorscheme molokai
+    colorscheme molokai
     " colorscheme elflord
     " colorscheme duskfox
     " colorscheme default
