@@ -1,3 +1,4 @@
+eval $(/opt/homebrew/bin/brew shellenv)
 # ------------------------------------------------------------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -51,7 +52,7 @@ plugins=(
   themes
   # ufw
   yarn
-  zsh-z
+  z
   fancy-ctrl-z
   gitignore
   terraform
@@ -208,6 +209,19 @@ function export-hdfc-staging-aws()
   export AWS_SECRET_ACCESS_KEY="$(crudini --get ~/.aws/credentials hdfc-staging aws_secret_access_key)"
 }
 
+function aws-assume-role() {
+  role_arn="$1"
+  role_session_name="$2"
+  if [[ "$role_session_name" == "" ]]; then
+    role_session_name="opslyft"
+  fi
+
+  credentials="$(aws sts assume-role --role-arn $role_arn --role-session-name $role_session_name)"
+  export AWS_ACCESS_KEY_ID="$(echo $credentials | jq '.Credentials.AccessKeyId')"
+  export AWS_SECRET_ACCESS_KEY="$(echo $credentials | jq '.Credentials.SecretAccessKey')"
+  export AWS_SESSION_TOKEN="$(echo $credentials | jq '.Credentials.SessionToken')"
+}
+
 
 # ============MACOS SPECIFIC SETTINGS=====================
 
@@ -222,4 +236,8 @@ export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib" \
 # Add mysql-client to path
 export PATH="${PATH}:/opt/homebrew/Cellar/mysql-client/8.0.33/bin"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Dont know what this does ! :(
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Save every command to shell history (no limit)
+export HISTSIZE=1000000000
