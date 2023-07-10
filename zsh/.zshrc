@@ -203,12 +203,6 @@ function export-opslyft-aws()
   export AWS_SECRET_ACCESS_KEY="$(crudini --get ~/.aws/credentials default aws_secret_access_key)"
 }
 
-function export-hdfc-staging-aws()
-{
-  export AWS_ACCESS_KEY_ID="$(crudini --get ~/.aws/credentials hdfc-staging aws_access_key_id)"
-  export AWS_SECRET_ACCESS_KEY="$(crudini --get ~/.aws/credentials hdfc-staging aws_secret_access_key)"
-}
-
 function aws-assume-role() {
   role_arn="$1"
   role_session_name="$2"
@@ -241,3 +235,7 @@ export PATH="${PATH}:/opt/homebrew/Cellar/mysql-client/8.0.33/bin"
 
 # Save every command to shell history (no limit)
 export HISTSIZE=1000000000
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
