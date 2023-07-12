@@ -12,7 +12,7 @@ function M.setup()
       show_buffer_close_icons = false,
       show_close_icon = false,
       offsets = { { filetype = "neo-tree", text = "File Explorer", highlight = "Directory", text_align = "center" } },
-      sort_by = "insert_after_current"
+      -- sort_by = "insert_at_end"
     },
   }
 
