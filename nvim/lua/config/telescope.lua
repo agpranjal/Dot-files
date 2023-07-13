@@ -101,7 +101,7 @@ function M.setup()
       },
       s = {
         name = "Symbols",
-        R = { "<cmd>Telescope lsp_references<cr>", "Current Symbol References (workspace)" },
+        r = { "<cmd>Telescope lsp_references<cr>", "Current Symbol References (workspace)" },
         d = { "<cmd>Telescope lsp_document_symbols<cr>", "All Document Symbols" },
         w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "All Workspace Symbols" },
       },

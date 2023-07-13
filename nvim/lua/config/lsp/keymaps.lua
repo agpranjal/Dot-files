@@ -28,7 +28,7 @@ function M.setup(client, bufnr)
       },
       s = {
         name = "Symbols",
-        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Current Symbol (across workspace)" },
+        R = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Current Symbol (across workspace)" },
       },
       g = {
         name = "Goto",
