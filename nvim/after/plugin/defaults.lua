@@ -117,10 +117,3 @@ vim.cmd [[
 
   autocmd WinClosed * lua if (vim.bo.filetype == "fugitive" or vim.bo.filetype == "Trouble") then vim.cmd "wincmd p" end
 ]]
-
-vim.cmd [[
-  " Required bcos 'neovim' python pkg was not being found
-  " in virtual environments
-  let g:python3_host_prog="/Users/ag_pranjal/.pyenv/shims/python"
-  let g:python_host_prog="/Users/ag_pranjal/.pyenv/shims/python"
-]]
