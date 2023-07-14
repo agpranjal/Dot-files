@@ -115,13 +115,13 @@ function M.setup(use)
   }
 
   -- -- Fidget
-  -- use {
-  --   "j-hui/fidget.nvim",
-  --   tag = "legacy",
-  --   config = function()
-  --     require("config.fidget").setup()
-  --   end
-  -- }
+  use {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    config = function()
+      require("config.fidget").setup()
+    end
+  }
 
   -- -- Indent lines
   use {
