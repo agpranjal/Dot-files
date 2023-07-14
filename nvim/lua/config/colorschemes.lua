@@ -120,8 +120,10 @@ function M.setup(use)
   
       " Make neo-tree background darker
       if index(["molokai", "molokayo", "vscode"], get(g:, "colors_name")) >= 0
-        hi NeoTreeNormal guibg=#131313
-        hi NeoTreeNormalNC guibg=#131313
+        " hi NeoTreeNormal guibg=#131313
+        " hi NeoTreeNormalNC guibg=#131313
+        hi NeoTreeNormal guibg=#000000
+        hi NeoTreeNormalNC guibg=#000000
       endif
     endfunction
   
