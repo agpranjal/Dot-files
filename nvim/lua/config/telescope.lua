@@ -33,6 +33,7 @@ function M.setup()
     extensions = {
       frecency = {
         ignore_patterns = { "*.git/*" },
+        db_safe_mode = false,
       }
     }
   }
