@@ -10,10 +10,10 @@ function M.setup()
     direction = "float",
     terminal_mappings = false,
     shade_terminals = true,
-    shading_factor = 1,
+    shading_factor = '10',
     autochdir = true,
     float_opts = {
-      border = "double",
+      border = "curved",
       winblend = 12
     }
   }
