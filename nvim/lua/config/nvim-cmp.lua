@@ -79,7 +79,7 @@ function M.setup()
     },
     sources = {
       { name = "nvim_lsp" },
-      { name = "cmp_tabnine" },
+      -- { name = "cmp_tabnine" },
       { name = "treesitter" },
       { name = "buffer" },
       { name = "luasnip" },
