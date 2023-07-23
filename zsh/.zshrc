@@ -69,11 +69,11 @@ fi
 bindkey "^ " autosuggest-accept
 
 # Install thefuck (if not installed)
-if [ ! -x "$(command -v thefuck)" ]; then
-  #sudo apt install thefuck -y
-fi
+# if [ ! -x "$(command -v thefuck)" ]; then
+#   sudo apt install thefuck -y
+# fi
 
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -196,7 +196,7 @@ alias ws="warp-cli status"
 alias wc="warp-cli connect"
 alias wd="warp-cli disconnect"
 
-# Export AWS KEYS to environment
+# # Export AWS KEYS to environment
 function export-opslyft-aws()
 {
   export AWS_ACCESS_KEY_ID="$(crudini --get ~/.aws/credentials default aws_access_key_id)"
