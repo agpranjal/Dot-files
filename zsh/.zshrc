@@ -38,7 +38,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
   colored-man-pages 
   zsh-autosuggestions
-  #thefuck
   jsontools
   docker
   docker-compose
@@ -50,12 +49,12 @@ plugins=(
   pm2
   safe-paste
   themes
-  # ufw
   yarn
   z
   fancy-ctrl-z
   gitignore
   terraform
+  # ufw
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,13 +66,6 @@ fi
 
 # Use Ctrl-Space to accept zsh suggestion
 bindkey "^ " autosuggest-accept
-
-# Install thefuck (if not installed)
-# if [ ! -x "$(command -v thefuck)" ]; then
-#   sudo apt install thefuck -y
-# fi
-
-# eval "$(thefuck --alias)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -135,12 +127,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
 
-# Use CTRL-f to trigger fzf (just like Ctrl-T)
-# bindkey "^f" fzf-file-widget
-
-# Use CTRL-f to trigger fzf command line completion (instead of CTRL-r)
-# bindkey "^f" fzf-history-widget
-
 # ------------------------------------------------------------------------
 # Install pyenv (if not already installed)
 if [ ! -d ~/.pyenv ]; then
@@ -151,10 +137,10 @@ if [ ! -d ~/.pyenv ]; then
 fi
 
 # Add pyenv to PATH
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # ------------------------------------------------------------------------
 # Set default editor for the shell
@@ -185,18 +171,16 @@ alias cle="clear"
 alias clea="clear"
 alias rls="ls"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# alias hdfc-connect="warp-cli delete && warp-cli disconnect && warp-cli teams-enroll retire100"
-# alias opslyft-connect="warp-cli delete && warp-cli disconnect && warp-cli teams-enroll opslyft"
 alias wa="warp-cli account"
 alias ws="warp-cli status"
 alias wc="warp-cli connect"
 alias wd="warp-cli disconnect"
 
-# # Export AWS KEYS to environment
+# Export AWS KEYS to environment
 function export-opslyft-aws()
 {
   export AWS_ACCESS_KEY_ID="$(crudini --get ~/.aws/credentials default aws_access_key_id)"
@@ -231,14 +215,14 @@ export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib" \
 export PATH="${PATH}:/opt/homebrew/Cellar/mysql-client/8.0.33/bin"
 
 # Dont know what this does ! :(
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Save every command to shell history (no limit)
 export HISTSIZE=1000000000
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
 # Enable zsh syntax highlighting
