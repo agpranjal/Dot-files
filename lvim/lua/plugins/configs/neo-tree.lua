@@ -39,4 +39,3 @@ vim.cmd [[
       autocmd VimEnter * silent! Neotree reveal_force_cwd show
     augroup end
 ]]
-
