@@ -66,3 +66,7 @@ vim.cmd [[
     autocmd ColorScheme * silent! call ColorschemeFix()
   augroup end
 ]]
+
+lvim.builtin.which_key.mappings["gS"] = {
+  "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer"
+}
