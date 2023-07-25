@@ -230,3 +230,6 @@ file="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 if [ -f "$file" ]; then
   source "$file"
 fi
+
+export PATH=/Users/ag_pranjal/.local/bin:$PATH
+alias nvim=lvim
