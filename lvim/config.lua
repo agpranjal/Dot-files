@@ -3,7 +3,7 @@ reload "plugins"
 reload "user.options"
 reload "user.keys"
 
-lvim.colorscheme = "vscode"
+lvim.colorscheme = "molokai"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.bufferline.options.offsets = {
   { filetype = "neo-tree", text = "Explorer", highlight = "Directory", text_align = "center" }
@@ -34,4 +34,37 @@ vim.cmd [[
   "   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
   autocmd FileChangedShellPost *
   \ lua vim.notify("Buffer reloaded - File changed on disk.", "warn", {title="Nvim"})
+]]
+
+vim.cmd [[
+  function! ColorschemeFix()
+    if index(["molokai", "molokayo"], get(g:, "colors_name")) >= 0
+      highlight MatchParen guibg=black guifg=#FD971F
+      highlight Comment cterm=italic gui=italic
+    endif
+
+    if index(["vscode"], get(g:, "colors_name")) >= 0
+      highlight @comment gui=italic
+    endif
+
+    " Set cursor style
+    if index(["molokayo"], get(g:, "colors_name")) >= 0
+      set guicursor=i:ver25-iCursor
+    endif
+
+    " Make neo-tree background darker
+    if index(["molokai", "molokayo", "vscode"], get(g:, "colors_name")) >= 0
+      " hi NeoTreeNormal guibg=#131313
+      " hi NeoTreeNormalNC guibg=#131313
+      hi NeoTreeNormal guibg=#000000
+      hi NeoTreeNormalNC guibg=#000000
+    endif
+  endfunction
+
+  " call ColorschemeFix()
+
+  augroup VimColorSchemeFix
+    autocmd!
+    autocmd ColorScheme * silent! call ColorschemeFix()
+  augroup end
 ]]
