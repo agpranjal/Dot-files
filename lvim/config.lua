@@ -61,8 +61,6 @@ vim.cmd [[
     endif
   endfunction
 
-  " call ColorschemeFix()
-
   augroup VimColorSchemeFix
     autocmd!
     autocmd ColorScheme * silent! call ColorschemeFix()
