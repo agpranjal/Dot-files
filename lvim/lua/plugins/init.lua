@@ -18,8 +18,8 @@ lvim.plugins = {
   },
   {
     'wfxr/minimap.vim',
-    build = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+    build = "!cargo install --locked code-minimap",
+    cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
     config = function()
       require("plugins.configs.minimap")
     end,
@@ -69,6 +69,9 @@ lvim.plugins = {
   },
   {
     "mrjones2014/nvim-ts-rainbow",
+    config = function()
+      lvim.builtin.treesitter.rainbow.enable = true
+    end
   },
   {
     "norcalli/nvim-colorizer.lua",
@@ -129,12 +132,13 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
-  -- {
-  --   'gelguy/wilder.nvim',
-  --   config = function()
-  --     require("plugins.configs.wilder").setup()
-  --   end,
-  -- },
+  {
+    'gelguy/wilder.nvim',
+    build = ":UpdateRemotePlugins",
+    config = function()
+      require("plugins.configs.wilder").setup()
+    end,
+  },
   {
     "simrat39/symbols-outline.nvim",
     config = function()
@@ -167,5 +171,6 @@ lvim.plugins = {
         }
       })
     end
-  }
+  },
+  { "gpanders/editorconfig.nvim" }
 }
