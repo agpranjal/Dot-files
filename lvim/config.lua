@@ -1,5 +1,4 @@
 reload "plugins"
-
 reload "user.options"
 reload "user.keys"
 
@@ -136,3 +135,20 @@ formatters.setup {
   { command = "black", filetypes = { "python" } },
   { command = "isort", filetypes = { "python" } },
 }
+
+vim.cmd [[
+  " Escape from diffferent window types using <esc>
+  augroup ExitUsingEscape
+    autocmd!
+    autocmd FileType qf,vim nnoremap <buffer> <silent> <esc> :q<cr>
+    autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
+  augroup end
+]]
+
+vim.cmd [[
+  " Show numberline in vim help buffers
+  augroup HelpTextNumberLine
+    autocmd!
+    autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "setlocal number" end
+  augroup end
+]]
