@@ -128,7 +128,7 @@ lvim.builtin.which_key.mappings["H"] = {
   "<cmd>lua _horz_split()<cr>", "Horizontal split"
 }
 lvim.builtin.which_key.mappings["W"] = {
-  "<cmd>set wrap!<cr>", "Toggle Wrap"
+  "<cmd>set wrap!<cr>", "Wrap/No Wrap"
 }
 
 local formatters = require "lvim.lsp.null-ls.formatters"
