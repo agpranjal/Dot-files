@@ -70,3 +70,66 @@ vim.cmd [[
 lvim.builtin.which_key.mappings["gS"] = {
   "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer"
 }
+
+-- Open current buffer in vertical split and change to last hidden buffer in previous window
+function _vert_split()
+  vim.cmd [[
+    let lastused = 0
+    let bufnum = 0
+
+    for buf in getbufinfo({'bufloaded': 1, 'buflisted': 1})
+        if buf.lastused > lastused && buf.hidden
+          let lastused = buf.lastused
+          let bufnum = buf.bufnr
+        endif
+      endfor
+
+    vsplit
+    if bufnum > 0
+      wincmd p
+      execute "buffer "..bufnum
+      wincmd p
+    endif
+
+    unlet lastused
+    unlet bufnum
+  ]]
+end
+
+-- Open current buffer in horizontal split and change to last hidden buffer in previous window
+function _horz_split()
+  vim.cmd [[
+    let lastused = 0
+    let bufnum = 0
+
+    for buf in getbufinfo({'bufloaded': 1, 'buflisted': 1})
+        if buf.lastused > lastused && buf.hidden
+          let lastused = buf.lastused
+          let bufnum = buf.bufnr
+        endif
+      endfor
+
+    split
+    if bufnum > 0
+      wincmd p
+      execute "buffer "..bufnum
+      wincmd p
+    endif
+
+    unlet lastused
+    unlet bufnum
+  ]]
+end
+
+lvim.builtin.which_key.mappings["v"] = {
+  "<cmd>lua _vert_split()<cr>", "Vertical split"
+}
+lvim.builtin.which_key.mappings["H"] = {
+  "<cmd>lua _horz_split()<cr>", "Horizontal split"
+}
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "black", filetypes = { "python" } },
+  { command = "isort", filetypes = { "python" } },
+}
