@@ -2,6 +2,7 @@ lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 
 require "neo-tree".setup {
   close_if_last_window = true,
+  open_files_do_not_replace_types = { "terminal", "trouble", "qf", "spectre" },
   default_component_configs = {
     indent = {
       indent_size = 3,

@@ -4,7 +4,7 @@ require('neoclip').setup {
   content_spec_column = true
 }
 
-lvim.builtin.which_key.mappings["C"] = {
+lvim.builtin.which_key.mappings["sR"] = {
   "<cmd>Telescope neoclip<cr>", "Clipboard"
 }
 
