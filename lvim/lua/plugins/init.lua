@@ -245,5 +245,12 @@ lvim.plugins = {
         -- Configuration here, or leave empty to use defaults
       })
     end
+  },
+  {
+    "AckslD/nvim-neoclip.lua",
+    dependencies = { 'kkharji/sqlite.lua', module = 'sqlite' },
+    config = function()
+      require('plugins.configs.neoclip')
+    end,
   }
 }
