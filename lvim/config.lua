@@ -66,10 +66,6 @@ vim.cmd [[
   augroup end
 ]]
 
-lvim.builtin.which_key.mappings["gS"] = {
-  "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer"
-}
-
 -- Open current buffer in vertical split and change to last hidden buffer in previous window
 function _vert_split()
   vim.cmd [[
@@ -120,16 +116,6 @@ function _horz_split()
   ]]
 end
 
-lvim.builtin.which_key.mappings["v"] = {
-  "<cmd>lua _vert_split()<cr>", "Vertical split"
-}
-lvim.builtin.which_key.mappings["H"] = {
-  "<cmd>lua _horz_split()<cr>", "Horizontal split"
-}
-lvim.builtin.which_key.mappings["W"] = {
-  "<cmd>set wrap!<cr>", "Wrap/No Wrap"
-}
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "black", filetypes = { "python" } },
@@ -152,3 +138,46 @@ vim.cmd [[
     autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "setlocal number" end
   augroup end
 ]]
+
+lvim.builtin.which_key.mappings.v = {
+  "<cmd>lua _vert_split()<cr>", "Vertical split"
+}
+lvim.builtin.which_key.mappings.H = {
+  "<cmd>lua _horz_split()<cr>", "Horizontal split"
+}
+lvim.builtin.which_key.mappings.w = { "<cmd>set wrap!<cr>", "Wrap/No Wrap" }
+lvim.builtin.which_key.mappings.s.w = {
+  "<cmd>Telescope live_grep<cr>", "Search Text (workspace)"
+}
+lvim.builtin.which_key.mappings.g.S = {
+  "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer"
+}
+lvim.builtin.which_key.mappings.l.r = {
+  "<cmd>lua vim.lsp.buf.rename()<cr>",
+  "Rename Symbol (workspace)"
+}
+lvim.builtin.which_key.mappings.l.w = {
+  "<cmd>Telescope diagnostics theme=ivy<cr>",
+  "Workspace Diagnostics"
+}
+lvim.builtin.which_key.mappings.l.d = {
+  "<cmd>Telescope diagnostics bufnr=0 theme=ivy<cr>",
+  "Document/Buffer Diagnostics"
+}
+lvim.builtin.which_key.mappings.g.d = {
+  "<cmd>Gitsigns diffthis HEAD<cr>",
+  "Git Diff (Buffer)"
+}
+lvim.builtin.which_key.mappings.l.q = {
+  "<cmd>lua vim.diagnostic.setloclist()<cr>",
+  "Diagnostic Quickfix (document)"
+}
+lvim.builtin.which_key.mappings.q = {
+  function()
+    vim.cmd [[
+      BufferLineCloseRight
+      BufferLineCloseLeft
+    ]]
+  end,
+  "Close Other Buffers"
+}
