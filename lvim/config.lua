@@ -2,7 +2,7 @@ reload("plugins")
 reload("user.options")
 reload("user.keys")
 
-lvim.colorscheme = "molokai"
+lvim.colorscheme = "molokayo"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.bufferline.options.offsets = {
   { filetype = "neo-tree", text = "Explorer", highlight = "Directory", text_align = "center" },
