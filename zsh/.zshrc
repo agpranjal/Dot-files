@@ -54,7 +54,6 @@ plugins=(
   fancy-ctrl-z
   gitignore
   terraform
-  # ufw
 )
 
 source $ZSH/oh-my-zsh.sh
