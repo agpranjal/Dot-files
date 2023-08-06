@@ -1,9 +1,10 @@
-reload("user.options")
-reload("user.keys")
-reload("user.autocmd")
-reload("user.mappings")
+require("user.options")
+require("user.keys")
+require("user.mappings")
+require("user.autocmd")
+require("user.lsp")
 
-reload("user.plugins")
+require("user.plugins")
 
 lvim.colorscheme = "molokayo"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
@@ -21,9 +22,3 @@ vim.cmd([[
 -- Use :W to write, :Wq to write and quit
 vim.api.nvim_create_user_command("W", "w", { nargs = 0 })
 vim.api.nvim_create_user_command("Wq", "wq", { nargs = 0 })
-
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-  { command = "black", filetypes = { "python" } },
-  { command = "isort", filetypes = { "python" } },
-})
