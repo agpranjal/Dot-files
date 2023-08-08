@@ -97,5 +97,5 @@ lvim.builtin.which_key.mappings.q = {
 }
 lvim.builtin.cmp.mapping["<Tab>"].i = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<Tab>"].s = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
-lvim.builtin.cmp.mapping["<CR>"].i = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
-lvim.builtin.cmp.mapping["<CR>"].s = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
+lvim.builtin.cmp.mapping["<CR>"].i = false
+lvim.builtin.cmp.mapping["<CR>"].s = false
