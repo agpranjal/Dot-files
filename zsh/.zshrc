@@ -234,3 +234,4 @@ export PATH=/Users/ag_pranjal/.local/bin:$PATH
 export PATH=/Users/ag_pranjal/.cargo/bin:$PATH
 alias nvim=lvim
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+alias lg=lazygit
