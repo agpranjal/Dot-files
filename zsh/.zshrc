@@ -235,3 +235,6 @@ export PATH=/Users/ag_pranjal/.cargo/bin:$PATH
 alias nvim=lvim
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 alias lg=lazygit
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
