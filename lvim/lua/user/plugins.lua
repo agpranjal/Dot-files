@@ -17,14 +17,6 @@ lvim.plugins = {
     end,
   },
   {
-    'wfxr/minimap.vim',
-    build = "!cargo install --locked code-minimap",
-    cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
-    config = function()
-      require("user.minimap")
-    end,
-  },
-  {
     "f-person/git-blame.nvim",
     event = "BufRead",
     config = function()
@@ -190,5 +182,11 @@ lvim.plugins = {
     config = function()
       require('user.neoclip')
     end,
+  },
+  {
+    'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+    config = function()
+      require("user.toggle-lsp-diagnostics")
+    end
   }
 }
