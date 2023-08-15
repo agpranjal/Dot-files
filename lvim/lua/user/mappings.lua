@@ -95,6 +95,9 @@ lvim.builtin.which_key.mappings.q = {
   end,
   "Close Other Buffers",
 }
+lvim.builtin.which_key.mappings.s.c = {
+  "<cmd>Telescope colorscheme<cr>", "Colorscheme"
+}
 lvim.builtin.cmp.mapping["<Tab>"].i = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<Tab>"].s = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<CR>"].i = false

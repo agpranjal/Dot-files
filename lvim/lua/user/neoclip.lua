@@ -4,11 +4,8 @@ require('neoclip').setup {
   content_spec_column = true
 }
 
-lvim.builtin.which_key.mappings.s.c = {
-  "<cmd>Telescope neoclip<cr>", "Clipboard"
-}
 lvim.builtin.which_key.mappings.s.C = {
-  "<cmd>Telescope colorscheme<cr>", "Colorscheme"
+  "<cmd>Telescope neoclip<cr>", "Clipboard"
 }
 lvim.builtin.telescope.on_config_done = function(telescope)
   pcall(telescope.load_extension, "neoclip")
