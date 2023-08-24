@@ -16,6 +16,7 @@ vim.opt.wrap = false         -- Disable wrapping
 vim.opt.splitright = true    -- Open vertical split to right of current buffer
 vim.opt.splitbelow = true    -- Open horizontal split below current buffer
 vim.opt.cursorline = false
+vim.opt.clipboard = ""
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
