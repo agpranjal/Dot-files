@@ -8,6 +8,7 @@ require("user.plugins")
 
 lvim.colorscheme = "molokayo"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
+lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.builtin.bufferline.options.offsets = {
   { filetype = "neo-tree", text = "Explorer", highlight = "Directory", text_align = "center" },
 }
