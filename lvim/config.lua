@@ -6,8 +6,8 @@ require("user.lsp")
 
 require("user.plugins")
 
--- lvim.colorscheme = "molokayo"
-lvim.colorscheme = "default"
+lvim.colorscheme = "molokayo"
+-- lvim.colorscheme = "default"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.builtin.bufferline.options.offsets = {
