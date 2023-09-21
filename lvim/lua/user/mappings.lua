@@ -82,6 +82,19 @@ lvim.builtin.which_key.mappings.g.d = {
   "<cmd>Gitsigns diffthis HEAD<cr>",
   "Git Diff (Buffer)",
 }
+
+lvim.builtin.which_key.mappings.g.j = {}
+lvim.builtin.which_key.mappings.g.k = {}
+lvim.builtin.which_key.mappings.g.h = {
+  n = {
+    "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>",
+    "Next Hunk"
+  },
+  p = {
+    "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>",
+    "Prev Hunk"
+  },
+}
 lvim.builtin.which_key.mappings.l.q = {
   "<cmd>lua vim.diagnostic.setloclist()<cr>",
   "Diagnostic Quickfix (document)",
