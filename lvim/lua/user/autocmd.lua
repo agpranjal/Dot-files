@@ -31,9 +31,9 @@ vim.cmd([[
 
 vim.cmd([[
   function! ColorschemeFix()
+    highlight Comment cterm=italic gui=italic
     if index(["molokai", "molokayo"], get(g:, "colors_name")) >= 0
       highlight MatchParen guibg=black guifg=#FD971F
-      highlight Comment cterm=italic gui=italic
     endif
 
     if index(["vscode"], get(g:, "colors_name")) >= 0
