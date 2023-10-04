@@ -29,8 +29,16 @@ require "neo-tree".setup {
   }
 }
 
+function _custom_neotree_toggle()
+  vim.cmd [[
+    UndotreeHide
+    Neotree reveal_force_cwd show toggle
+  ]]
+end
+
 lvim.builtin.which_key.mappings["e"] = {
-  "<cmd>Neotree reveal_force_cwd show toggle<cr>", "Explorer"
+  _custom_neotree_toggle,
+  "Explorer"
 }
 
 -- Automatically open NeoTree on startup

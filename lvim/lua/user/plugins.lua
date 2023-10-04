@@ -184,9 +184,15 @@ lvim.plugins = {
     end,
   },
   {
-    'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+    "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
     config = function()
       require("user.toggle-lsp-diagnostics")
+    end
+  },
+  {
+    "mbbill/undotree",
+    config = function()
+      require("user.undotree")
     end
   }
 }
