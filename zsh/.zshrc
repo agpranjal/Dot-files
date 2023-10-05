@@ -241,7 +241,7 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' 2>/dev/null ; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' 2>/dev/null ; fi
