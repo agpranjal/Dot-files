@@ -194,5 +194,8 @@ lvim.plugins = {
     config = function()
       require("user.undotree")
     end
+  },
+  {
+    "rafi/awesome-vim-colorschemes"
   }
 }
