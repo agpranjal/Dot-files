@@ -23,8 +23,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="awesomepanda"
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="../custom/themes/powerlevel10k/powerlevel10k"
 # ZSH_THEME="gentoo"
 # ZSH_THEME="mh"
 # ZSH_THEME="michelebologna"
@@ -180,23 +180,24 @@ alias wc="warp-cli connect"
 alias wd="warp-cli disconnect"
 
 # Export AWS KEYS to environment
-function export-opslyft-aws()
+function export-opslyft-iam()
 {
-  export AWS_ACCESS_KEY_ID="$(crudini --get ~/.aws/credentials default aws_access_key_id)"
-  export AWS_SECRET_ACCESS_KEY="$(crudini --get ~/.aws/credentials default aws_secret_access_key)"
+  profile_name="opslyft-iam" \
+  export AWS_ACCESS_KEY_ID="$(crudini --get ~/.aws/credentials $profile_name aws_access_key_id)" \
+  export AWS_SECRET_ACCESS_KEY="$(crudini --get ~/.aws/credentials $profile_name aws_secret_access_key)"
 }
 
-function aws-assume-role() {
+function with-role() {
   role_arn="$1"
-  role_session_name="$2"
-  if [[ "$role_session_name" == "" ]]; then
-    role_session_name="opslyft"
-  fi
 
-  credentials="$(aws sts assume-role --role-arn $role_arn --role-session-name $role_session_name)"
-  export AWS_ACCESS_KEY_ID="$(echo $credentials | jq '.Credentials.AccessKeyId')"
-  export AWS_SECRET_ACCESS_KEY="$(echo $credentials | jq '.Credentials.SecretAccessKey')"
-  export AWS_SESSION_TOKEN="$(echo $credentials | jq '.Credentials.SessionToken')"
+  shift 1
+  (
+  credentials="$(aws sts assume-role --role-arn $role_arn --role-session-name opslyft)" && \
+  export AWS_ACCESS_KEY_ID="$(echo $credentials | jq -r '.Credentials.AccessKeyId')" && \
+  export AWS_SECRET_ACCESS_KEY="$(echo $credentials | jq -r '.Credentials.SecretAccessKey')" && \
+  export AWS_SESSION_TOKEN="$(echo $credentials | jq -r '.Credentials.SessionToken')" && \
+  "$@"
+  )
 }
 
 
