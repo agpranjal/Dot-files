@@ -50,7 +50,6 @@ lvim.plugins = {
   },
   {
     "windwp/nvim-spectre",
-    event = "BufRead",
     config = function()
       require("user.nvim-spectre")
     end,
@@ -197,5 +196,11 @@ lvim.plugins = {
   },
   {
     "rafi/awesome-vim-colorschemes"
+  },
+  {
+    "sindrets/winshift.nvim",
+    config = function()
+      require("user.winshift")
+    end
   }
 }
