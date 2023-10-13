@@ -48,6 +48,11 @@ function _horz_split()
   ]])
 end
 
+lvim.builtin.which_key.mappings.c = {
+  "<cmd>lua _horz_split()<cr>",
+  "Horizontal split",
+}
+
 lvim.builtin.which_key.mappings.v = {
   "<cmd>lua _vert_split()<cr>",
   "Vertical split",
@@ -116,3 +121,24 @@ lvim.builtin.cmp.mapping["<Tab>"].i = require "cmp".mapping.confirm { behavior =
 lvim.builtin.cmp.mapping["<Tab>"].s = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<CR>"].i = false
 lvim.builtin.cmp.mapping["<CR>"].s = false
+
+-- Remap floating terminal
+lvim.builtin.terminal.execs = {
+  {
+    [2] = "<M-1>",
+    [3] = "Horizontal Terminal",
+    [4] = "horizontal",
+    [5] = 0.3
+  },
+  {
+    [2] = "<M-2>",
+    [3] = "Float Terminal",
+    [4] = "float"
+  },
+  {
+    [2] = "<M-3>",
+    [3] = "Vertical Terminal",
+    [4] = "vertical",
+    [5] = 0.4
+  },
+}
