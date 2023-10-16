@@ -1,28 +1,28 @@
 require('multicursors').setup {
-  -- hint_config = false,
+  hint_config = false,
 }
 
--- local function is_active()
---   local ok, hydra = pcall(require, 'hydra.statusline')
---   return ok and hydra.is_active()
--- end
+local function is_active()
+  local ok, hydra = pcall(require, 'hydra.statusline')
+  return ok and hydra.is_active()
+end
 
--- local function get_name()
---   local ok, hydra = pcall(require, 'hydra.statusline')
---   if ok then
---     return hydra.get_name()
---   end
---   return ''
--- end
+local function get_name()
+  local ok, hydra = pcall(require, 'hydra.statusline')
+  if ok then
+    return hydra.get_name()
+  end
+  return ''
+end
 
--- lvim.builtin.lualine.inactive_sections.lualine_b = {
---   {
---     "b:gitsigns_head",
---     color = { gui = "bold" },
---     icon = ""
---   },
---   { get_name, cond = is_active },
--- }
+lvim.builtin.lualine.sections.lualine_b = {
+  {
+    "b:gitsigns_head",
+    color = { gui = "bold" },
+    icon = ""
+  },
+  { get_name, cond = is_active },
+}
 
 lvim.builtin.which_key.mappings.m = {
   name = "Multicursor",
