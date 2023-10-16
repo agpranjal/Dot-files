@@ -14,7 +14,7 @@
 # [ -d ~/.config/nvim ] && cp -r ~/.config/nvim .
 [ -d ~/.config/nvim ] && rsync -av --progress --exclude=".git" ~/.config/nvim-personal .
 [ -d ~/.config/lvim ] && rsync -av --progress --exclude=".git" ~/.config/lvim .
-[ -d ~/.config/lazygit ] && rsync -av --progress --exclude=".git" ~/.config/lazygit .
+[ -d ~/.config/lazygit ] && rsync -av --progress --exclude=".git" --exclude="state.yml" ~/.config/lazygit .
 
 git add .
 git commit -m "Update"
