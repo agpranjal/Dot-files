@@ -62,7 +62,7 @@ lvim.builtin.which_key.mappings.H = {
   "Horizontal split",
 }
 
-lvim.builtin.which_key.mappings.W = { "<cmd>set wrap!<cr>", "Wrap/No Wrap" }
+lvim.builtin.which_key.mappings.w = { "<cmd>set wrap!<cr>", "Wrap/No Wrap" }
 lvim.builtin.which_key.mappings.s.w = {
   "<cmd>Telescope live_grep<cr>",
   "Search Text (workspace)",
@@ -117,6 +117,8 @@ lvim.builtin.which_key.mappings.s.c = {
 lvim.builtin.which_key.mappings.s.r = {
   "<cmd>Telescope oldfiles<cr>", "Open Recent/Old files"
 }
+lvim.builtin.which_key.mappings.s.o = lvim.builtin.which_key.mappings.s.r
+
 lvim.builtin.cmp.mapping["<Tab>"].i = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<Tab>"].s = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<CR>"].i = false

@@ -142,17 +142,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # ------------------------------------------------------------------------
-# Set default editor for the shell
-if [ -x "$(command -v nvim)" ]; then
-  export VISUAL=nvim
-elif [ -x "$(command -v vim)" ]; then
-  export VISUAL=vim
-else
-  export VISUAL=vi
-fi
-export EDITOR="$VISUAL"
-
-# ------------------------------------------------------------------------
 # Customised git log
 alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
@@ -231,9 +220,8 @@ if [ -f "$file" ]; then
   source "$file"
 fi
 
-export PATH=/Users/ag_pranjal/.local/bin:$PATH
-export PATH=/Users/ag_pranjal/.cargo/bin:$PATH
-alias nvim=lvim
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 alias lg=lazygit
 export GOPATH=$HOME/go
@@ -242,7 +230,24 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' 2>/dev/null ; fi
+if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' 2>/dev/null ; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' 2>/dev/null ; fi
+if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' 2>/dev/null ; fi
+
+
+
+# ------------------------------------------------------------------------
+# Set default editor for the shell
+alias nvim=lvim
+if [ -x "$(command -v lvim)" ]; then
+  export VISUAL=lvim
+elif [ -x "$(command -v nvim)" ]; then
+  export VISUAL=nvim
+elif [ -x "$(command -v vim)" ]; then
+  export VISUAL=vim
+else
+  export VISUAL=vi
+fi
+export EDITOR="$VISUAL"
+
