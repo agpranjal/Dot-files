@@ -216,18 +216,19 @@ export HISTSIZE=1000000000
 
 # Enable zsh syntax highlighting
 file="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-if [ -f "$file" ]; then
-  source "$file"
-fi
+if [ -f "$file" ]; then source "$file" ; fi
+
+alias lg=lazygit
+export CONFIG_DIR="$HOME/.config/lazygit"
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-alias lg=lazygit
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export CONFIG_DIR="$HOME/.config/lazygit" # For lazygit config override
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' 2>/dev/null ; fi
@@ -236,8 +237,6 @@ if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/Downloa
 if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' 2>/dev/null ; fi
 
 
-
-# ------------------------------------------------------------------------
 # Set default editor for the shell
 alias nvim=lvim
 if [ -x "$(command -v lvim)" ]; then

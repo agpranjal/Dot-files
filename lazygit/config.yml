@@ -1,0 +1,12 @@
+git:
+  paging:
+    colorArg: always
+    pager: diff-so-fancy
+gui:
+  showFileTree: false
+  nerdFontsVersion: "3"
+  scrollPastBottom: false
+keybinding:
+  universal:
+    quit: 'q'
+    return: 'q'
