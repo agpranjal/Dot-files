@@ -24,7 +24,7 @@ vim.cmd([[
   " Escape from diffferent window types using <esc>
   augroup ExitUsingEscape
     autocmd!
-    autocmd FileType qf,vim nnoremap <buffer> <silent> <esc> :q<cr>
+    autocmd FileType qf,vim,Trouble nnoremap <buffer> <silent> <esc> :q<cr>
     autocmd FileType spectre_panel nnoremap <buffer> <silent> q :q<cr>
     autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
   augroup end
