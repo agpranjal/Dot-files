@@ -5,6 +5,8 @@ require "trouble".setup {
     close = "q"
   }
 }
+
+lvim.builtin.dap.active = false
 lvim.builtin.which_key.mappings.d = {
   name = "Diagnostics",
   -- t = { "<cmd>TroubleToggle<cr>", "trouble" },

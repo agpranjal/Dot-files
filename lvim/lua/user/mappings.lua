@@ -111,7 +111,7 @@ lvim.builtin.which_key.mappings.q = {
   end,
   "Close Other Buffers",
 }
-lvim.builtin.which_key.mappings.s.c = {
+lvim.builtin.which_key.mappings.s.C = {
   "<cmd>Telescope colorscheme<cr>", "Colorscheme"
 }
 lvim.builtin.which_key.mappings.s.r = {
