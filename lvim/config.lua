@@ -6,14 +6,17 @@ require("user.lsp")
 
 require("user.plugins")
 
--- lvim.colorscheme = "molokayo"
-lvim.colorscheme = "molokai"
+lvim.colorscheme = "molokayo"
+-- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "default"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.builtin.bufferline.options.offsets = {
   { filetype = "neo-tree", text = "Explorer", highlight = "Directory", text_align = "center" },
 }
+lvim.builtin.bufferline.options.indicator.style = "icon"
+lvim.builtin.bufferline.options.themable = true
+-- lvim.builtin.bufferline.options.separator_style = "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
 
 vim.cmd([[
   " Required bcos 'neovim' python pkg was not being found

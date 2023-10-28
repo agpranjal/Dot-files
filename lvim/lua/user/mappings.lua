@@ -49,8 +49,7 @@ function _horz_split()
 end
 
 lvim.builtin.which_key.mappings.c = {
-  "<cmd>lua _horz_split()<cr>",
-  "Horizontal split",
+  "<cmd>Telescope colorscheme<cr>", "Colorscheme"
 }
 
 lvim.builtin.which_key.mappings.v = {
@@ -110,9 +109,6 @@ lvim.builtin.which_key.mappings.q = {
     ]])
   end,
   "Close Other Buffers",
-}
-lvim.builtin.which_key.mappings.s.C = {
-  "<cmd>Telescope colorscheme<cr>", "Colorscheme"
 }
 lvim.builtin.which_key.mappings.s.r = {
   "<cmd>Telescope oldfiles<cr>", "Open Recent/Old files"
