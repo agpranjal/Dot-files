@@ -120,7 +120,7 @@ lvim.builtin.which_key.mappings.j = {
 function _jsonify_file()
   vim.cmd [[
   set ft=json
-  execute ":%s/'/\"/g"
+  silent! execute ":%s/'/\"/g"
 ]]
 end
 
