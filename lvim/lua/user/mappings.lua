@@ -114,6 +114,15 @@ lvim.builtin.which_key.mappings.s.r = {
   "<cmd>Telescope oldfiles<cr>", "Open Recent/Old files"
 }
 lvim.builtin.which_key.mappings.s.o = lvim.builtin.which_key.mappings.s.r
+lvim.builtin.which_key.mappings.j = {
+  "<cmd>lua _jsonify_file()<cr>", "JSONify"
+}
+function _jsonify_file()
+  vim.cmd [[
+  set ft=json
+  execute ":%s/'/\"/g"
+]]
+end
 
 lvim.builtin.cmp.mapping["<Tab>"].i = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
 lvim.builtin.cmp.mapping["<Tab>"].s = require "cmp".mapping.confirm { behavior = require "cmp".ConfirmBehavior.Replace, select = true }
