@@ -203,13 +203,16 @@ lvim.plugins = {
       require("user.winshift")
     end
   },
+  -- {
+  --   "smoka7/multicursors.nvim",
+  --   dependencies = {
+  --     'smoka7/hydra.nvim',
+  --   },
+  --   config = function()
+  --     require("user.multicursors")
+  --   end
+  -- },
   {
-    "smoka7/multicursors.nvim",
-    dependencies = {
-      'smoka7/hydra.nvim',
-    },
-    config = function()
-      require("user.multicursors")
-    end
+    "mg979/vim-visual-multi"
   }
 }

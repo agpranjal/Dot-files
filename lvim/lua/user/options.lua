@@ -9,13 +9,12 @@ vim.opt.smartcase = true     -- Smart case
 vim.opt.updatetime = 250     -- Decrease update time
 vim.opt.splitbelow = true    -- open splits below
 vim.opt.signcolumn = "yes"   -- Always show sign column
-vim.opt.cursorline = true    -- Highlight line with cursor
+vim.opt.cursorline = false    -- Highlight line with cursor
 vim.opt.swapfile = false     -- Disable swap files
 vim.opt.timeoutlen = 300     -- Set timeout to 300ms (for whichkey)
 vim.opt.wrap = false         -- Disable wrapping
 vim.opt.splitright = true    -- Open vertical split to right of current buffer
 vim.opt.splitbelow = true    -- Open horizontal split below current buffer
-vim.opt.cursorline = false
 vim.opt.clipboard = ""
 vim.opt.showmode = true -- Show INSERT/VISUAL mode in command line
 

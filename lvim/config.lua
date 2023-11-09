@@ -40,3 +40,4 @@ lvim.builtin.which_key.mappings.d = {
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "Current Word References" },
 }
+
