@@ -8,6 +8,11 @@ require('goto-preview').setup {
 }
 
 vim.keymap.set(
-  "n", "gp", "<cmd>lua require('goto-preview').close_all_win()<CR>",
+  "n", "gpp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+  { noremap = true, desc = "Preview Definition" }
+)
+
+vim.keymap.set(
+  "n", "gpc", "<cmd>lua require('goto-preview').close_all_win()<CR>",
   { noremap = true, desc = "Close Preview" }
 )

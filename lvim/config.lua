@@ -6,7 +6,8 @@ require("user.lsp")
 
 require("user.plugins")
 
-lvim.colorscheme = "molokayo"
+-- lvim.colorscheme = "molokayo"
+lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "default"
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
