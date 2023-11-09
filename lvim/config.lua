@@ -10,6 +10,7 @@ require("user.plugins")
 lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "default"
+lvim.builtin.illuminate.active = false
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.builtin.bufferline.options.offsets = {
