@@ -25,6 +25,7 @@ vim.cmd([[
   augroup ExitUsingEscape
     autocmd!
     autocmd FileType qf,vim,Trouble nnoremap <buffer> <silent> <esc> :q<cr>
+    autocmd FileType vim nnoremap <buffer> <silent> q :q<cr>
     autocmd FileType spectre_panel nnoremap <buffer> <silent> q :q<cr>
     autocmd BufEnter * lua if (vim.bo.filetype == "help") then vim.cmd "nnoremap <buffer> <silent> <esc> :q<cr>" end
   augroup end
