@@ -4,6 +4,7 @@ vim.cmd [[
   let g:gitblame_date_format = '%r'
   let g:gitblame_enabled = 1
   let g:gitblame_message_when_not_committed = ''
+  let g:gitblame_highlight_group = "CursorLine"
 
   function! SetGitBlamerHighlight()
     highlight default link gitblame Comment
