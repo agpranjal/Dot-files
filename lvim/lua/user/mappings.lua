@@ -110,10 +110,11 @@ lvim.builtin.which_key.mappings.q = {
   end,
   "Close Other Buffers",
 }
-lvim.builtin.which_key.mappings.s.r = {
+lvim.builtin.which_key.mappings.s.h = { "<cmd>Telescope help_tags<cr>", "Find Vim Help" }
+lvim.builtin.which_key.mappings.s.r = {}
+lvim.builtin.which_key.mappings.s.o = {
   "<cmd>Telescope oldfiles<cr>", "Open Recent/Old files"
 }
-lvim.builtin.which_key.mappings.s.o = lvim.builtin.which_key.mappings.s.r
 lvim.builtin.which_key.mappings.j = {
   name = "JSONify",
   j = { "<cmd>lua _jsonify_file()<cr>", "JSONify" }
