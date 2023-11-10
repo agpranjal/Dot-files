@@ -188,4 +188,7 @@ let g:VM_maps["Visual Regex"]                = '\\/'
 let g:VM_maps["Visual Add"]                  = '\\a'
 let g:VM_maps["Visual Find"]                 = '\\f'
 let g:VM_maps["Visual Cursors"]              = '\\c'
+
+" Disable this bcos this was causing conflict
+let g:VM_maps["Toggle Block"]                = ''
 ]]
