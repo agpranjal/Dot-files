@@ -11,7 +11,8 @@ lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "default"
 lvim.builtin.illuminate.active = false
-lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
+lvim.builtin.autopairs.map_bs = false -- shows conflict warning
+lvim.builtin.nvimtree.active = false  -- NOTE: using neo-tree
 lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.builtin.bufferline.options.offsets = {
   { filetype = "neo-tree", text = "Explorer", highlight = "Directory", text_align = "center" },
@@ -41,4 +42,3 @@ lvim.builtin.which_key.mappings.d = {
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "Current Word References" },
 }
-
