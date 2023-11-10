@@ -87,6 +87,7 @@ lvim.builtin.which_key.mappings.g.d = {
   "Git Diff (Buffer)",
 }
 
+lvim.builtin.which_key.mappings.g.o = { "<cmd>Telescope git_status<cr>", "Open changed/modified file" }
 lvim.builtin.which_key.mappings.g.j = {}
 lvim.builtin.which_key.mappings.g.k = {}
 lvim.builtin.which_key.mappings.g.n = {
