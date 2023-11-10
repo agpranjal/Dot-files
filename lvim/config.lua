@@ -6,8 +6,8 @@ require("user.lsp")
 
 require("user.plugins")
 
--- lvim.colorscheme = "molokayo"
-lvim.colorscheme = "darkblue"
+lvim.colorscheme = "molokayo"
+-- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "default"
 lvim.builtin.illuminate.active = false
@@ -41,4 +41,14 @@ lvim.builtin.which_key.mappings.d = {
   q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "Current Word References" },
+}
+
+lvim.builtin.gitsigns.opts.current_line_blame = true
+lvim.builtin.gitsigns.opts.current_line_blame_formatter = '     <author> • <author_time:%R> • <summary>'
+lvim.builtin.gitsigns.opts.current_line_blame_opts = {
+  virt_text = true,
+  virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+  delay = 100,
+  ignore_whitespace = false,
+  virt_text_priority = 1000,
 }

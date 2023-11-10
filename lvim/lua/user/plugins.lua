@@ -16,13 +16,13 @@ lvim.plugins = {
       require("user.leap")
     end,
   },
-  {
-    "f-person/git-blame.nvim",
-    event = "BufRead",
-    config = function()
-      require("user.git-blame")
-    end,
-  },
+  -- {
+  --   "f-person/git-blame.nvim",
+  --   event = "BufRead",
+  --   config = function()
+  --     require("user.git-blame")
+  --   end,
+  -- },
   {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
