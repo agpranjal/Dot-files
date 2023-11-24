@@ -16,3 +16,8 @@ vim.keymap.set(
   "n", "gpc", "<cmd>lua require('goto-preview').close_all_win()<CR>",
   { noremap = true, desc = "Close Preview" }
 )
+
+vim.keymap.set(
+  "n", "gpq", "<cmd>lua require('goto-preview').close_all_win()<CR>",
+  { noremap = true, desc = "Close/Quit Preview" }
+)
