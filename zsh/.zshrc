@@ -250,3 +250,4 @@ else
 fi
 export EDITOR="$VISUAL"
 
+alias D=deactivate
