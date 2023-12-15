@@ -250,4 +250,5 @@ else
 fi
 export EDITOR="$VISUAL"
 
+alias S="source venv/bin/activate"
 alias D=deactivate
