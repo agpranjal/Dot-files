@@ -128,12 +128,12 @@ export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --colo
 
 # ------------------------------------------------------------------------
 # Install pyenv (if not already installed)
-if [ ! -d ~/.pyenv ]; then
-  #sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
-  #  libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-    #libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
-      #curl https://pyenv.run | bash
-fi
+# if [ ! -d ~/.pyenv ]; then
+#   sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+#    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+#     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
+#       curl https://pyenv.run | bash
+# fi
 
 # Add pyenv to PATH
 export PYENV_ROOT="$HOME/.pyenv"
@@ -163,7 +163,7 @@ alias rls="ls"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias wa="warp-cli account"
+alias wa="warp-cli registration show"
 alias ws="warp-cli status"
 alias wc="warp-cli connect"
 alias wd="warp-cli disconnect"
@@ -252,3 +252,5 @@ export EDITOR="$VISUAL"
 
 alias S="source venv/bin/activate"
 alias D=deactivate
+
+# source $(brew --prefix nvm)/nvm.sh

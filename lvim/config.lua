@@ -6,8 +6,8 @@ require("user.lsp")
 
 require("user.plugins")
 
--- lvim.colorscheme = "molokayo"
-lvim.colorscheme = "molokai"
+lvim.colorscheme = "molokayo"
+-- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "OceanicNext"
