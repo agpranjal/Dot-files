@@ -6,11 +6,11 @@ require("user.lsp")
 
 require("user.plugins")
 
-lvim.colorscheme = "molokayo"
+-- lvim.colorscheme = "molokayo"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
--- lvim.colorscheme = "OceanicNext"
+lvim.colorscheme = "OceanicNext"
 -- lvim.colorscheme = "default"
 lvim.builtin.illuminate.active = false
 lvim.builtin.autopairs.map_bs = false -- shows conflict warning
