@@ -154,7 +154,9 @@ lvim.builtin.terminal.execs = {
 }
 
 for _, value in ipairs(lvim.builtin.cmp.sources) do
-  if value.name == "nvim_lsp" then
+  if value.name == "cmp_tabnine" then
+    value.priority = 1
+  elseif value.name == "nvim_lsp" then
     value.priority = 10
   elseif value.name == "path" then
     value.priority = 20
@@ -164,8 +166,8 @@ for _, value in ipairs(lvim.builtin.cmp.sources) do
     value.priority = 40
   elseif value.name == "buffer" then
     value.priority = 50
-  elseif value.name == "cmp_tabnine" then
-    value.priority = 1
+  -- elseif value.name == "cmp_tabnine" then
+  --   value.priority = 1
   end
 end
 
