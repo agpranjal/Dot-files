@@ -165,7 +165,7 @@ for _, value in ipairs(lvim.builtin.cmp.sources) do
   elseif value.name == "buffer" then
     value.priority = 50
   elseif value.name == "cmp_tabnine" then
-    value.priority = 100
+    value.priority = 1
   end
 end
 
