@@ -112,7 +112,7 @@ lvim.builtin.which_key.mappings.q = {
   "Close Other Buffers",
 }
 lvim.builtin.which_key.mappings.s.h = { "<cmd>Telescope help_tags<cr>", "Find Vim Help" }
-lvim.builtin.which_key.mappings.s.r = {}
+lvim.builtin.which_key.mappings.s.r = {"<cmd>Telescope resume<cr>","Resume last search"}
 lvim.builtin.which_key.mappings.s.o = {
   "<cmd>Telescope oldfiles<cr>", "Open Recent/Old files"
 }
