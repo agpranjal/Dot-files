@@ -8,7 +8,7 @@ require("user.plugins")
 
 -- lvim.colorscheme = "lucid"
 -- lvim.colorscheme = "ayu"
--- lvim.colorscheme = "molokayo"
+lvim.colorscheme = "molokayo"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
