@@ -74,6 +74,10 @@ lvim.builtin.which_key.mappings.l.r = {
   "<cmd>lua vim.lsp.buf.rename()<cr>",
   "Rename Symbol (workspace)",
 }
+lvim.builtin.which_key.mappings.l.R = {
+  "<cmd>LspRestart<cr>",
+  "Restart LSP"
+}
 lvim.builtin.which_key.mappings.l.w = {
   "<cmd>Telescope diagnostics theme=ivy<cr>",
   "Workspace Diagnostics",
@@ -112,7 +116,7 @@ lvim.builtin.which_key.mappings.q = {
   "Close Other Buffers",
 }
 lvim.builtin.which_key.mappings.s.h = { "<cmd>Telescope help_tags<cr>", "Find Vim Help" }
-lvim.builtin.which_key.mappings.s.r = {"<cmd>Telescope resume<cr>","Resume last search"}
+lvim.builtin.which_key.mappings.s.r = { "<cmd>Telescope resume<cr>", "Resume last search" }
 lvim.builtin.which_key.mappings.s.o = {
   "<cmd>Telescope oldfiles<cr>", "Open Recent/Old files"
 }
