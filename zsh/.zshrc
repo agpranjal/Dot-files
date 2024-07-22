@@ -139,7 +139,7 @@ export FZF_ALT_C_OPTS="--preview '([[ -f {} ]] && (batcat --style=numbers --colo
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # ------------------------------------------------------------------------
 # Customised git log
@@ -252,5 +252,8 @@ export EDITOR="$VISUAL"
 
 alias S="source venv/bin/activate"
 alias D=deactivate
+alias lz="lazygit"
+
+export PATH=/opt/fluent-bit/bin:$PATH
 
 # source $(brew --prefix nvm)/nvm.sh
