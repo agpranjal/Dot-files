@@ -230,12 +230,6 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export CONFIG_DIR="$HOME/.config/lazygit" # For lazygit config override
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' 2>/dev/null ; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' 2>/dev/null ; fi
-
 
 # Set default editor for the shell
 alias nvim=lvim
@@ -257,3 +251,9 @@ alias lz="lazygit"
 export PATH=/opt/fluent-bit/bin:$PATH
 
 # source $(brew --prefix nvm)/nvm.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
