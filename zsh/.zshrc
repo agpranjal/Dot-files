@@ -261,5 +261,3 @@ if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; the
 
 # kubectl auto completion
 source <(kubectl completion zsh)
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

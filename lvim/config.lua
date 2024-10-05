@@ -56,3 +56,6 @@ lvim.builtin.gitsigns.opts.current_line_blame_opts = {
   ignore_whitespace = false,
   virt_text_priority = 1000,
 }
+
+-- Disable ruff lsp for python
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ruff" })
