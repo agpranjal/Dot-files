@@ -225,4 +225,8 @@ lvim.plugins = {
   {
     "mg979/vim-visual-multi"
   },
+  {
+    "chrisbra/csv.vim",
+    dependencies = { 'kkharji/sqlite.lua', module = 'sqlite' }
+  }
 }

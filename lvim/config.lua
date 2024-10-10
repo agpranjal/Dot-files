@@ -7,6 +7,7 @@ require("user.lsp")
 require("user.plugins")
 
 -- lvim.colorscheme = "lucid"
+lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
 -- lvim.colorscheme = "molokayo"
 -- lvim.colorscheme = "molokai"
@@ -14,6 +15,7 @@ require("user.plugins")
 -- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "OceanicNext"
 -- lvim.colorscheme = "default"
+
 lvim.builtin.illuminate.active = false
 lvim.builtin.autopairs.map_bs = false -- shows conflict warning
 lvim.builtin.nvimtree.active = false  -- NOTE: using neo-tree

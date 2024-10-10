@@ -252,5 +252,9 @@ lvim.plugins = {
     config = function()
       require('plugins.configs.neoclip')
     end,
+  },
+  {
+    "chrisbra/csv.vim",
+    dependencies = { 'kkharji/sqlite.lua', module = 'sqlite' }
   }
 }
