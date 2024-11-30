@@ -70,16 +70,16 @@ bindkey "^ " autosuggest-accept
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ------------------------------------------------------------------------
-# start tmux when shell starts
-# if [[ ! $TERM =~ screen ]]; then
-#   export TERM=screen-256color
-#   exec tmux -u
-# fi
+#start tmux when shell starts
+if [[ ! $TERM =~ screen ]]; then
+ export TERM=screen-256color
+ exec tmux -u
+fi
 
-#if [ "$TMUX" = "" ]; then
-#  export TERM=screen-256color
-#  exec tmux -u
-#fi
+if [ "$TMUX" = "" ]; then
+export TERM=screen-256color
+exec tmux -u
+fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
 
@@ -193,7 +193,8 @@ function with-role() {
 # ============MACOS SPECIFIC SETTINGS=====================
 
 # Max limit of open file descriptors - required for macos
-ulimit -n 1024
+#ulimit -n 1024
+ulimit -c unlimited
 
 # required for installing psycopg2
 export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib" \
