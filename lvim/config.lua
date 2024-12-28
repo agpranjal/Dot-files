@@ -10,7 +10,7 @@ require("user.plugins")
 -- lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
 -- lvim.colorscheme = "molokayo"
-lvim.colorscheme = "molokai"
+-- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "OceanicNext"

@@ -224,12 +224,15 @@ export CONFIG_DIR="$HOME/.config/lazygit"
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export CONFIG_DIR="$HOME/.config/lazygit" # For lazygit config override
+
+# Which java version to use
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 
 # Set default editor for the shell
@@ -262,3 +265,8 @@ if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; the
 
 # kubectl auto completion
 source <(kubectl completion zsh)
+
+# ngrok shell completion
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
