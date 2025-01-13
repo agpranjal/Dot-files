@@ -171,7 +171,7 @@ alias wd="warp-cli disconnect"
 # Export AWS KEYS to environment
 function export-opslyft-iam()
 {
-  profile_name="opslyft-iam" \
+  profile_name="default" \
   export AWS_ACCESS_KEY_ID="$(crudini --get ~/.aws/credentials $profile_name aws_access_key_id)" \
   export AWS_SECRET_ACCESS_KEY="$(crudini --get ~/.aws/credentials $profile_name aws_secret_access_key)"
 }
