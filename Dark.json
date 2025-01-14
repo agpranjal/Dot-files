@@ -70,6 +70,7 @@
     "Red Component" : 0,
     "Blue Component" : 0
   },
+  "Mouse Reporting allow clicks and drags" : false,
   "Transparency" : 0.39844739425025322,
   "Use Bright Bold" : true,
   "Horizontal Spacing" : 1,
@@ -323,6 +324,7 @@
   "Character Encoding" : 4,
   "Minimum Contrast" : 0,
   "Cursor Boost (Light)" : 0,
+  "Hide After Opening" : false,
   "Cursor Text Color (Light)" : {
     "Green Component" : 1,
     "Red Component" : 1,
@@ -382,6 +384,7 @@
     "Red Component" : 1,
     "Blue Component" : 0.3333333432674408
   },
+  "Allow Title Reporting" : false,
   "Ansi 9 Color" : {
     "Green Component" : 0.3333333432674408,
     "Red Component" : 1,
