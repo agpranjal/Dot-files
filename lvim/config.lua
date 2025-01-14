@@ -7,7 +7,7 @@ require("user.lsp")
 require("user.plugins")
 
 -- lvim.colorscheme = "lucid"
--- lvim.colorscheme = "challenger_deep"
+lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
 -- lvim.colorscheme = "molokayo"
 -- lvim.colorscheme = "molokai"

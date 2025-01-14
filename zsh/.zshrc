@@ -72,12 +72,12 @@ bindkey "^ " autosuggest-accept
 # ------------------------------------------------------------------------
 #start tmux when shell starts
 if [[ ! $TERM =~ screen ]]; then
- export TERM=screen-256color
+ # export TERM=screen-255color
  exec tmux -u
 fi
 
 if [ "$TMUX" = "" ]; then
-export TERM=screen-256color
+# export TERM=screen-255color
 exec tmux -u
 fi
 
