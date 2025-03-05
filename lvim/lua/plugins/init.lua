@@ -216,7 +216,7 @@ lvim.plugins = {
   },
   {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    cmd = "Trouble",
     config = function()
       require "trouble".setup {
         use_diagnostic_signs = true,

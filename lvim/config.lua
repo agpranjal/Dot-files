@@ -7,10 +7,10 @@ require("user.lsp")
 require("user.plugins")
 
 -- lvim.colorscheme = "lucid"
-lvim.colorscheme = "challenger_deep"
+-- lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
 -- lvim.colorscheme = "molokayo"
--- lvim.colorscheme = "molokai"
+lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "OceanicNext"
@@ -41,12 +41,12 @@ vim.api.nvim_create_user_command("Wq", "wq", { nargs = 0 })
 lvim.builtin.dap.active = false
 lvim.builtin.which_key.mappings.d = {
   name = "Diagnostics",
-  t = { "<cmd>TroubleToggle<cr>", "trouble" },
-  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
-  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
-  q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-  l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-  r = { "<cmd>TroubleToggle lsp_references<cr>", "Current Word References" },
+  t = { "<cmd>Trouble<cr>", "trouble" },
+  w = { "<cmd>Trouble diagnostics toggle<cr>", "Workspace Diagnostics" },
+  d = { "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Document Diagnostics" },
+  q = { "<cmd>Trouble quickfix<cr>", "quickfix" },
+  l = { "<cmd>Trouble loclist<cr>", "loclist" },
+  r = { "<cmd>Trouble lsp_references<cr>", "Current Word References" },
 }
 
 lvim.builtin.gitsigns.opts.current_line_blame = true

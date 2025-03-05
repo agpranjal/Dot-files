@@ -70,16 +70,16 @@ bindkey "^ " autosuggest-accept
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ------------------------------------------------------------------------
-#start tmux when shell starts
-if [[ ! $TERM =~ screen ]]; then
- # export TERM=screen-255color
- exec tmux -u
-fi
+# #start tmux when shell starts
+# if [[ ! $TERM =~ screen ]]; then
+# # export TERM=screen-254color
+# exec tmux -u
+# fi
 
-if [ "$TMUX" = "" ]; then
-# export TERM=screen-255color
-exec tmux -u
-fi
+# # if [ "$TMUX" = "" ]; then
+# #  #export TERM=screen-255color
+# #  exec tmux -u
+# # fi
 
 ZLE_SPACE_SUFFIX_CHARS=$'|&'
 

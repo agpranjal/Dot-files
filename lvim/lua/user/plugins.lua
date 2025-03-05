@@ -172,7 +172,7 @@ lvim.plugins = {
   },
   {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    cmd = "Trouble",
     config = function()
       require("user.trouble")
     end
