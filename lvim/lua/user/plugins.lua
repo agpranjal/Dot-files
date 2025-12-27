@@ -158,6 +158,7 @@ lvim.plugins = {
   },
   {
     "rmagatti/goto-preview",
+    dependencies = { "rmagatti/logger.nvim" },
     config = function()
       require("user.goto-preview")
     end
