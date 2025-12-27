@@ -163,11 +163,6 @@ alias rls="ls"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias wa="warp-cli registration show"
-alias ws="warp-cli status"
-alias wc="warp-cli connect"
-alias wd="warp-cli disconnect"
-
 # Export AWS KEYS to environment
 function export-opslyft-iam()
 {
@@ -248,7 +243,7 @@ else
 fi
 export EDITOR="$VISUAL"
 
-alias S="source venv/bin/activate"
+alias S="if [ -d 'venv' ]; then source venv/bin/activate; else source .venv/bin/activate; fi"
 alias D=deactivate
 alias lz="lazygit"
 
@@ -270,3 +265,7 @@ source <(kubectl completion zsh)
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
+
+# Task Master aliases added on 6/28/2025
+alias tm='task-master'
+alias taskmaster='task-master'

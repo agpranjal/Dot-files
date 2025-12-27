@@ -9,13 +9,13 @@ lvim.plugins = {
       require("user.nvim-bqf")
     end
   },
-  {
-    "ggandor/leap.nvim",
-    name = "leap",
-    config = function()
-      require("user.leap")
-    end,
-  },
+  -- {
+  --   "ggandor/leap.nvim",
+  --   name = "leap",
+  --   config = function()
+  --     require("user.leap")
+  --   end,
+  -- },
   -- {
   --   "f-person/git-blame.nvim",
   --   event = "BufRead",
