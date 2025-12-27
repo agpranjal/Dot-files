@@ -72,7 +72,7 @@ lvim.plugins = {
   },
   {
     "ahmedkhalf/lsp-rooter.nvim",
-    event = "BufRead",
+    event = "LspAttach",
     config = function()
       require("user.lsp-rooter")
     end,
@@ -103,14 +103,14 @@ lvim.plugins = {
     cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
     build = "npm install --prefix server",
   },
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    ft = "markdown",
-    config = function()
-      require("user.markdown-preview")
-    end,
-  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   build = "cd app && npm install",
+  --   ft = "markdown",
+  --   config = function()
+  --     require("user.markdown-preview")
+  --   end,
+  -- },
   {
     'gelguy/wilder.nvim',
     build = ":UpdateRemotePlugins",
