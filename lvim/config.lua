@@ -28,10 +28,14 @@ lvim.builtin.bufferline.options.themable = true
 -- lvim.builtin.bufferline.options.separator_style = "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
 
 vim.cmd([[
-  " Required bcos 'neovim' python pkg was not being found
-  " in virtual environments
-  let g:python3_host_prog="/Users/ag_pranjal/.pyenv/shims/python"
-  let g:python_host_prog="/Users/ag_pranjal/.pyenv/shims/python"
+  " Dedicated Python virtualenv for Neovim (isolated from project Python versions)
+  " This ensures Neovim always works regardless of which Python version your project uses
+  let g:python3_host_prog="/Users/ag_pranjal/.pyenv/versions/3.11.0/envs/neovim/bin/python"
+  let g:python_host_prog="/Users/ag_pranjal/.pyenv/versions/3.11.0/envs/neovim/bin/python"
+  
+  " Disable unused providers to avoid health check warnings
+  let g:loaded_perl_provider = 0
+  let g:loaded_ruby_provider = 0
 ]])
 
 -- Use :W to write, :Wq to write and quit
