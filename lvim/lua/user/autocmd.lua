@@ -1,5 +1,16 @@
 vim.cmd("autocmd FileType * set formatoptions-=cro")
 
+-- Terraform filetype detection
+vim.cmd([[
+  augroup TerraformFileType
+    autocmd!
+    autocmd BufRead,BufNewFile *.tf set filetype=terraform
+    autocmd BufRead,BufNewFile *.tfvars set filetype=terraform
+    autocmd BufRead,BufNewFile *.hcl set filetype=terraform
+    autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json
+  augroup end
+]])
+
 vim.cmd([[
   " Triger `autoread` when files changes on disk
       autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *

@@ -3,6 +3,7 @@ require("user.keys")
 require("user.mappings")
 require("user.autocmd")
 require("user.lsp")
+require("user.terraform")
 
 require("user.plugins")
 
@@ -76,3 +77,6 @@ lvim.builtin.gitsigns.opts.current_line_blame_opts = {
 
 -- Disable ruff lsp for python
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ruff" })
+
+-- Ensure terraformls is enabled (it should be installed via Mason)
+-- terraformls will be automatically configured by LunarVim's mason-lspconfig

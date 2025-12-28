@@ -248,5 +248,19 @@ lvim.plugins = {
   {
     "chrisbra/csv.vim",
     dependencies = { 'kkharji/sqlite.lua', module = 'sqlite' }
-  }
+  },
+  {
+    "hashivim/vim-terraform",
+    ft = { "terraform", "hcl", "tf" },
+    config = function()
+      -- Enable automatic formatting on save
+      vim.g.terraform_fmt_on_save = 1
+      -- Enable alignment
+      vim.g.terraform_align = 1
+    end,
+  },
+  {
+    "hashicorp/hcl",
+    ft = { "terraform", "hcl", "tf" },
+  },
 }
