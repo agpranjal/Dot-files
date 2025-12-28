@@ -1,6 +1,7 @@
 vim.opt.termguicolors = true -- Enable colors in terminal
 vim.opt.hlsearch = true      -- Set highlight on search
 vim.opt.number = true        -- Make line numbers default
+vim.opt.relativenumber = false -- Disable relative numbers (can enable if preferred)
 vim.opt.mouse = "a"          -- Enable mouse mode
 vim.opt.breakindent = true   -- Enable break indent
 vim.opt.undofile = true      -- Save undo history

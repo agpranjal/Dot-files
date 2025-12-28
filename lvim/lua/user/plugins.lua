@@ -1,6 +1,23 @@
 require("user.nvim-bufdel")
 
 lvim.plugins = {
+  -- Ensure nvim-web-devicons loads early for proper icon rendering
+  -- IMPORTANT: Make sure your terminal uses a Nerd Font (e.g., MesloLGS NF, FiraCode Nerd Font)
+  -- for icons to display properly in status bar and number line
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = false, -- Load immediately
+    config = function()
+      require("nvim-web-devicons").setup({
+        -- Enable default icons
+        default = true,
+        -- Enable strict mode for better icon matching
+        strict = true,
+        -- Enable color coding
+        color_icons = true,
+      })
+    end,
+  },
   { "chaoren/vim-wordmotion" },
   {
     "kevinhwang91/nvim-bqf",
@@ -35,9 +52,11 @@ lvim.plugins = {
     branch = "v2.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
+      "nvim-tree/nvim-web-devicons", -- This will use the already loaded instance
       "MunifTanjim/nui.nvim",
     },
+    -- Ensure neo-tree loads after nvim-web-devicons
+    after = "nvim-web-devicons",
     config = function()
       require("user.neo-tree")
     end

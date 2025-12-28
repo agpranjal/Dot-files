@@ -6,11 +6,18 @@ require("user.lsp")
 
 require("user.plugins")
 
+-- Icon rendering fix:
+-- 1. nvim-web-devicons is configured in plugins.lua to load early
+-- 2. Make sure your terminal uses a Nerd Font for icons to display properly
+--    Common options: MesloLGS NF, FiraCode Nerd Font, JetBrainsMono Nerd Font
+--    Install from: https://www.nerdfonts.com/
+--    Then set it in your terminal preferences
+
 -- lvim.colorscheme = "lucid"
 -- lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
 -- lvim.colorscheme = "molokayo"
-lvim.colorscheme = "molokai"
+-- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "OceanicNext"
@@ -25,6 +32,10 @@ lvim.builtin.bufferline.options.offsets = {
 }
 lvim.builtin.bufferline.options.indicator.style = "icon"
 lvim.builtin.bufferline.options.themable = true
+-- Ensure icons are enabled in bufferline
+lvim.builtin.bufferline.options.show_buffer_icons = true
+lvim.builtin.bufferline.options.show_buffer_close_icons = true
+lvim.builtin.bufferline.options.show_close_icon = true
 -- lvim.builtin.bufferline.options.separator_style = "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
 
 vim.cmd([[
