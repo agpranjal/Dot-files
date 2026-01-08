@@ -269,3 +269,8 @@ fi
 # Task Master aliases added on 6/28/2025
 alias tm='task-master'
 alias taskmaster='task-master'
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ag_pranjal/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
