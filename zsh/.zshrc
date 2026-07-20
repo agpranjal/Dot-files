@@ -1,4 +1,10 @@
 eval $(/opt/homebrew/bin/brew shellenv)
+
+# Add to ~/.zshrc or ~/.bashrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+
 # ------------------------------------------------------------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -252,10 +258,10 @@ export PATH=/opt/fluent-bit/bin:$PATH
 # source $(brew --prefix nvm)/nvm.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/ag_pranjal/Downloads/Dev-Tools/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/Dev-Tools/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/ag_pranjal/Downloads/Dev-Tools/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ag_pranjal/Downloads/Dev-Tools/google-cloud-sdk/completion.zsh.inc'; fi
 
 
 # kubectl auto completion
@@ -274,3 +280,5 @@ fpath=(/Users/ag_pranjal/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+alias k='kubectl'
