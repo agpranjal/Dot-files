@@ -1,3 +1,23 @@
+-- Silence deprecation-warning echoes/notifications (they still show up in
+-- :checkhealth vim.deprecated). Several vendored plugins (nvim-lspconfig,
+-- mason-lspconfig, none-ls.nvim, LunarVim core) call long-deprecated Nvim
+-- APIs (vim.lsp.start_client, vim.tbl_flatten, vim.validate{table}, etc.);
+-- updating them properly means chasing breaking upstream rewrites (e.g.
+-- nvim-lspconfig's tsserver -> ts_ls rename) that risk breaking working LSP
+-- setups just to quiet a cosmetic status-line message.
+do
+  local nvim_deprecate = vim.deprecate
+  vim.deprecate = function(name, alternative, version, plugin, backtrace)
+    if plugin == nil or plugin == "Nvim" then
+      pcall(function()
+        require("vim.deprecated.health").add(name, version, debug.traceback(), alternative)
+      end)
+      return
+    end
+    return nvim_deprecate(name, alternative, version, plugin, backtrace)
+  end
+end
+
 vim.opt.termguicolors = true -- Enable colors in terminal
 vim.opt.hlsearch = true      -- Set highlight on search
 vim.opt.number = true        -- Make line numbers default

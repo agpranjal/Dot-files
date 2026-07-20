@@ -2,6 +2,7 @@ require("user.options")
 require("user.keys")
 require("user.mappings")
 require("user.autocmd")
+require("user.indentlines")
 require("user.lsp")
 require("user.terraform")
 
@@ -17,7 +18,7 @@ require("user.plugins")
 -- lvim.colorscheme = "lucid"
 -- lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
--- lvim.colorscheme = "molokayo"
+lvim.colorscheme = "molokayo"
 -- lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"

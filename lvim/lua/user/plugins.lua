@@ -55,8 +55,6 @@ lvim.plugins = {
       "nvim-tree/nvim-web-devicons", -- This will use the already loaded instance
       "MunifTanjim/nui.nvim",
     },
-    -- Ensure neo-tree loads after nvim-web-devicons
-    after = "nvim-web-devicons",
     config = function()
       require("user.neo-tree")
     end
