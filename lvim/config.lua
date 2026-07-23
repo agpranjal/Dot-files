@@ -1,9 +1,12 @@
+require("user.treesitter-compat") -- must run before nvim-treesitter loads
 require("user.options")
 require("user.keys")
 require("user.mappings")
 require("user.autocmd")
 require("user.indentlines")
 require("user.lsp")
+require("user.none-ls-compat")
+require("user.python-venv")
 require("user.terraform")
 
 require("user.plugins")
