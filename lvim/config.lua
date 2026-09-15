@@ -21,8 +21,8 @@ require("user.plugins")
 -- lvim.colorscheme = "lucid"
 -- lvim.colorscheme = "challenger_deep"
 -- lvim.colorscheme = "ayu"
-lvim.colorscheme = "molokayo"
--- lvim.colorscheme = "molokai"
+-- lvim.colorscheme = "molokayo"
+lvim.colorscheme = "molokai"
 -- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkblue"
 -- lvim.colorscheme = "OceanicNext"
@@ -84,3 +84,19 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ruff" })
 
 -- Ensure terraformls is enabled (it should be installed via Mason)
 -- terraformls will be automatically configured by LunarVim's mason-lspconfig
+
+
+-- make neovim background transparent
+local groups = {
+  "Normal",
+  "NormalNC",
+  "SignColumn",
+  "EndOfBuffer",
+  "MsgArea",
+  "NormalFloat",
+  "FloatBorder",
+}
+
+for _, group in ipairs(groups) do
+  vim.api.nvim_set_hl(0, group, { bg = "none" })
+end
